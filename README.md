@@ -159,11 +159,15 @@ Following this, I used [Coolers](https://coolors.co/) to create a palette of com
 
 ### Images
 
+The logo for the site was created using [Adobe](https://www.adobe.com/express/create/logo).
+
+![Surf the Wave Logo](readme/assets/readme-images/logo.png)
+
 
 
 ### Typography
 
-
+To ensure easy reading, consistency and a good user experience, I have chosen Akshar font from [Google Fonts](https://fonts.google.com/).
 
 ## Technologies
 
@@ -171,9 +175,11 @@ Following this, I used [Coolers](https://coolors.co/) to create a palette of com
 - HTML
 - CSS3
 - JavaScript
+- Python
 
 ### Frameworks and Libraries
 
+- [Adobe](https://www.adobe.com/express/create/logo) was used to create the site logo.
 - [Am I Responsive?](http://ami.responsivedesign.is/) was used to create the mock ups.
 - [Balsamiq](https://balsamiq.com/) was used to create the wireframes.
 - [Bootstrap 5.1.3](https://getbootstrap.com/) was used to contribute to responsiveness and styling of the site.
