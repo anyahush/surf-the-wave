@@ -131,7 +131,7 @@ The wireframes for this project were developed using [Balsamiq](https://balsamiq
 
 | Mobile | Tablet| Desktop|
 --------------------|--------------------|--------------------------|
-| [Mobile]() | [Tablet]() | [Desktop]() |
+| [Mobile](readme/assets/wireframes/mobile.png) | [Tablet](readme/assets/wireframes/tablet.png) | [Desktop](readme/assets/wireframes/desktop.png) |
 
 
 ### Changes to Wireframes
@@ -140,8 +140,21 @@ The wireframes for this project were developed using [Balsamiq](https://balsamiq
 
 ## Surface Plane
 
+During initial stages of development, I carried out research to explore what other surf websites looked like. From what I found, most surf websites are fairly simple in design, following standard layouts of e-commerce sites. In particular, I found two sites that I have taken inspiration from in the design and colour schemes; [Surfdome](https://www.surfdome.com/) and [Shore](https://www.shore.co.uk/).
+
 ### Colour Scheme
 
+As mentioned above, I used inspiration from other surf websites whilst choosing the colour schemes. I decided that blue, an obvious choice with the correlation to water, and yellow, due to its bright and uplifting colour and it can represent the sun. 
+
+Initially I chose two colours that I wanted to use. They are Yellow Orange and Cornflower Blue.
+
+![Yellow Orange colour](readme/assets/readme-images/yellow-orange.png)
+
+![Cornflower Blue colour](readme/assets/readme-images/cornflower-blue.png)
+
+Following this, I used [Coolers](https://coolors.co/) to create a palette of complimentary colours.
+
+![Colour palette](readme/assets/readme-images/colour-palette.png)
 
 
 ### Images
