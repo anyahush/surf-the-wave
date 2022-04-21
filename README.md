@@ -95,29 +95,60 @@ The project goals for this site is to develop "a full stack e-commerce  site usi
 
 
 
-### Opportunity Goal Table
-
-During the initial strategy planning, the opportunities of the site were determined and values were given according to their imporance and viability at this stage.
-
-| Opportunity | Importance | Viability |
-| ----------- | ---------- | --------- |
-| 1. |  |  |
-| 2. |  |  |
-| 3. |  |  |
-| 4. |  |  |
-| 5. |  |  |
-| 6. |  |  |
-| 7. |  |  |
-
-
 ## Scope Plane
 
-
 ### **Existing Features**
+
+During the initial strategy planning, the opportunities of the site were determined and values were given according to their imporance and viability ranking between 1 and 5. Below are the list of features that were valued important and viable at this stage. The remaining features have been recorded in Features Left to Implement.
+
+#### Design
+- Responsive design
+- Accessible
+- Easy navigation throughout, nav links clearly labelled or icons used in navbar. Sidenav used for smaller devices.
+- Site logo - returns user to the home page
+- Nav link options will change depending on status of user eg. unregistered, registered or admin
+- On the home page a selection of photos will be displayed that link to different sections of the site, aimed to promote certain products or lines that are in season
+
+#### Products
+- Users are able to search and filter products depending on what they are looking for
+- Users can add products to shopping basket
+- Users can update or delete products from shopping basket
+- Users can securely purchase product(s) from the site
+- Order confirmation will be displayed to user and subsequent confirmation email sent.
+- If a product is 'Out of Stock', this will be displayed to the user and the add to basket button will be hidden
+
+#### Register, Login and Logout
+- Users are able to register for an account
+- Registered users can login and logout of account
+- Users will receive confirmation emails for registering, order summary and deleting account
+- Registered users can change their password if forgotten
+- Registered users can view profile containing personal information and order history
+- Registered users can save and update personal information on their profile
+
+#### Admin
+- Admin users can add, update and delete products
+- Admin users can create new categories
+- Admin users can add, update and delete blog posts
+- Admin users can delete user comments on blog posts
+- Admin users can delete users
+- Admin users can make other users admin
+
+#### Other
+- Users can contact site owner through contact form
+- If user is logged in, contact form will pre-populate
+- Social media links displayed
+- Back to top button in footer, to prevent unnecessary scrolling
+- All users can view blog posts, if logged in users can leave comments
+- Deletion confirmation before anything is deleted, to prevent accidental deletion
+- Cancel buttons on all edit pages, incase user changes their mind
+
 
 
 ### **Features Left to Implement**
 
+- A wishlist section for logged in users to save products for future purchase
+- Expand further product lines and product ranges
+- A rating and comment section for products
 
 
 ## Structure Plane 
