@@ -1,7 +1,7 @@
 # Surf the Wave
 ![Mock-up of site]()
 
-
+Surf the Wave is a fictional e-commerce site that sells surf equipment and surfwear for all those who love surfing or are curious to try! This is the fourth milestone project as part of my Diploma with Code Institute. This project focuses on the development of a full-stack e-commerce site that uses a centrally-owned dataset by using HTML, CSS, JavaScript, Python+Django, relational database(Postgres), stripe payments and AWS.
 
 Deployed website can be viewed [here]().
 
@@ -24,10 +24,6 @@ Deployed website can be viewed [here]().
 12. [Acknowledgements]()
 
 ---
-
-## Project Goals
-
-The project goals for this site is to develop "a full stack e-commerce  site using buisness logic used to control a centrally-owned dataset."
 
 ## UX Design
 
