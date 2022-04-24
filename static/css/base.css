@@ -1,0 +1,12 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Akshar';
+    color: #30323D;
+}
+
+.search-input {
+    border-left: 0 !important;
+}
