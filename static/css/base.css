@@ -4,9 +4,20 @@ html {
 
 body {
     font-family: 'Akshar';
-    color: #30323D;
+    color: #000;
 }
 
-.search-input {
-    border-left: 0 !important;
+.nav-options {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+.headings {
+    text-transform: uppercase;
+}
+
+#delivery-banner {
+    background-color: #feb751;
+    padding-top: 5px;
 }
