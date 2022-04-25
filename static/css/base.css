@@ -7,6 +7,17 @@ body {
     color: #000;
 }
 
+a {
+    text-decoration: none;
+}
+
+#logo {
+    font-family: 'Source Sans Pro';
+    color: #529afe;
+    text-transform: lowercase;
+    font-weight: 700;
+}
+
 .nav-options {
     text-transform: uppercase;
     font-family: sans-serif;
