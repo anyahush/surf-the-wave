@@ -186,9 +186,7 @@ Following this, I used [Coolers](https://coolors.co/) to create a palette of com
 
 ### Images
 
-The logo for the site was created using [Adobe](https://www.adobe.com/express/create/logo).
-
-![Surf the Wave Logo](readme/assets/readme-images/logo.png)
+Initially a logo, created using [Adobe](https://www.adobe.com/express/create/logo), was going to be used. During initial stages of development I felt the logo did not fit well with the aesthetic of the site and decided to remove this. The brand logo was created using 'Source Sans Pro' font from Google Fonts.
 
 
 
@@ -206,7 +204,6 @@ To ensure easy reading, consistency and a good user experience, I have chosen Ak
 
 ### Frameworks and Libraries
 
-- [Adobe](https://www.adobe.com/express/create/logo) was used to create the site logo.
 - [Am I Responsive?](http://ami.responsivedesign.is/) was used to create the mock ups.
 - [Balsamiq](https://balsamiq.com/) was used to create the wireframes.
 - [Bootstrap 5.1.3](https://getbootstrap.com/) was used to contribute to responsiveness and styling of the site.
@@ -232,11 +229,11 @@ The testing process can be viewed [here]().
 
 ### Content
 
-#### Question Content
-
 
 #### Code Content
 * README layout and style used from previous [project](https://github.com/anyahush/protect-our-planet-quiz).
+* [Code Institute's Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project was used throughout as a guide.
+* Image hover effect on image gallery modified from [W3 Schools Tutorial](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity) and [Shore's website](https://www.shore.co.uk/).
 
 
 ### Media
