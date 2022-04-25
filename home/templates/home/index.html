@@ -14,32 +14,52 @@
 {% block content %}
     <div class="container">
         <div class="row gallery">
-            <div class="col-6 offset-1">
+            <div class="col-6 offset-1 image-container">
                 <a href="">
-                    <img src="{{ MEDIA_URL }}surfing2-home.jpg" alt="" class="gallery-lg-img">
+                    <img src="{{ MEDIA_URL }}surfing2-home.jpg" alt="" class="gallery-lg-img image">
+                    <div class="image-grid-hover">
+                        <div class="text">
+                            <h3>Are you ready to surf the wave?</h3>
+                            <span>Get the latest surfboards for your summer adventures</span>
+                            <div>
+                                <button class="btn">Shop now</button>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </a>
             </div>
             <div class="col-4">
-                <a href="">
-                    <img src="{{ MEDIA_URL }}surfboard-van-home.jpg" alt="" class="gallery-sm-img">
-                </a>
-                <a href="">
-                    <img src="{{ MEDIA_URL }}ocean-home.jpg" alt="" class="gallery-sm-img">
-                </a>
+                    <a href="">
+                        <img src="{{ MEDIA_URL }}surfboards2-home.jpg" alt="" class="gallery-sm-img">
+                    </a>
+                    <a href="">
+                        <img src="{{ MEDIA_URL }}ocean-home.jpg" alt="" class="gallery-sm-img">
+                    </a>
             </div>
         </div>
         <div class="row gallery">
             <div class="col-4 offset-1">
                 <a href="">
-                    <img src="{{ MEDIA_URL }}surfboards2-home.jpg" alt="" class="gallery-sm-img">
+                    <img src="{{ MEDIA_URL }}surfboard-van-home.jpg" alt="" class="gallery-sm-img">
                 </a>
                 <a href="">
                     <img src="{{ MEDIA_URL }}wetsuit-home.jpg" alt="" class="gallery-sm-img">
                 </a>
             </div>
-            <div class="col-6">
+            <div class="col-6 image-container">
                 <a href="">
-                    <img src="{{ MEDIA_URL }}surfing-home.jpg" alt="" class="gallery-lg-img">
+                    <img src="{{ MEDIA_URL }}surfing-home.jpg" alt="" class="gallery-lg-img image">
+                    <div class="image-grid-hover">
+                        <div class="text">
+                            <h3>Solo Surfing</h3>
+                            <span>Check out our latest blogs</span>
+                            <div>
+                                <button class="btn">Read now</button>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
