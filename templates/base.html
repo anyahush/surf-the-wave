@@ -19,7 +19,9 @@
         <!-- Google Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Source+Sans+Pro:wght@600;700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Source+Sans+Pro:wght@600;700&display=swap"
+            rel="stylesheet">
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -44,27 +46,27 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div class="row bg-white d-none d-lg-flex">
+        <div class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-4 my-auto py-1">
                 <a href="{% url 'home' %}">
                     <h1 id="logo">Surf the Wave</h1>
                 </a>
             </div>
-            <div class="col-4 my-auto py-2">
+            <div class="col-5 my-auto py-2">
                 <form method="GET" action="">
                     <div class="input-group w-100">
-                        <input class="form-control border border-$gray-500 rounded search-input" type="text" name="q" placeholder="I am looking for...">
                         <div class="input-group-append">
-                            <button type="submit" class="form-control border-0">
+                            <button type="submit" class="form-control border border-end-0">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
                             </button>
                         </div>
+                        <input class="form-control border border-start-0" type="text" name="q" placeholder="I am looking for...">
                     </div>
                 </form>
             </div>
-            <div class="col-3 offset-1 my-auto py-2">
+            <div class="col-3 my-auto py-2">
                 <ul class="list-inline list-unstyled text-end my-0">
                     <li class="dropdown list-inline-item">
                         <a class="text-black nav-link" href="#" id="user-options" 
@@ -94,6 +96,9 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="container-fluid">
+                <hr id="hr-decoration">
         </div>
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light">

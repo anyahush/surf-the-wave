@@ -24,8 +24,19 @@ a {
     font-weight: 800;
 }
 
+.dropdown-menu {
+    border: none;
+}
+
 .headings {
     text-transform: uppercase;
+}
+
+#hr-decoration {
+    position: relative;
+    left: -25px;
+    width: calc(100% + 50px);
+    height: 1px;
 }
 
 #delivery-banner {
