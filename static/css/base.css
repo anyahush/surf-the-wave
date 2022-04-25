@@ -43,3 +43,32 @@ a {
     background-color: #feb751;
     padding-top: 5px;
 }
+
+/* Gallery */
+.gallery img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gallery-sm-img {
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.gallery-lg-img {
+    height: 420px;
+} 
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+@media (min-width: 992px) {
+    .header-container {
+        padding-top: 224px;
+    }
+}
