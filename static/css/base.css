@@ -32,7 +32,7 @@ a {
     text-transform: uppercase;
 }
 
-#hr-decoration {
+.hr-decoration {
     position: relative;
     left: -25px;
     width: calc(100% + 50px);
@@ -42,6 +42,22 @@ a {
 #delivery-banner {
     background-color: #feb751;
     padding-top: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #30323d;
+    color: #fff;
+    padding: 20px;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 3px;
+}
+
+footer h4 {
+    text-transform: uppercase;
 }
 
 /* Gallery */
