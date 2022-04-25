@@ -1,35 +1,20 @@
+/* Universal Styles */
 html {
     height: 100%;
 }
 
 body {
-    font-family: 'Akshar';
+    font-family: 'Inter';
     color: #000;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Akshar';
+    text-transform: uppercase;
 }
 
 a {
     text-decoration: none;
-}
-
-#logo {
-    font-family: 'Source Sans Pro';
-    color: #529afe;
-    text-transform: lowercase;
-    font-weight: 700;
-}
-
-.nav-options {
-    text-transform: uppercase;
-    font-family: sans-serif;
-    font-weight: 800;
-}
-
-.dropdown-menu {
-    border: none;
-}
-
-.headings {
-    text-transform: uppercase;
 }
 
 .hr-decoration {
@@ -38,6 +23,37 @@ a {
     width: calc(100% + 50px);
     height: 1px;
 }
+
+/* Navbar */
+#logo {
+    font-family: 'Source Sans Pro';
+    color: #529afe;
+    text-transform: lowercase;
+    font-weight: 700;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-light .navbar-nav .nav-link, .dropdown-item {
+    color:#30323d
+}
+
+.nav-options {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color:#feb751;
+}
+
+.dropdown-menu {
+    border: none;
+}
+
 
 #delivery-banner {
     background-color: #feb751;
@@ -58,6 +74,10 @@ footer a {
 
 footer h4 {
     text-transform: uppercase;
+}
+
+footer a:hover {
+    color:#feb751;
 }
 
 /* Gallery */
