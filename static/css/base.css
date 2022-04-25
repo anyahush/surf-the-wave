@@ -61,9 +61,20 @@ a {
 } 
 
 /* Media Queries */
+@media (max-width: 425px) {
+    .gallery-sm-img {
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    
+    .gallery-lg-img {
+        height: 210px;
+    } 
+}
+
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 164px;
+        padding-top: 134px;
     }
 }
 
