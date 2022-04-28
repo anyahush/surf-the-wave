@@ -135,6 +135,19 @@ footer a:hover {
       font-family: 'Source Sans Pro';
       color: #529afe;
   }
+
+/* Products */
+a.category-badge > span.badge:hover {
+    color: #529afe !important;
+    border-style: solid !important;
+    border-color: #529afe !important;
+}
+
+.badge {
+    font-size: 100%;
+}
+
+
   
 
 /* Media Queries */

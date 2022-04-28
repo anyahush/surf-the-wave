@@ -6,6 +6,7 @@
                     Mens
                 </a>
                 <div class="dropdown-menu" aria-labelledby="mens-products">
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_wetsuits,mens_footwear,mens_accessories">All Menswear</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=mens_wetsuits">Wetsuits</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=mens_footwear">Footwear</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=mens_accessories">Accessories</a>
@@ -17,6 +18,7 @@
                     Ladies
                 </a>
                 <div class="dropdown-menu" aria-labelledby="ladies-products">
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_wetsuits,ladies_footwear,ladies_accessories">All Ladieswear</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=ladies_wetsuits">Wetsuits</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=ladies_footwear">Footwear</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=ladies_accessories">Accessories</a>
@@ -28,6 +30,7 @@
                     Kids
                 </a>
                 <div class="dropdown-menu" aria-labelledby="kids-products">
+                    <a class="dropdown-item" href="{% url 'products' %}?category=boys_wetsuits,girls_wetsuits,kids_footwear,kids_accessories">All Kidswear</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=boys_wetsuits">Boys Wetsuits</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=girls_wetsuits">Girls Wetsuits</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=kids_footwear">Footwear</a>
@@ -40,6 +43,7 @@
                     Surf
                 </a>
                 <div class="dropdown-menu" aria-labelledby="surf-products">
+                    <a class="dropdown-item" href="{% url 'products' %}?category=surfboards,surf_equipment">All Surf Kit</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=surfboards">Surfboards</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=surf_equipment">Surf Essentials</a>
                 </div>
