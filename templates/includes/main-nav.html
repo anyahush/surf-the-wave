@@ -6,11 +6,9 @@
                     Mens
                 </a>
                 <div class="dropdown-menu" aria-labelledby="mens-products">
-                    <a class="dropdown-item" href="#">Wetsuits</a>
-                    <a class="dropdown-item" href="#">Shoes and Boots</a>
-                    <a class="dropdown-item" href="#">Accessories</a>
-                    <a class="dropdown-item" href="#">Gloves</a>
-                    <a class="dropdown-item" href="#">Hoods</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_wetsuits">Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_footwear">Footwear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_accessories">Accessories</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -19,11 +17,9 @@
                     Ladies
                 </a>
                 <div class="dropdown-menu" aria-labelledby="ladies-products">
-                    <a class="dropdown-item" href="#">Wetsuits</a>
-                    <a class="dropdown-item" href="#">Shoes and Boots</a>
-                    <a class="dropdown-item" href="#">Accessories</a>
-                    <a class="dropdown-item" href="#">Gloves</a>
-                    <a class="dropdown-item" href="#">Hoods</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_wetsuits">Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_footwear">Footwear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_accessories">Accessories</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -32,12 +28,10 @@
                     Kids
                 </a>
                 <div class="dropdown-menu" aria-labelledby="kids-products">
-                    <a class="dropdown-item" href="#">Boys Wetsuits</a>
-                    <a class="dropdown-item" href="#">Girls Wetsuits</a>
-                    <a class="dropdown-item" href="#">Shoes and Boots</a>
-                    <a class="dropdown-item" href="#">Accessories</a>
-                    <a class="dropdown-item" href="#">Gloves</a>
-                    <a class="dropdown-item" href="#">Hoods</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=boys_wetsuits">Boys Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=girls_wetsuits">Girls Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=kids_footwear">Footwear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=kids_accessories">Accessories</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -46,8 +40,8 @@
                     Surf
                 </a>
                 <div class="dropdown-menu" aria-labelledby="surf-products">
-                    <a class="dropdown-item" href="#">Surfboards</a>
-                    <a class="dropdown-item" href="#">Surf Essentials</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=surfboards">Surfboards</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=surf_equipment">Surf Essentials</a>
                 </div>
             </li>
         </ul>
