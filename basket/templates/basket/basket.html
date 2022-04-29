@@ -21,7 +21,9 @@
       <div class="row">
           <div class="col">
               {% if basket_items %}
-                <div>Table</div>
+                <div>
+                    {{ basket_items }}
+                </div>
               {% else %}
                 <p>Your basket is empty.</p>
                 <a href="{% url 'products' %}">
