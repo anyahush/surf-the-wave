@@ -44,6 +44,12 @@
                                 </td>
                                 <td class="py-2">
                                     <p>{{ item.product.name }}</p>
+                                    <p>Size:{% if item.product.men_sizes %}
+                                                {{ item.size|upper }}
+                                            {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes %}
+                                                {{ item.size }}
+                                            {% endif %}
+                                    </p>
                                     <p>SKU: {{ item.product.sku|upper }}</p>
                                 </td>
                                 <td class="py-2">
