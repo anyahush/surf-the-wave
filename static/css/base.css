@@ -24,6 +24,21 @@ a {
     height: 1px;
 }
 
+.btn-blue {
+    background-color: #529afe;
+    color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    border: 2px solid #529afe;
+}
+
+.btn-outline-black {
+    border: 2px solid #30323d;
+    color: #30323d !important;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
 /* Navbar */
 #logo {
     font-family: 'Source Sans Pro';
