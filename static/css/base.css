@@ -39,6 +39,11 @@ a {
     border-radius: 0;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* Navbar */
 #logo {
     font-family: 'Source Sans Pro';
