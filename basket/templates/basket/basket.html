@@ -44,10 +44,10 @@
                                 <h4 class="basket-meta">SKU: {{ item.product.sku|upper }}</h4>
                             </div>
                             <div class="col-md-6 col-lg-3">
-                                <form class="form" action="" method="POST">
+                                <form class="form update-form" action="{% url 'adjust_basket' item.item_id %}" method="POST">
                                     {% csrf_token %}
                                     <div class="form-group">
-                                        <div class="input-group quantity-input">
+                                        <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <button class="decrement-qty btn btn-sm btn-outline-grey rounded-0"
                                                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id  }}">
@@ -71,8 +71,8 @@
                                     </div>
                                 </form>
                                 <a class="update-link"><i class="fas fa-sync-alt mt-3" aria-label="Will update quantity of item in basket"></i></a>
-                                <a class="remove-item" id="remove_{{item.item_id }}"
-                                    data-size="{{ item.size }}" aria-label="Will remove quantity of item from basket"><i class="far fa-trash-alt"></i></a>
+                                <a class="remove-item" id="remove_{{ item.item_id }}"
+                                    data-product_size="{{ item.size }}" aria-label="Will remove quantity of item from basket"><i class="far fa-trash-alt"></i></a>
                             </div>
                             <div class="col-md-6 col-lg-2">
                                 <h4>£{{ item.product.price }}</h4>
@@ -118,28 +118,26 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <!-- Used from Boutique Ado -->
+
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function (e) {
+    $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function (e) {
+    $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
-        var url = `/bag/remove/${itemId}`;
-        var data = {
-            'csrfmiddlewaretoken': csrfToken,
-            'size': size
-        };
+        var size = $(this).data('product_size');
+        var url = `/basket/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
+         .done(function() {
+             location.reload();
+         });
     })
 </script>
 {% endblock %}
