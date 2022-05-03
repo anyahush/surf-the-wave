@@ -192,30 +192,6 @@ a.category-badge > span.badge:hover {
     margin-bottom: 20px;
 }
 
-/* .qty_input {
-    border-color: #6c757d;
-    border-left: none;
-    border-right: none;
-    text-align: center;
-}
-
-.decrement-qty {
-    border-right: none;
-}
-
-.increment-qty {
-    border-left: none;
-}
-
-.quantity-input {
-    width: 75%;
-}
-
-.fas.fa-minus,
-.fas.fa-plus {
-    font-size: 0.5rem;
-} */
-
 .basket-buttons {
     width: 100%;
     margin-bottom: 20px;
@@ -225,7 +201,6 @@ a.category-badge > span.badge:hover {
 .remove-item {
     cursor: pointer;
 }
-
 
 .update-link i,
 .remove-item i {

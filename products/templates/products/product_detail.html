@@ -158,6 +158,19 @@
                 <p>Features</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <h4>Reviews</h4>
+                <p>Check out our customer reviews!</p>
+            </div>
+            <div class="col-12">
+                {% for comment in product.user_comment %}
+                    <h5>{{ product.user_comment.review_title }}</h5>
+                    <p class="float-end">{{ product.user_comment.date_created }}</p>
+                    <p>{{ product.user_comment.review_comment }}</p>
+                {% endfor %}
+            </div>
+        </div>
 
     </div>
 
