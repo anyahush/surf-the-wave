@@ -217,6 +217,12 @@ a.category-badge > span.badge:hover {
     width: 100%;
     margin-bottom: 20px;
 }
+
+.update-link i,
+.remove-item i {
+    color: #666;
+    padding: 0 7px
+}
   
 
 /* Media Queries */
