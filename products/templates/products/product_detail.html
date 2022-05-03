@@ -13,12 +13,6 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <h2>Products</h2>
-        </div>
-
-    </div>
     <div class="container-fluid">
         <div class="row mt-2">
 
@@ -37,17 +31,15 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div>
-                    <h3 class="text-center m-3">{{ product.name }}</h3>
+                    <h3>{{ product.name }}</h3>
                     <p>£{{ product.price }}</p>
-                    <p>{{ product.description }}</p>
                     <form action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             {% if product.men_sizes %}
-                                <div class="col-12">
-                                    <p><strong>Size:</strong></p>
+                                <div class="col-sm-12 col-md-6">
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="" selected>Please select a size</option>
+                                        <option value="" selected>Choose size</option>
                                         <option value="xs">XS</option>
                                         <option value="s">S</option>
                                         <option value="m">M</option>
@@ -56,10 +48,10 @@
                                     </select>
                                 </div>
                             {% elif product.ladies_sizes %}
-                                <div class="col-12">
+                                <div class="col-sm-12 col-md-6">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_ladies_size'>
-                                        <option value="" selected>Please select a size</option>
+                                        <option value="" selected>Choose size</option>
                                         <option value="6">6</option>
                                         <option value="8">8</option>
                                         <option value="10">10</option>
@@ -70,10 +62,10 @@
                                     </select>
                                 </div>
                             {% elif product.shoe_sizes %}
-                                <div class="col-12">
+                                <div class="col-sm-12 col-md-6">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_shoe_size'>
-                                        <option value="" selected>Please select a size</option>
+                                        <option value="" selected>Choose size</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
@@ -87,10 +79,10 @@
                                     </select>
                                 </div>
                             {% elif product.kids_sizes %}
-                                <div class="col-12">
+                                <div class="col-sm-12 col-md-6">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_kids_size'>
-                                        <option value="" selected>Please select a size</option>
+                                        <option value="" selected>Choose size</option>
                                         <option value="7-8">7-8</option>
                                         <option value="9-10"></option>
                                         <option value="11-12">11-12</option>
@@ -100,10 +92,10 @@
                                     </select>
                                 </div>
                             {% elif product.kids_shoe_sizes %}
-                                <div class="col-12">
+                                <div class="col-sm-12 col-md-6">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_kids_shoe_size'>
-                                        <option value="" selected>Please select a size</option>
+                                        <option value="" selected>Choose size</option>
                                         <option value="xs">XS</option>
                                         <option value="s">S</option>
                                         <option value="m">M</option>
@@ -114,8 +106,7 @@
                             {% else %}
                             N/A
                             {% endif %}
-                            <div class="col-12">
-                                <p>Quantity:</p>
+                            <div class="col-sm-12 col-md-6">
                                 <!--Quantity buttons and relating JavaScript used from Boutique Ado-->
                                 <div class="form-group w-50">
                                     <div class="input-group">
@@ -146,13 +137,10 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black mt-5">
-                                    <span>
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span>Keep Shopping</span>
-                                </a>
                                 <input type="submit" class="btn btn-blue mt-5" value="Add to basket">
+                                <a href="{% url 'products' %}" class="btn btn-outline-grey mt-5">
+                                    <span>Continue shopping</span>
+                                </a>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
