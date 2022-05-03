@@ -17,6 +17,12 @@ a {
     text-decoration: none;
 }
 
+button:hover {
+    color: #fff !important;
+    border-color: #feb751;
+    background-color: #feb751;
+}
+
 .hr-decoration {
     position: relative;
     left: -25px;
@@ -39,10 +45,7 @@ a {
     font-size: 1rem;
 }
 
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
+
 
 /* Navbar */
 #logo {
@@ -218,10 +221,21 @@ a.category-badge > span.badge:hover {
     margin-bottom: 20px;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
 .update-link i,
 .remove-item i {
     color: #666;
     padding: 0 7px
+}
+
+.update-link i:hover,
+.remove-item i:hover {
+    color: #feb751;
 }
   
 
