@@ -192,7 +192,7 @@ a.category-badge > span.badge:hover {
     margin-bottom: 20px;
 }
 
-.qty_input {
+/* .qty_input {
     border-color: #6c757d;
     border-left: none;
     border-right: none;
@@ -214,7 +214,7 @@ a.category-badge > span.badge:hover {
 .fas.fa-minus,
 .fas.fa-plus {
     font-size: 0.5rem;
-}
+} */
 
 .basket-buttons {
     width: 100%;
