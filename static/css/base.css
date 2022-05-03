@@ -32,11 +32,11 @@ a {
     border: 2px solid #529afe;
 }
 
-.btn-outline-black {
-    border: 2px solid #30323d;
-    color: #30323d !important;
-    text-transform: uppercase;
+.btn-outline-grey {
+    border: 1px solid #6c757d;
+    color: #6c757d !important;
     border-radius: 0;
+    font-size: 1rem;
 }
 
 .update-link,
@@ -180,6 +180,42 @@ a.category-badge > span.badge:hover {
 .basket-meta {
     font-size: 1.2rem;
     color: #666;
+    text-transform: revert;
+}
+
+.basket-summary {
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.qty_input {
+    border-color: #6c757d;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
+.decrement-qty {
+    border-right: none;
+}
+
+.increment-qty {
+    border-left: none;
+}
+
+.quantity-input {
+    width: 75%;
+}
+
+.fas.fa-minus,
+.fas.fa-plus {
+    font-size: 0.5rem;
+}
+
+.basket-buttons {
+    width: 100%;
+    margin-bottom: 20px;
 }
   
 
