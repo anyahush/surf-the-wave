@@ -37,7 +37,7 @@
                                 <h3 id="basket-item-title">{{ item.product.name }}</h3>
                                 <h4 class="basket-meta">Size:{% if item.product.men_sizes %}
                                     {{ item.size|upper }}
-                                    {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes %}
+                                    {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes or item.product.kids_shoe_sizes %}
                                     {{ item.size }}
                                     {% endif %}
                                 </h4>
