@@ -48,27 +48,27 @@ var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
-    card.update({ 'disbaled': true});
+    card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
         }
     }).then(function(result) {
-        if(result.error) {
+        if (result.error) {
             var errorDiv = document.getElementById('card-errors');
             var html = `
-                <span rold="aler">
-                <i class="fas fa-times></i>
+                <span class="icon" role="alert">
+                <i class="fas fa-times"></i>
                 </span>
-                <span>${event.error.message}</span>`;
+                <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
-            card.update({ 'disbaled': false});
+            card.update({ 'disabled': false});
             $('#submit-button').attr('disabled', false);
         } else {
-            if (result.paymentInten.status === 'succeeded') {
+            if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
             }
         }
-    })
-})
+    });
+});
