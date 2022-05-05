@@ -4,7 +4,8 @@
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
-  border: 1px solid transparent;
+  border: 1px solid #aab7c4;
+  ;
   background-color: white;
 }
 
@@ -24,4 +25,3 @@
 .stripe-style-input::placeholder {
     color: #aab7c4;
 }
-
