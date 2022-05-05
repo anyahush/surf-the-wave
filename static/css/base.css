@@ -36,6 +36,7 @@ button:hover {
     border-radius: 0;
     text-transform: uppercase;
     border: 1px solid #529afe;
+    border-radius: 0.25rem;
 }
 
 .btn-outline-grey {
@@ -43,8 +44,8 @@ button:hover {
     color: #6c757d !important;
     border-radius: 0;
     font-size: 1rem;
+    border-radius: 0.25rem;
 }
-
 
 
 /* Navbar */
