@@ -92,16 +92,21 @@
         </div>
         <div class="col-sm-12 col-md-5 col-lg-4">
             <section class="basket-summary">
-                <h5 class="basket-meta">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h6>
-                <h5 class="basket-meta">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h6>
-                <h5 class="mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h4>
+                <h5 class="basket-meta">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
+                <h5 class="basket-meta">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h5>
+                <h5 class="mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h5>
             </section>
             {% if free_delivery_delta > 0 %}
             <p>
                 Get free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!
             </p>
         {% endif %}
-            <input type="submit" class="btn btn-blue btn-lg basket-buttons" value="Proceed to Checkout">
+            <a href="{% url 'checkout' %}" class="btn btn-blue btn-lg basket-buttons">
+                <span>Go to secure checkout</span>
+                <span>
+                    <i class="fa-solid fa-lock"></i>
+                </span>
+            </a>
             <a href="{% url 'products' %}">
                 <button type="button" class="btn btn-outline-grey btn-lg basket-buttons">Continue shopping</button>
             </a>
