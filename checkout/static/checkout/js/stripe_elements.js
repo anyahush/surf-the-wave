@@ -6,22 +6,17 @@ var elements = stripe.elements();
 
 var style = {
     base: {
-        iconColor: '#aab7c4',
         color: '#000',
-        fontWeight: '500',
-        fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
-        fontSize: '16px',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
-        ':-webkit-autofill': {
-            color: '#fce883',
-        },
+        fontSize: '16px',
         '::placeholder': {
-            color: '#aab7c4',
-        },
+            color: '#aab7c4'
+        }
     },
     invalid: {
-        iconColor: '#dc3545',
         color: '#dc3545',
+        iconColor: '#dc3545'
     }
 };
 
