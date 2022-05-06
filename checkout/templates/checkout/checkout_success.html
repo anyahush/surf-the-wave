@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -16,24 +16,158 @@
 {% endblock %}
 
 {% block content %}
+<!-- Layout and styling used from Boutique Ado -->
 <div class="container">
     <div class="row">
         <div class="col">
             <h2>Thank you</h2>
-            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }} </strong>
+            </p>
         </div>
     </div>
     <div class="row">
-        <div class="col"></div>
-
+        <div class="col-12 col-lg-7">
+            <div class="order-confirmation-wrapper p-2 border">
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted mt-2">Order Info:</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Order Number:</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="small float-custom">{{ order.order_number }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Order Date: </p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.date }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted mt-2">Order Details:</small>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for item in order.lineitems.all %}
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p class="small">{{ item.product.name }} {% if item.product_size %} Size:
+                                {{ item.product_size|upper }}{% endif %}
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <p class="small float-custom">{{ item.quantity }} @ £{{ item.product.price }} each</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col mt-2">
+                        <small class="text-muted">Delivery Info:</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Full Name</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.full_name }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Phone Number</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.phone_number }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Address 1</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.street_address1 }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Town or City</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.town_or_city }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>County</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.county}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Postcode</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.postcode }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Country</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.country }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted mt-2">Billing Info:</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Order Total</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.order_total }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Delivery</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.delivery_cost }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Grand Total</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.grand_total }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
