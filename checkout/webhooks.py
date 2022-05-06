@@ -7,11 +7,10 @@ from checkout.webhook_handler import StripeWH_Handler
 
 import stripe
 
-# Used from Boutique Ado
 @require_POST
 @csrf_exempt
 def webhook(request):
-    """ Listen for webhooks from Stripe """
+    """Listen for webhooks from Stripe"""
     # Setup
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -33,8 +32,6 @@ def webhook(request):
         return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
-
-    print('Success!')
 
     # Set up a webhook handler
     handler = StripeWH_Handler(request)
