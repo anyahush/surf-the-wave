@@ -7,7 +7,7 @@
 
 {% block inner_content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<h2 class="text-center">{% trans "Login" %}</h2>
 
 {% get_providers as socialaccount_providers %}
 
@@ -29,7 +29,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
+<p class="text-center">{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
@@ -39,10 +39,10 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="btn btn-blue" type="submit">{% trans "Sign In" %}</button>
-  <p class="mt-3">
-    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  <p class="mt-2">
+    <a class="small button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
+  <button class="btn btn-blue" type="submit">{% trans "Login" %}</button>
 </form>
 
 {% endblock %}
