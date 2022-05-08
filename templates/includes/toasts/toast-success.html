@@ -10,7 +10,7 @@
           {{ message }}
         </div>
       </div>
-      {% if grand_total %}
+      {% if grand_total and not on_profile_page %}
       <div class="row">
         <div class="col mt-2">
           <p>Your Basket ({{ product_count }})</p>

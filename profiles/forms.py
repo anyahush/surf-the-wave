@@ -8,7 +8,7 @@ class UserProfileForm(forms.ModelForm):
         """ Update Class Meta Data """
         model = UserProfile
         exclude = ('user',)
-    
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders, required attribute
