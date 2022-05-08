@@ -240,6 +240,7 @@ The testing process can be viewed [here]().
 * README layout and style used from previous [project](https://github.com/anyahush/protect-our-planet-quiz).
 * [Code Institute's Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project was used throughout as a guide.
 * Image hover effect on image gallery modified from [W3 Schools Tutorial](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity) and [Shore's website](https://www.shore.co.uk/).
+* The shopping basket page modiefied code from [Surfdome](https://www.surfdome.com/).
 
 
 ### Media
@@ -247,9 +248,9 @@ The testing process can be viewed [here]().
 #### Images
 
 
-#### Sound
-
-
-
 ## Acknowledegments
+- Code Institute tutors and Slack community for help and guidance
+- My mentor Precious Ijege for his help and guidance throughout
+- My mini-Feb group on Slack for moral support and feedback
+
 
