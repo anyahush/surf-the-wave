@@ -7,12 +7,19 @@
 }
 
 .profile-buttons {
-    border: 2px solid #feb751 !important;
-    color: #fff;
-    background-color: #feb751 !important;
+    background-color: #30323d !important;
+    border-color: #30323d !important;
+    color: #fff !important;
     margin: 20px 0;
     width: 75%;
     text-align: center;
     text-transform: uppercase;
+}
+
+
+.nav-link.profile-buttons:hover {
+    border: 2px solid #feb751 !important;
+    color: #fff;
+    background-color: #feb751 !important;
 }
 
