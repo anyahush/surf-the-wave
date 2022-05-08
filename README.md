@@ -225,7 +225,7 @@ To ensure easy reading, consistency and a good user experience, I have chosen Ak
 
 ## Testing
 
-The testing process can be viewed [here]().
+The testing process can be viewed [here](TESTING.md).
 
 ## Deployment
 
