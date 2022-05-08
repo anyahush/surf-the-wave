@@ -1,0 +1,18 @@
+.nav {
+    display: block;
+}
+
+.profile-section {
+    display: none;
+}
+
+.profile-buttons {
+    border: 2px solid #feb751 !important;
+    color: #fff;
+    background-color: #feb751 !important;
+    margin: 20px 0;
+    width: 75%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
