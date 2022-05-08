@@ -69,6 +69,8 @@ Deployed website can be viewed [here]().
     * I want to be able to save and edit personal information on my profile.
     * I want to be able to view my order history.
     * I want to be able to login an logout with ease.
+    * I want to be able to leave reviews on products.
+    * I want to be able to edit or delete my reviews.
     * I want to be able to leave comments on the blog posts.
     * I want to be able to delete my account.
     * I want to be able to change my password if I forget it.
@@ -85,6 +87,7 @@ Deployed website can be viewed [here]().
     * I want to be able to add new blog posts.
     * I want to be able to edit or delete existing blog posts.
     * I want to be able to delete blog comments left by users. 
+    * I want to be able to delete user reviews left on products.
     * I want to be able to delete a user.
     * I want to be able to make another user admin.
     * I want to inform users of products that are out of stock, and prevent users from purchasing them.
@@ -112,6 +115,8 @@ During the initial strategy planning, the opportunities of the site were determi
 - Users can securely purchase product(s) from the site
 - Order confirmation will be displayed to user and subsequent confirmation email sent.
 - If a product is 'Out of Stock', this will be displayed to the user and the add to basket button will be hidden
+- Registered users can leave reviews on products
+- Registered users can edit or delete their reviews
 
 #### Register, Login and Logout
 - Users are able to register for an account
@@ -126,6 +131,7 @@ During the initial strategy planning, the opportunities of the site were determi
 - Admin users can create new categories
 - Admin users can add, update and delete blog posts
 - Admin users can delete user comments on blog posts
+- Admin users can delete user reviews on products
 - Admin users can delete users
 - Admin users can make other users admin
 
