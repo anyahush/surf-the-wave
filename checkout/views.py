@@ -14,7 +14,6 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 
-
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -126,8 +125,6 @@ def checkout(request):
                 order_form = OrderForm()
         else:
             order_form = OrderForm()
-
-        order_form = OrderForm()
 
     template = 'checkout/checkout.html'
     context = {
