@@ -83,14 +83,14 @@
                         <ul class="dropdown-menu" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item nav-options">Product Management</a>
-                                    <a href="{% url 'add_product' %}" class="dropdown-item nav-options">Add Product</a>
+                                    <a href="" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                                 {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item nav-options">Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item nav-options">Logout</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item nav-options">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item nav-options">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-itemF">Login</a>
                             {% endif %}
                         </ul>
                     </li>
@@ -113,17 +113,15 @@
                 </ul>
             </div>
         </div>
-        <div class="container-fluid d-none d-lg-block">
-                <hr class="hr-decoration">
-        </div>
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
-              </nav>
+            </nav>
         </div>
         <div id="delivery-banner" class="row text-center">
             <div class="col text-white">

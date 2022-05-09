@@ -1,5 +1,8 @@
     <div class="collapse navbar-collapse" id="main-nav">
         <ul class="navbar-nav">
+            <li class="nav-item d-lg-none d-lg-block">
+                <a class="nav-link nav-options" href="{% url 'home' %}">Home</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link nav-options" href="#" id="mens-products" role="button" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -47,6 +50,17 @@
                     <a class="dropdown-item" href="{% url 'products' %}?category=surfboards">Surfboards</a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=surf_equipment">Surf Essentials</a>
                 </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link nav-options" href="#" id="blog-management" role="button" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Blogs
+                </a>
+                {% if request.user.is_superuser %}
+                <div class="dropdown-menu" aria-labelledby="blog-management">
+                    <a class="dropdown-item" href="">Add Blog</a>
+                </div>
+                {% endif %}
             </li>
         </ul>
     </div>
