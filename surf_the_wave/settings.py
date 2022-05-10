@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-y77qj2nk9s9j+a)t0i=h-r5%+w(5tm$ynxood*7m!4_4#1(!b5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['surf-the-wave.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -125,12 +125,17 @@ WSGI_APPLICATION = 'surf_the_wave.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
