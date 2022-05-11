@@ -1,7 +1,17 @@
 from django.shortcuts import render
 
+from .models import Blog
+
 # Create your views here.
 
-def all_blogs(request):
+
+def blogs(request):
     """ A view to render the blogs page """
-    return render(request, 'blog/blogs.html')
+
+    blog = Blog.objects.all()
+    template = 'blog/blogs.html'
+    context = {
+        'blog': blog,
+    }
+
+    return render(request, template, context)
