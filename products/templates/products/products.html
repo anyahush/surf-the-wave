@@ -2,16 +2,17 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
 
-            </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
+<div class="container">
     <div class="row">
         <div class="col text-center">
             {% for c in current_categories %}
@@ -35,8 +36,7 @@
     <div class="row">
         <div class="product-container col-12">
             <div class="row mt-1 mb-2">
-                <div
-                    class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                     <div class="sort-select-wrapper w-50">
                         <select id="sort-selector"
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -50,8 +50,8 @@
                                 (A-Z)</option>
                             <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>
                                 Name (Z-A)</option>
-                            <option value="category_asc"
-                                {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)
+                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
+                                Category (A-Z)
                             </option>
                             <option value="category_desc"
                                 {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)
@@ -70,70 +70,70 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-lg-8 offset-lg-2">
-                <div class="row">
-                    {% for product in products %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-100 border-0">
-                            {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                            </a>
-
-                            {% else %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
-                            </a>
-                            {% endif %}
-                            <div class="card-body pb-0 text-center">
-                                <h5 class="card-title">{{ product.name }}</h5>
-                            </div>
-                            <div class="card-footer bg-white border-0 text-center">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p>£{{ product.price }}</p>
-                                        {% if request.user.is_superuser %}
-                                            <small>
-                                                <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                                <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
-                                            </small>
-                                        {% endif %}
-                                    </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 border-0">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0 text-center">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                        </div>
+                        <div class="card-footer bg-white border-0 text-center">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>£{{ product.price }}</p>
+                                    {% if request.user.is_superuser %}
+                                    <small>
+                                        <a href="{% url 'edit_product' product.id %}">Edit</a>
+                                        <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
-
         </div>
-    
+    </div>
+</div>
+
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+{{ block.super }}
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
 
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}
