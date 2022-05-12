@@ -26,7 +26,7 @@
         <div class="blog-post">
                 {% for post in blog %}
                         {% if post.image %}
-                            <a href="">
+                            <a href="{% url 'blog_detail' post.id %}">
                                 <div class="blog-img-container">
                                     <img src="{{ post.image.url }}" class="blog-post-img" alt="{{ post.blog_title }}">
                                 </div>
