@@ -12,7 +12,7 @@ class Blog(models.Model):
     blog_content = models.TextField()
     author = models.CharField(max_length=254)
     image = models.ImageField()
-    date_created = models.DateField()
+    date_created = models.DateField(auto_now=False, editable=True, blank=True, null=True)
 
     def __str__(self):
         return self.blog_title
