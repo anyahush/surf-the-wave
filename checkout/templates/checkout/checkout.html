@@ -88,7 +88,7 @@
                     <div class="row">
                         <div class="col-md-12 col-lg-6">
                             <h4 id="basket-item-title">{{ item.product.name }}</h4>
-                            <h4 class="basket-meta">Size:{% if item.product.men_sizes %}
+                            <h4 class="caption">Size:{% if item.product.men_sizes %}
                                 {{ item.size|upper }}
                                 {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes or item.product.kids_shoe_sizes %}
                                 {{ item.size }}
@@ -96,7 +96,7 @@
                                 N/A
                                 {% endif %}
                             </h4>
-                            <h4 class="basket-meta">Qty: {{ item.quantity }}</h4>
+                            <h4 class="caption">Qty: {{ item.quantity }}</h4>
                         </div>
                         <div class="col-md-6 col-lg-2">
                             <h4>£{{ item.product.price }}</h4>
@@ -108,8 +108,8 @@
             <hr>
             <div class="row">
                 <div class="col">
-                    <h5 class="basket-meta">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
-                    <h5 class="basket-meta">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h5>
+                    <h5 class="caption">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
+                    <h5 class="caption">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h5>
                     <h5 class="mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h5>
                 </div>
             </div>

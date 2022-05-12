@@ -5,7 +5,7 @@ html {
 
 body {
     font-family: 'Inter';
-    color: #000;
+    color: #30323d;
 }
 
 h2, h3, h4, h5, h6 {
@@ -40,6 +40,12 @@ button:hover {
     border-radius: 0.25rem;
 }
 
+.caption {
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: revert;
+}
+
 
 /* Navbar */
 #logo {
@@ -55,7 +61,7 @@ button:hover {
 
 .navbar-light .navbar-nav .nav-link, .dropdown-item,
 .nav-link i {
-    color:#30323d
+    color:#30323d;
 }
 
 .nav-options {
@@ -149,7 +155,7 @@ footer a:hover {
   }
   
   .text {
-      color: #000;
+      color: #30323d;
   }
 
   .text h3 {
@@ -177,12 +183,6 @@ a.category-badge > span.badge:hover {
 
 #basket-item-title {
     font-size: 1.4rem;
-}
-
-.basket-meta {
-    font-size: 1.2rem;
-    color: #666;
-    text-transform: revert;
 }
 
 .basket-summary {

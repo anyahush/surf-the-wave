@@ -35,13 +35,13 @@
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
                                 <h3 id="basket-item-title">{{ item.product.name }}</h3>
-                                <h4 class="basket-meta">Size:{% if item.product.men_sizes %}
+                                <h4 class="caption">Size:{% if item.product.men_sizes %}
                                     {{ item.size|upper }}
                                     {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes or item.product.kids_shoe_sizes %}
                                     {{ item.size }}
                                     {% endif %}
                                 </h4>
-                                <h4 class="basket-meta">SKU: {{ item.product.sku|upper }}</h4>
+                                <h4 class="caption">SKU: {{ item.product.sku|upper }}</h4>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <form class="form update-form" action="{% url 'adjust_basket' item.item_id %}" method="POST">
@@ -92,8 +92,8 @@
         </div>
         <div class="col-sm-12 col-md-5 col-lg-4">
             <section class="basket-summary">
-                <h5 class="basket-meta">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
-                <h5 class="basket-meta">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h5>
+                <h5 class="caption">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
+                <h5 class="caption">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h5>
                 <h5 class="mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h5>
             </section>
             {% if free_delivery_delta > 0 %}
