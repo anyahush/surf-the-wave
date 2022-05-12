@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
 
 
@@ -19,35 +19,45 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <h2>{{ blog.blog_title }}</h2>
+            <p class="basket-meta mt-2">{{ blog.date_created }} by {{ blog.author }} </p>
         </div>
     </div>
 
-        <div class="row mt-2">
+    <div class="row mt-4">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 
-            <div class="col-12">
-                <div>
-                    {% if blog.image %}
-                        <img src="{{ blog.image.url }}" class="img-fluid" alt="{{ blog.name }}">
-                    {% else %}
-                        <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ blog.name }}">
-                    {% endif %}
-                </div>
-                <div>
-                    <p>{{ blog.blog_content }}</p>
-                </div>
-            </div>
-          
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <h4>Comments</h4>
-                <p>Check out our blog comments!</p>
-            </div>
-            <div class="col-12">
+            {% if blog.image %}
+            <img src="{{ blog.image.url }}" class="img-fluid" alt="{{ blog.name }}">
+            {% else %}
+            <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ blog.name }}">
+            {% endif %}
+            <div class="mt-2 float-end">
+                {% if request.user.is_superuser %}
+                    <small>
+                        <a href="{% url 'edit_blog' blog.id %}">Edit</a>
+                        <a href="" class="text-danger">Delete</a>
+                    </small>
+                {% endif %}
             </div>
         </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <p>{{ blog.blog_content }}</p>
+            <a href="{% url 'blogs' %}">
+                <button class="btn btn-blue">Back to blogs</button>
+            </a>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <h4>Comments</h4>
+            <p>Check out our blog comments!</p>
+        </div>
+        <div class="col-12">
+        </div>
+    </div>
 </div>
 {% endblock %}
-
