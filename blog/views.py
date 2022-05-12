@@ -22,7 +22,7 @@ def blog_detail(request, blog_id):
 
     blog = get_object_or_404(Blog, pk=blog_id)
 
-    template = 'products/product_detail.html'
+    template = 'blog/blog_detail.html'
     context = {
         'blog': blog,
     }
