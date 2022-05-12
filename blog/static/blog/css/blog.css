@@ -1,0 +1,39 @@
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 15px;
+    margin-top: 40px;
+}
+
+.blog-img-container {
+    height: 200px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-post-img {
+    max-width: unset;
+    height: auto;
+    display: inline;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    min-width: 100%;
+    margin: 0 auto
+}
+
+.blog-info {
+    color: #30323d;
+}
+
+/* Media queries */
+@media (max-width: 425px) {
+   .blog-img-container {
+       height: 100px;
+   }
+}
+
