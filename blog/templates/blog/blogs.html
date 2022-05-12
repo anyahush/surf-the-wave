@@ -21,39 +21,44 @@
         <div class="col-12 text-center">
             <h2>Blogs</h2>
         </div>
-    </div>
-    <div class="blog-posts">
-        <div class="blog-post">
+        <div class="col-12">
+            <a href="{% url 'add_blog' %}" >
+                <button class="btn btn-blue">Add Blog</button>
+            </a>
+        </div>
+
+        <div class="blog-posts">
+            <div class="blog-post">
                 {% for post in blog %}
-                        {% if post.image %}
-                            <a href="{% url 'blog_detail' post.id %}">
-                                <div class="blog-img-container">
-                                    <img src="{{ post.image.url }}" class="blog-post-img" alt="{{ post.blog_title }}">
-                                </div>
-                                <h3 class="blog-info">{{ post.blog_title }}</h3>
-                                <p class="blog-info">{{ post.date_created }}</p>
-                                {% if request.user.is_superuser %}
-                                <small>
-                                    <a href="">Edit</a>
-                                    <a href="" class="text-danger">Delete</a>
-                                </small>
-                                {% endif %}
-                            </a>
-                        {% else %}
-                            <a href="">
-                                <div class="blog-img-container">
-                                    <img src="{{ MEDIA_URL }}noimage.png" class="blog-post-img" alt="{{ post.blog_title }}">
-                                </div>
-                                <h3 class="blog-info">{{ post.blog_title }}</h3>
-                                <p class="blog-info">{{ post.date_created }}</p>
-                                {% if request.user.is_superuser %}
-                                <small>
-                                    <a href="">Edit</a>
-                                    <a href="" class="text-danger">Delete</a>
-                                </small>
-                                {% endif %}
-                            </a>
-                        {% endif %}
+                {% if post.image %}
+                <a href="{% url 'blog_detail' post.id %}">
+                    <div class="blog-img-container">
+                        <img src="{{ post.image.url }}" class="blog-post-img" alt="{{ post.blog_title }}">
+                    </div>
+                    <h3 class="blog-info">{{ post.blog_title }}</h3>
+                    <p class="blog-info">{{ post.date_created }}</p>
+                    {% if request.user.is_superuser %}
+                    <small>
+                        <a href="">Edit</a>
+                        <a href="" class="text-danger">Delete</a>
+                    </small>
+                    {% endif %}
+                </a>
+                {% else %}
+                <a href="">
+                    <div class="blog-img-container">
+                        <img src="{{ MEDIA_URL }}noimage.png" class="blog-post-img" alt="{{ post.blog_title }}">
+                    </div>
+                    <h3 class="blog-info">{{ post.blog_title }}</h3>
+                    <p class="blog-info">{{ post.date_created }}</p>
+                    {% if request.user.is_superuser %}
+                    <small>
+                        <a href="">Edit</a>
+                        <a href="" class="text-danger">Delete</a>
+                    </small>
+                    {% endif %}
+                </a>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
