@@ -40,7 +40,7 @@
                     {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_blog' post.id %}">Edit</a>
-                        <a href="" class="text-danger">Delete</a>
+                        <a href="{% url 'delete_blog' post.id %}" class="text-danger">Delete</a>
                     </small>
                     {% endif %}
                 </a>
@@ -54,7 +54,7 @@
                     {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_blog' post.id %}">Edit</a>
-                        <a href="" class="text-danger">Delete</a>
+                        <a href="{% url 'delete_blog' post.id %}" class="text-danger">Delete</a>
                     </small>
                     {% endif %}
                 </a>
