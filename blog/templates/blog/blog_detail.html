@@ -53,10 +53,15 @@
     </div>
     <div class="row mt-4">
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <h4>Comments</h4>
-            <p>Check out our blog comments!</p>
+            <h3>Comments</h3>
+            {% for comment in comments %}
+                <div class="comments">
+                    <p>{{ comment.blog_comment }}</p>
+                    <small class="caption float-end">{{ comment.author }} {{ comment.date_added }}</small>
+                </div>
+            {% endfor %}
         </div>
-        <div class="col-12">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             {% if request.user.is_authenticated %}
             <form action="{% url 'blog_detail' blog.id %}" method="POST">
                 {% csrf_token %}
@@ -70,11 +75,7 @@
             </form>
             {% endif %}
         </div>
-        <div class="col-12">
-            {% for comment in comments %}
-            {{ comment.blog_comment }}
-            {% endfor %}
-        </div>
+      
     </div>
 </div>
 {% endblock %}
