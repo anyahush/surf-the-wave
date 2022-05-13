@@ -30,6 +30,7 @@
     color: #30323d;
 }
 
+/* Box shadow effect modified from CSS Tricks */
 .comments p,
 .comments small {
    padding: 15px;
