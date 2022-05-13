@@ -2,9 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import Blog
-from .forms import BlogForm
-
+from .models import Blog, BlogComment
+from .forms import BlogForm, BlogCommentForm
 
 # Create your views here.
 
@@ -26,9 +25,25 @@ def blog_detail(request, blog_id):
 
     blog = get_object_or_404(Blog, pk=blog_id)
 
+    if request.method == 'POST':
+        comment_form = BlogCommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save()
+            comment.blog = blog
+            comment.author = request.user
+            comment.save()
+            messages.success(request, 'Comment successfully added!')
+            return redirect(reverse('blog_detail', args=[blog.id]))
+        else:
+            messages.error(request, 'Something went wrong. Please ensure your form is valid')
+            return redirect(reverse('blog_detail', args=[blog.id]))
+    else:
+        comment_form = BlogCommentForm()
+
     template = 'blog/blog_detail.html'
     context = {
         'blog': blog,
+        'comment_form': comment_form,
     }
 
     return render(request, template, context)

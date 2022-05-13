@@ -45,4 +45,5 @@ class BlogCommentForm(forms.ModelForm):
         }
         self.fields['blog_comment'].widget.attrs['autofocus'] = True
         for field in self.fields:
+            placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
