@@ -1,5 +1,5 @@
 from django import forms
-from .models import Blog
+from .models import Blog, BlogComment
 
 
 class BlogForm(forms.ModelForm):
@@ -25,4 +25,24 @@ class BlogForm(forms.ModelForm):
                 placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+
+
+class BlogCommentForm(forms.ModelForm):
+    """ Creates BlogCommentForm class """
+
+    class Meta:
+        """ Update Class Meta Data """
+        model = BlogComment
+        fields = [
+            'blog_comment',
+        ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'blog_comment': 'Leave your comment here',
+        }
+        self.fields['blog_comment'].widget.attrs['autofocus'] = True
+        for field in self.fields:
             self.fields[field].widget.attrs['placeholder'] = placeholder
