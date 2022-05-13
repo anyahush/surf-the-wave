@@ -28,7 +28,7 @@ def blog_detail(request, blog_id):
     if request.method == 'POST':
         comment_form = BlogCommentForm(request.POST)
         if comment_form.is_valid():
-            comment = comment_form.save()
+            comment = comment_form.save(commit=False)
             comment.blog = blog
             comment.author = request.user
             comment.save()
