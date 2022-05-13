@@ -24,6 +24,8 @@ def blog_detail(request, blog_id):
     """ A view to display individual blog posts """
 
     blog = get_object_or_404(Blog, pk=blog_id)
+    comments = BlogComment.objects.filter(blog=blog_id)
+
 
     if request.method == 'POST':
         comment_form = BlogCommentForm(request.POST)
@@ -44,7 +46,9 @@ def blog_detail(request, blog_id):
     context = {
         'blog': blog,
         'comment_form': comment_form,
+        'comments': comments,
     }
+    print(comments)
 
     return render(request, template, context)
 
