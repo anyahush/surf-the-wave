@@ -170,10 +170,11 @@
                 <p>Check out our customer reviews!</p>
             </div>
             <div class="col-12">
-                {% for comment in product.user_comment %}
-                    <h5>{{ product.user_comment.review_title }}</h5>
-                    <p class="float-end">{{ product.user_comment.date_created }}</p>
-                    <p>{{ product.user_comment.review_comment }}</p>
+                {% for review in reviews %}
+                    <h5>{{ review.review_title }}</h5>
+                    <p class="float-end">{{ review.date_added }}</p>
+                    <p>{{ review.review_content }}</p>
+                    <p>{{ review.author }}</p>
                 {% endfor %}
             </div>
             <div class="col-12">
