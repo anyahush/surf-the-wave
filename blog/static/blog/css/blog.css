@@ -56,6 +56,10 @@
     display: none;
 }
 
+#id_blog_comment.textarea.form-control {
+    height: 120px;
+}
+
 /* Media queries */
 @media (max-width: 425px) {
    .blog-img-container {
