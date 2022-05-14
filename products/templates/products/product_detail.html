@@ -175,6 +175,12 @@
                     <p class="float-end">{{ review.date_added }}</p>
                     <p>{{ review.review_content }}</p>
                     <p>{{ review.author }}</p>
+                    {% if review.author == request.user or request.user.is_superuser %}
+                    <small>
+                        <a href="{% url 'edit_product_review' review.id %}">Edit</a>
+                        <a href="" class="text-danger">Delete</a>
+                    </small>
+                    {% endif %}
                 {% endfor %}
             </div>
             <div class="col-12">
