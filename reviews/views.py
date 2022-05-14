@@ -64,3 +64,19 @@ def edit_product_review(request, review_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_product_review(request, review_id):
+    """ View to allow users to delete product reviews """
+
+    review = get_object_or_404(ProductReview, id=review_id)
+    product = review.product
+
+    if review:
+        review.delete()
+        messages.success(request, f'Review for {product} was successfully deleted')
+    else:
+        messages.error(request, f'Unable to delete review for {product}')
+
+    return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
