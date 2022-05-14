@@ -176,6 +176,12 @@
                     <p>{{ product.user_comment.review_comment }}</p>
                 {% endfor %}
             </div>
+            <div class="col-12">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'create_review' product.id %}">Leave a review</a>
+                {% endif %}
+            </div>
+           
         </div>
 
     </div>

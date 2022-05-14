@@ -21,8 +21,9 @@
     </div>
     <div class="row mt-3">
         <div class="col-12 col-md-6 offset-md-3">
-            <form action="" method="POST" class="form" enctype="multipart/form-data">
-              
+            <form action="{% url 'create_review' product.id" method="POST" class="form">
+                {% csrf_token %}
+                {{ form|crispy }}
                 <div class="text-center">
                     <button class="btn btn-blue" type="submit" >Create</button>
                     <a href="">
