@@ -58,6 +58,12 @@
                 <div class="comments">
                     <p>{{ comment.blog_comment }}</p>
                     <small class="caption float-end">{{ comment.author }} {{ comment.date_added }}</small>
+                    {% if request.user.is_superuser %}
+                        <small>
+                            <a href="">Edit</a>
+                            <a href="{% url 'delete_blog_comment' comment.id %}" class="text-danger">Delete</a>
+                        </small>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>

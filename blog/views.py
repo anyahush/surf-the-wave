@@ -120,3 +120,18 @@ def delete_blog(request, blog_id):
     messages.success(request, 'Blog successfully deleted')
     return redirect(reverse('blogs'))
 
+
+
+@login_required
+def delete_blog_comment(request, comment_id):
+    """ View to allow users to delete blog comments """
+    comment = get_object_or_404(BlogComment, id=comment_id)
+    blog = comment.blog
+
+    if comment:
+        comment.delete()
+        messages.success(request, f'Comment for {blog} was successfully deleted')
+    else:
+        messages.error(request, f'Unable to delete comment for {blog}')
+
+    return redirect(reverse('blog_detail', kwargs={"blog_id": blog.id}))
