@@ -58,12 +58,26 @@
                 <div class="comments">
                     <p>{{ comment.blog_comment }}</p>
                     <small class="caption float-end">{{ comment.author }} {{ comment.date_added }}</small>
-                    {% if request.user.is_superuser %}
+                    {% if request.user == comment.author or request.user.is_superuser %}
                         <small>
-                            <a href="">Edit</a>
+                            <a href="{% url 'edit_blog_comment' comment.id %}">
+                                Edit
+                            </a>
                             <a href="{% url 'delete_blog_comment' comment.id %}" class="text-danger">Delete</a>
                         </small>
                     {% endif %}
+                    <div>
+                        <form id="edit-comment" action="{% url 'edit_blog_comment' comment.id %}" method="POST">
+                            {% csrf_token %}
+                            {{ comment_form|crispy }}
+                            <div class="text-center">
+                                <button class="btn btn-blue" type="submit" >Update comment</button>
+                                <a href="{% url 'blog_detail' blog.id %}">
+                                    <button class="btn btn-outline-grey" type="button">Cancel</button>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             {% endfor %}
         </div>
@@ -84,4 +98,8 @@
       
     </div>
 </div>
+{% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'blog/js/blog.js' %}"></script>
 {% endblock %}

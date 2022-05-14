@@ -121,6 +121,34 @@ def delete_blog(request, blog_id):
     return redirect(reverse('blogs'))
 
 
+@login_required
+def edit_blog_comment(request, comment_id):
+    """ Admin users can edit blogs on the site """
+    comment = get_object_or_404(BlogComment, id=comment_id)
+    blog = comment.blog
+
+    if request.method == 'POST':
+        form = BlogCommentForm(request.POST, request.FILES, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Comment successfully updated')
+            return redirect(reverse('blog_detail', kwargs={"blog_id": blog.id}))
+        else:
+            messages.error(request, 'Failed to updated comment. Please ensure the form is valid')
+    else:
+        form = BlogCommentForm(instance=comment)
+        messages.info(request, f'You are editing comment on {blog.blog_title}')
+
+    template = 'blog/edit_blog_comment.html'
+    context = {
+        'form': form,
+        'comment': comment,
+        'blog': blog,
+    }
+
+    return render(request, template, context)
+
+
 
 @login_required
 def delete_blog_comment(request, comment_id):

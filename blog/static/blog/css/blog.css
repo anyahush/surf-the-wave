@@ -52,6 +52,10 @@
         right: 0;
     }
 
+#edit-comment {
+    display: none;
+}
+
 /* Media queries */
 @media (max-width: 425px) {
    .blog-img-container {
