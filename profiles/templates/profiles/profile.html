@@ -40,6 +40,21 @@
                     <a href="{% url 'account_logout' %}" class="nav-link profile-buttons">Logout</a>
                 </li>
             </ul>
+            <!-- Admin profile buttons -->
+            {% if request.user.is_superuser %}
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="{% url 'add_product' %}">
+                            <button class="nav-link profile-buttons" type="button" aria-label="Go to add product form">Add Product</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'add_blog' %}">
+                            <button class="nav-link profile-buttons" type="button" aria-label="Go to add blog form">Add Blog</button>
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
         </div>
         <div class="col-12 col-md-7 col-lg-8 col-xl-6">
             <section id="my-info" class="profile-section">
