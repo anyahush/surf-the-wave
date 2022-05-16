@@ -24,11 +24,11 @@
     </div>
     <div class="row mt-3">
         <div class="col-12 col-md-6 offset-md-3">
-            <form action="" method="POST" class="form">
+            <form action="{% url 'contact' %}" method="POST" class="form">
                 {% csrf_token %}
                 {{ contact_form|crispy }}
                 <div class="text-center">
-                    <button class="btn btn-blue" type="submit" >Create</button>
+                    <button class="btn btn-blue" type="submit" >Send</button>
                     <a href="">
                         <button class="btn btn-grey" type="button">Cancel</button>
                     </a>
