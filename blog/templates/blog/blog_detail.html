@@ -37,8 +37,30 @@
                 {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_blog' blog.id %}">Edit</a>
-                        <a href="{% url 'delete_blog' blog.id %}" class="text-danger">Delete</a>
+                        <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal"
+                        data-bs-target="#deleteBlog">Delete</a>
                     </small>
+                    <!-- Deletion confirmation Bootstrap modal -->
+                    <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-center">Are you sure you want to delete {{ post.blog_title }} blog?</p>
+                                  </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
+                                    <a href="{% url 'delete_blog' blog.id %}" class="text-danger">
+                                        <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 {% endif %}
             </div>
         </div>
@@ -79,9 +101,31 @@
                                 {% endif %}
                             </td>
                             <td>{% if request.user == comment.author or request.user.is_superuser %}
-                                <a href="{% url 'delete_blog_comment' comment.id %}">
+                                <a href="#deleteComment" data-bs-toggle="modal" data-bs-target="#deleteComment">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </a>
+                                <!-- Deletion confirmation Bootstrap modal -->
+                                <div class="modal fade" id="deleteComment" tabindex="-1"
+                                    aria-labelledby="Delete comment confirmation modal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="text-center">Are you sure you want to delete your comment?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-sm btn-grey"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <a href="{% url 'delete_blog_comment' comment.id %}" class="text-danger">
+                                                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 {% endif %}
                             </td>
                         </tr>
