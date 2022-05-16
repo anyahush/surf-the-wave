@@ -8,7 +8,11 @@ body {
     color: #30323d;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Akshar';
     text-transform: uppercase;
 }
@@ -50,7 +54,7 @@ button:hover {
 }
 
 .fa-solid {
-    color:#30323d !important;
+    color: #30323d !important;
 }
 
 .modal-header {
@@ -80,8 +84,9 @@ button:hover {
     margin: 0 5px;
 }
 
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color:#feb751;
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #feb751;
 }
 
 .dropdown-menu {
@@ -111,7 +116,7 @@ footer h4 {
 }
 
 footer a:hover {
-    color:#feb751;
+    color: #feb751;
 }
 
 /* Gallery */
@@ -133,15 +138,15 @@ footer a:hover {
 .image-container {
     position: relative;
     width: 50%;
-  }
-  
-  .image {
+}
+
+.image {
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
-  }
-  
-  .image-grid-hover {
+}
+
+.image-grid-hover {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -150,28 +155,28 @@ footer a:hover {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-  }
-  
-  .image-container:hover .image {
-    opacity: 0.4;
-  }
-  
-  .image-container:hover .image-grid-hover {
-    opacity: 1;
-  }
-  
-  .text {
-      color: #30323d;
-  }
+}
 
-  .text h3 {
-      text-transform: lowercase;
-      font-family: 'Source Sans Pro';
-      color: #529afe;
-  }
+.image-container:hover .image {
+    opacity: 0.4;
+}
+
+.image-container:hover .image-grid-hover {
+    opacity: 1;
+}
+
+.text {
+    color: #30323d;
+}
+
+.text h3 {
+    text-transform: lowercase;
+    font-family: 'Source Sans Pro';
+    color: #529afe;
+}
 
 /* Products */
-a.category-badge > span.badge:hover {
+a.category-badge>span.badge:hover {
     color: #529afe !important;
     border-style: solid !important;
     border-color: #529afe !important;
@@ -179,6 +184,19 @@ a.category-badge > span.badge:hover {
 
 .badge {
     font-size: 100%;
+}
+
+#product-title {
+    font-size: 2.5rem;
+}
+
+/* Modified from Surfdome */
+.promo-div {
+    padding: 20px 25px;
+    margin: 15px 0;
+    text-align: center;
+    background-color: #f8f7f5;
+    font-size: 1.1rem;
 }
 
 /* Basket */
@@ -231,10 +249,14 @@ a.category-badge > span.badge:hover {
         height: 100px;
         margin-bottom: 10px;
     }
-    
+
     .gallery-lg-img {
         height: 210px;
-    } 
+    }
+
+    .product-info-container {
+        margin-top: 35px;
+    }
 }
 
 @media (max-width: 991px) {
