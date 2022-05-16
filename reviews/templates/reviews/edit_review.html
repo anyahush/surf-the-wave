@@ -21,7 +21,7 @@
     </div>
     <div class="row mt-3">
         <div class="col-12 col-md-6 offset-md-3">
-            <form action="{% url 'create_review' product.id %}" method="POST" class="form">
+            <form action="{% url 'edit_product_review' review.id %}" method="POST" class="form">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-center">
