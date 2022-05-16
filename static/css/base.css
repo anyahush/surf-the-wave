@@ -35,9 +35,12 @@ button:hover {
     border: 1px solid #30323d;
     background-color: #30323d;
     color: #fff !important;
-    font-size: 1rem;
     border-radius: 0.25rem;
     text-transform: uppercase;
+}
+
+.btn-danger {
+    text-transform: uppercase !important;
 }
 
 .caption {
@@ -48,6 +51,14 @@ button:hover {
 
 .fa-solid {
     color:#30323d !important;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-footer {
+    border-top: none !important;
 }
 
 
