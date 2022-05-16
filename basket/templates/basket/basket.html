@@ -20,8 +20,8 @@
     </div>
     <div class="row">
         <div class="col-sm-12 col-md-6 offset-md-1">
+            <!-- Displays items in users basket -->
             {% if basket_items %}
-
                 {% for item in basket_items %}
                 <div class="row basket-item">
                     <div class="col-4 col-lg-2">
@@ -44,6 +44,7 @@
                                 <h4 class="caption">SKU: {{ item.product.sku|upper }}</h4>
                             </div>
                             <div class="col-12 col-lg-4">
+                                <!-- Modified from Batch Coffe details in README -->
                                 <form class="form update-form" action="{% url 'adjust_basket' item.item_id %}" method="POST">
                                     {% csrf_token %}
                                     <div class="form-group">
@@ -77,6 +78,7 @@
                                         </div>
                                     </div>
                                 </form>
+                                <!-- Allows users to update or remove items -->
                                 <a class="update-link small mt-2 float-start"
                                     aria-label="Will update quantity of item in basket">Update</a>
                                 <a href="#deleteProduct" class="text-danger small mt-2 float-end" data-bs-toggle="modal"
@@ -112,8 +114,6 @@
                                 <h4>£{{ item.product.price }}</h4>
                             </div>
                         </div>
-                     
-                        
                     </div>
                 </div>
                 {% endfor %}
@@ -124,6 +124,7 @@
                         </div>
             {% endif %}
         </div>
+        <!-- Basket summary -->
         <div class="col-sm-12 col-md-5 col-lg-4">
             <section class="basket-summary">
                 <h5 class="caption">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
@@ -135,6 +136,7 @@
                 Get free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!
             </p>
         {% endif %}
+        <!-- Action buttons -->
             <a href="{% url 'checkout' %}" class="btn btn-blue btn-lg basket-buttons">
                 <span>Go to secure checkout</span>
                 <span>
