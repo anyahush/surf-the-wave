@@ -1,7 +1,7 @@
 from django.shortcuts import render, reverse, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-
+from profiles.models import UserProfile
 from .forms import ContactForm
 
 
@@ -23,17 +23,28 @@ def contact(request):
             if request.user.is_authenticated:
                 user = User.objects.get(username=request.user)
                 user_enquiry.user = user
-                user_enquiry.save()
+            user_enquiry.save()
             messages.success(request, 'Your enquiry has been sent. Check your emails for a confirmation')
             return redirect(reverse('home'))
         else:
             messages.error(request, 'There was an error with your enquiry. Please ensure the form is valid')
             return redirect(reverse('contact'))
-    
-    contact_form = ContactForm()
-    template = 'contact/contact.html'
-    context = {
-        'contact_form': contact_form,
-    }
+    else:
+        if request.user.is_authenticated:
+            # If user is logged in try and populate information
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                contact_form = ContactForm(initial={
+                    'full_name': profile.default_full_name,
+                    'email_from': profile.default_email,
+                })
+            except UserProfile.DoesNotExist:
+                contact_form = ContactForm()
+        else:
+            contact_form = ContactForm()
+        template = 'contact/contact.html'
+        context = {
+            'contact_form': contact_form,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
