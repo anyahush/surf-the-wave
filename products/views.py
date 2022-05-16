@@ -40,7 +40,6 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-            print(categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
