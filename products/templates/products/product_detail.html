@@ -60,12 +60,12 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 <div class="promo-div">
                     <p>Free UK delivery on orders over £100</p>
                     <p>Order by 9pm for Next Day Delivery</p>
                     <p>Free paperless returns</p>
                 </div>
-                {% endif %}
                 <!-- Size dropdown option depending on product type -->
                 <form action="{% url 'add_to_basket' product.id %}" method="POST">
                     {% csrf_token %}
@@ -139,8 +139,6 @@
                                 <option value="xl">XL</option>
                             </select>
                         </div>
-                        {% else %}
-                        N/A
                         {% endif %}
                         <div class="col-sm-12 col-md-5">
                             <p class="small">Quantity*</p>
