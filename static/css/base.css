@@ -170,9 +170,17 @@ footer a:hover {
 }
 
 .text h3 {
-    text-transform: lowercase;
-    font-family: 'Source Sans Pro';
-    color: #529afe;
+    text-transform: uppercase;
+    font-family: 'Archivo Black';
+    color: #30323d;
+    font-size: 4.5rem;
+}
+
+.gallery-btn {
+    border: 1px solid #30323d;
+    text-transform: uppercase;
+    background-color: #30323d;
+    color: #fff;
 }
 
 /* Products */
@@ -262,6 +270,18 @@ a.category-badge>span.badge:hover {
 @media (max-width: 991px) {
     .header-container {
         padding-top: 134px;
+    }
+
+    .image-container .image {
+        opacity: 0.4;
+    }
+    
+    .image-container .image-grid-hover {
+        opacity: 1;
+    }
+
+    .text h3 {
+        font-size: 3rem;
     }
 }
 
