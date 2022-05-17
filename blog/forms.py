@@ -8,16 +8,19 @@ class BlogForm(forms.ModelForm):
     class Meta:
         """ Update Class Meta Data """
         model = Blog
-        fields = '__all__'
+        exclude = ('date_created',)
 
     def __init__(self, *args, **kwargs):
+        """
+        Add placeholders, required attribute
+        and set autofocus on first field
+        """
         super().__init__(*args, **kwargs)
         placeholders = {
             'blog_title': 'e.g The wonders of surfing in Scotland',
             'blog_content': 'e.g Surfing in Scotland has been popular...',
             'author': 'Layla Jefferson',
             'image': 'Image Upload',
-            'date_created': '23rd August 2022'
         }
         self.fields['blog_title'].widget.attrs['autofocus'] = True
         for field in self.fields:
