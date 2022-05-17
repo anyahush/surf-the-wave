@@ -16,18 +16,19 @@ class BlogForm(forms.ModelForm):
         and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-        placeholders = {
-            'blog_title': 'e.g The wonders of surfing in Scotland',
-            'blog_content': 'e.g Surfing in Scotland has been popular...',
-            'author': 'Layla Jefferson',
+        labels = {
+            'blog_title': 'Blog Title',
+            'blog_content': 'Blog Content',
+            'author': 'Author',
             'image': 'Image Upload',
         }
         self.fields['blog_title'].widget.attrs['autofocus'] = True
         for field in self.fields:
+            self.fields[field].label = labels[field] + ""
             if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
+                placeholder = f'{labels[field]} *'
             else:
-                placeholder = placeholders[field]
+                placeholder = labels[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
 
 

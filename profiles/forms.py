@@ -15,7 +15,7 @@ class UserProfileForm(forms.ModelForm):
         and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-        placeholders = {
+        labels = {
             'default_full_name': 'Full Name',
             'default_email': 'Email Address',
             'default_phone_number': 'Phone Number',
@@ -29,9 +29,10 @@ class UserProfileForm(forms.ModelForm):
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':
+                self.fields[field].label = labels[field] + ""
                 if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
+                    placeholder = f'{labels[field]} *'
                 else:
-                    placeholder = placeholders[field]
+                    placeholder = labels[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].label = False
+

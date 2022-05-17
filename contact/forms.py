@@ -14,13 +14,17 @@ class ContactForm(forms.ModelForm):
         """ Add placeholders and required attribute,
         set autofocus on first field """
         super().__init__(*args, **kwargs)
-        placeholders = {
-            'full_name': 'e.g Hannah Matheson',
-            'email_from': 'e.g hannahmatheson1@yahoo.com',
-            'order_number': 'FD405F66C443497B804C9BF0C28AB653',
-            'enquiry': 'Hello, Could do you know if you are getting more of...'
+        labels = {
+            'full_name': 'Full Name',
+            'email_from': 'Email',
+            'order_number': 'Order Number',
+            'enquiry': 'Enquiry'
         }
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            placeholder = placeholders[field]
+            self.fields[field].label = labels[field] + ""
+            if self.fields[field].required:
+                placeholder = f'{labels[field]} *'
+            else:
+                placeholder = labels[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
