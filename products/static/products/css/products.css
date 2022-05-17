@@ -1,0 +1,14 @@
+/* Products */
+a.category-badge>span.badge:hover {
+    color: #529afe !important;
+    border-style: solid !important;
+    border-color: #529afe !important;
+}
+
+.badge {
+    font-size: 100%;
+}
+
+#product-title {
+    font-size: 2.5rem;
+}
