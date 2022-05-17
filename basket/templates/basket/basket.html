@@ -35,13 +35,13 @@
                         <div class="row">
                             <div class="col-12 col-lg-5">
                                 <h3 id="basket-item-title">{{ item.product.name }}</h3>
-                                <h4 class="caption">Size:{% if item.product.men_sizes %}
-                                    {{ item.size|upper }}
+                                <p class="caption">{% if item.product.men_sizes %}
+                                    Size: {{ item.size|upper }}
                                     {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes or item.product.kids_shoe_sizes %}
-                                    {{ item.size }}
+                                    Size: {{ item.size }}
                                     {% endif %}
-                                </h4>
-                                <h4 class="caption">SKU: {{ item.product.sku|upper }}</h4>
+                                </p>
+                                <p class="caption">{% if item.product.sku %}SKU: {{ item.product.sku|upper }}{% endif %}</p>
                             </div>
                             <div class="col-12 col-lg-4">
                                 <!-- Modified from Batch Coffe details in README -->
@@ -111,7 +111,7 @@
                                  </div>
                             </div>
                             <div class="col-12 col-lg-2">
-                                <h4>£{{ item.product.price }}</h4>
+                                <p class="custom-size">£{{ item.product.price }}</p>
                             </div>
                         </div>
                     </div>
@@ -126,10 +126,15 @@
         </div>
         <!-- Basket summary -->
         <div class="col-sm-12 col-md-5 col-lg-4">
+            <div class="promo-div">
+                <p>Free UK delivery on orders over £100</p>
+                <p>Order by 9pm for Next Day Delivery</p>
+                <p>Free paperless returns</p>
+            </div>
             <section class="basket-summary">
-                <h5 class="caption">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
-                <h5 class="caption">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h5>
-                <h5 class="mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h5>
+                <p>Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></p>
+                <p>Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></p>
+                <p class="custom-size mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
             </section>
             {% if free_delivery_delta > 0 %}
             <p>
@@ -137,14 +142,14 @@
             </p>
         {% endif %}
         <!-- Action buttons -->
-            <a href="{% url 'checkout' %}" class="btn btn-blue btn-lg basket-buttons">
+            <a href="{% url 'checkout' %}" class="btn btn-blue basket-buttons">
                 <span>Go to secure checkout</span>
                 <span>
                     <i class="fa-solid fa-lock"></i>
                 </span>
             </a>
             <a href="{% url 'products' %}">
-                <button type="button" class="btn btn-grey btn-lg basket-buttons">Continue shopping</button>
+                <button type="button" class="btn btn-grey basket-buttons">Continue shopping</button>
             </a>
         </div>
     </div>

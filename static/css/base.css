@@ -10,9 +10,7 @@ body {
 
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
     font-family: 'Akshar';
     text-transform: uppercase;
 }
@@ -51,10 +49,6 @@ button:hover {
     font-size: 1.2rem;
     color: #666;
     text-transform: revert;
-}
-
-.fa-solid {
-    color: #30323d !important;
 }
 
 .modal-header {
@@ -242,6 +236,11 @@ a.category-badge>span.badge:hover {
     border: 1px solid #e5e5e5;
     padding: 20px;
     margin-bottom: 20px;
+}
+
+.custom-size {
+    text-transform: uppercase;
+    font-size: 1.3rem;
 }
 
 .basket-buttons {
