@@ -8,9 +8,9 @@ class OrderForm(forms.ModelForm):
         """ Update Class Meta Data """
         model = Order
         fields = ('full_name', 'email', 'phone_number',
-                    'street_address1', 'street_address2',
-                    'town_or_city', 'postcode', 'county',
-                    'country',)
+                  'street_address1', 'street_address2',
+                  'town_or_city', 'postcode', 'county',
+                  'country',)
     
     def __init__(self, *args, **kwargs):
         """
@@ -19,14 +19,14 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone Number',
-            'street_address1': 'Street Address 1',
-            'street_address2': 'Street Address 2',
-            'town_or_city': 'Town or City',
-            'postcode': 'Postcode',
-            'county': 'County',
+            'full_name': 'E.g Stephanie Rawlinson',
+            'email': 'E.g steph123@gmail.com',
+            'phone_number': 'E.g 01463 716 235',
+            'street_address1': 'E.g Marybank Farmhouse',
+            'street_address2': 'Dolphinton',
+            'town_or_city': 'West Linton',
+            'postcode': 'EH46 7HG',
+            'county': 'South Lanarkshire',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
@@ -37,5 +37,3 @@ class OrderForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-                self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-                self.fields[field].label = False
