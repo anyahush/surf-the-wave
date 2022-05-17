@@ -96,6 +96,11 @@ button:hover {
     border: none;
 }
 
+button.navbar-toggler {
+    padding: 0.15rem 0.55rem;
+    font-size: 1rem;
+}
+
 button.navbar-toggler:hover {
     background-color: #fff !important;
 }
