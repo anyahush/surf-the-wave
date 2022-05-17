@@ -20,17 +20,7 @@
 <div class="container">
     <div class="row">
         <div class="col text-center">
-            {% for c in current_categories %}
-            {% if c.name == 'mens_wetsuits' and 'mens_footwear' and 'mens_accessories' %}
-            <h2>Mens</h2>
-            {% elif c.name == 'ladies_wetsuits' and 'ladies_footwear' and 'ladies_accessories' %}
-            <h2>Ladies</h2>
-            {% elif c.name == 'boys_wetsuits' and 'girls_wetsuits' and 'kids_footwear' and 'kids_accessories' %}
-            <h2>Kids</h2>
-            {% elif c.name == 'surfboards' and 'surf_equipment' %}
-            <h2>Surf</h2>
-            {% endif %}
-            {% endfor %}
+            <h2>Products</h2>
             {% for c in current_categories %}
             <a href="{% url 'products' %}?category={{ c.name }}" class="category-badge text-decoration-none">
                 <span class="p-3 m-1 badge bg-light text-dark">{{ c.friendly_name }}</span>
