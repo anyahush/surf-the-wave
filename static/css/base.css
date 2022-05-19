@@ -195,7 +195,8 @@ footer a:hover {
     }
 
     .nav-link i,
-    .fas.fa-solid.fa-shopping-basket {
+    .fas.fa-solid.fa-shopping-basket,
+    sup {
         color: #fff !important;
     }
 
