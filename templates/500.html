@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Error message and link back to home page -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center">Ooops something went wrong with our server</h2>
+            <a href="{% url 'home' %}" class="btn btn-blue" aria-label="Link back to home page">Back to home page</a>
+
+        </div>
+        <!-- Report issue button -->
+        <div class="col-12">
+            <a href="{% url 'contact' %}" class="btn btn-grey" aria-label="Link to contact page">Report an issue</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
