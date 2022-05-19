@@ -74,8 +74,7 @@
                         <div class="col-sm-12 col-md-7">
                             <p class="small">Size*</p>
                             <select class="form-control form-select" name="product_size" id='id_product_size'>
-                                <option value="" selected>Choose size</option>
-                                <option value="xs">XS</option>
+                                <option value="xs" selected>XS</option>
                                 <option value="s">S</option>
                                 <option value="m">M</option>
                                 <option value="l">L</option>
@@ -86,8 +85,7 @@
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
                             <select class="form-control form-select rounded-0" name="product_size" id='id_ladies_size'>
-                                <option value="" selected>Choose size</option>
-                                <option value="6">6</option>
+                                <option value="6" selected>6</option>
                                 <option value="8">8</option>
                                 <option value="10">10</option>
                                 <option value="12">12</option>
@@ -100,8 +98,7 @@
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
                             <select class="form-control form-select rounded-0" name="product_size" id='id_shoe_size'>
-                                <option value="" selected>Choose size</option>
-                                <option value="3">3</option>
+                                <option value="3" selected>3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
@@ -117,8 +114,7 @@
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
                             <select class="form-control form-select rounded-0" name="product_size" id='id_kids_size'>
-                                <option value="" selected>Choose size</option>
-                                <option value="7-8">7-8</option>
+                                <option value="7-8" selected>7-8</option>
                                 <option value="9-10"></option>
                                 <option value="11-12">11-12</option>
                                 <option value="12-13">12-13</option>
@@ -131,8 +127,7 @@
                             <p>Size*</p>
                             <select class="form-control form-select rounded-0" name="product_size"
                                 id='id_kids_shoe_size'>
-                                <option value="" selected>Choose size</option>
-                                <option value="xs">XS</option>
+                                <option value="xs" selected>XS</option>
                                 <option value="s">S</option>
                                 <option value="m">M</option>
                                 <option value="l">L</option>
@@ -273,7 +268,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function (e) {
