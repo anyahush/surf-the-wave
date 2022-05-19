@@ -182,6 +182,12 @@ footer a:hover {
 }
 
 /* Media Queries */
+@media (max-width: 425px) {
+    .error-pages a {
+        margin-top: 15px;
+    }
+}
+
 @media (max-width: 991px) {
     .header-container {
         padding-top: 180px;
