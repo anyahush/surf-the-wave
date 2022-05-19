@@ -38,7 +38,9 @@
                     <div class="col-8 col-lg-10">
                         <div class="row">
                             <div class="col-12 col-lg-5">
-                                <h3 id="basket-item-title">{{ item.product.name }}</h3>
+                                <a href="{% url 'product_detail' item.product.id %}">
+                                    <h3 id="basket-item-title">{{ item.product.name }}</h3>
+                                </a>
                                 <p class="caption">{% if item.product.has_sizes %}
                                     Size: {{ item.size|upper }}
                                     {% endif %}
@@ -115,7 +117,7 @@
                                      </div>
                                  </div>
                             </div>
-                            <div class="col-12 col-lg-2">
+                            <div class="col-12 col-lg-2 mt-2">
                                 <p class="custom-size">£{{ item.product.price }}</p>
                             </div>
                         </div>
@@ -149,9 +151,6 @@
         <!-- Action buttons -->
             <a href="{% url 'checkout' %}" class="btn btn-blue basket-buttons">
                 <span>Go to secure checkout</span>
-                <span>
-                    <i class="fa-solid fa-lock"></i>
-                </span>
             </a>
             <a href="{% url 'products' %}">
                 <button type="button" class="btn btn-grey basket-buttons">Continue shopping</button>
