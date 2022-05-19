@@ -9,6 +9,10 @@ a.category-badge>span.badge:hover {
     font-size: 100%;
 }
 
+a .card-title {
+    color: #30323d;
+}
+
 #product-title {
     font-size: 2.5rem;
 }
