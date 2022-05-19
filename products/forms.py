@@ -31,7 +31,7 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'category' and field != 'men_sizes' and field != 'ladies_sizes' and field != 'kids_sizes' and field != 'shoe_sizes' and field != 'kids_shoe_sizes':
+            if field != 'category' and field != 'has_sizes':
                 self.fields[field].label = labels[field] + ""
                 if self.fields[field].required:
                     placeholder = f'{labels[field]} *'
@@ -39,8 +39,4 @@ class ProductForm(forms.ModelForm):
                     placeholder = labels[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
         self.fields['category'].label = 'Category'
-        self.fields['men_sizes'].label = 'Mens Sizes'
-        self.fields['ladies_sizes'].label = 'Ladies Sizes'
-        self.fields['shoe_sizes'].label = 'Shoe Sizes'
-        self.fields['kids_sizes'].label = 'Kids Sizes'
-        self.fields['kids_shoe_sizes'].label = 'Kids Shoe Sizes'
+        self.fields['has_sizes'].label = 'Has Sizes'
