@@ -28,6 +28,7 @@ h4 {
     border-top: none !important;
 }
 
+/* Modified from GymFit, details in README */
 .form-control:focus, 
 .form-control:active,
 .form-check-input:focus, 

@@ -242,8 +242,9 @@ The testing process can be viewed [here](TESTING.md).
 * Image hover effect on image gallery modified from [W3 Schools Tutorial](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity) and [Shore's website](https://www.shore.co.uk/).
 * The shopping basket page modified code from [Surfdome](https://www.surfdome.com/).
 * The box shadow used for the blog comments section was modified from [CSS Tricks](https://css-tricks.com/almanac/properties/b/box-shadow/#aa-inner-shadow).
-* The navbar pill layout and accompanying JavaScript in the user profile was used from [GymFit](https://github.com/nlenno1/gym-fit-MS4).
+* The topnav styling, autofocus on inputs and navbar pill layout and accompanying JavaScript in the user profile were modified from [GymFit](https://github.com/nlenno1/gym-fit-MS4).
 * The quantity dropdown selector on product detail and basket pages modified from Boutique Ado and [Batch Coffee](https://github.com/fayskerritt/batch-coffee).
+* Adding admin link to navbar and delete_user view were used from [Music to my Ears](https://github.com/natalie-kate/music_to_my_ears).
 
 
 ### Media

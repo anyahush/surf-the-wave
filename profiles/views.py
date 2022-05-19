@@ -58,6 +58,7 @@ def order_history(request, order_number):
     return render(request, template, context)
 
 
+# Used from Music to my Ears, details in README
 @login_required
 def delete_user(request, user_id):
     """ Delete user account """
