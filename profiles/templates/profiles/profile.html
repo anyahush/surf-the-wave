@@ -57,13 +57,16 @@
             {% endif %}
         </div>
         <div class="col-12 col-md-7 col-lg-8 col-xl-6">
+            <!-- Profile forms for user information -->
             <section id="my-info" class="profile-section">
                 <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
+                    {{ user_form|crispy }}
                     {{ form| crispy }}
                     <button class="btn btn-blue">Update Information</button>
                 </form>
             </section>
+            <!-- User order history -->
             <section id="order-history" class="profile-section">
                 <div class="col-12">
                     <div class="table-responsive">
@@ -103,6 +106,7 @@
                     </div>
                 </div>
             </section>
+            <!-- User account management -->
             <section id="my-account" class="profile-section">
                 <div class="row">
                     <div class="col-12">
