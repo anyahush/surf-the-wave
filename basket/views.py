@@ -60,6 +60,7 @@ def adjust_basket(request, item_id):
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     basket = request.session.get('basket', {})
+    print(basket)
 
     if size:
         if quantity > 0:
@@ -75,7 +76,7 @@ def adjust_basket(request, item_id):
             basket[item_id] = quantity
             messages.success(request, f'Updated {product.name} quantity to {basket[item_id]}')
         else:
-            basket.pop(item_id)
+            basket.pop[item_id]
             messages.success(request, f'Removed {product.name} from your basket')
 
     request.session['basket'] = basket
