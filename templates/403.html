@@ -15,12 +15,12 @@
 <!-- Error message and link back to home page -->
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center error-page">
+        <div class="col-12 text-center">
             <h2 class="mb-3">Ooops that's forbidden</h2>
-            <a href="{% url 'home' %}" class="btn btn-blue" aria-label="Link back to home page">Back to home page</a>
+            <a href="{% url 'home' %}" class="btn btn-blue action-buttons" aria-label="Link back to home page">Back to home page</a>
 
             <!-- Report issue button -->
-            <a href="{% url 'contact' %}" class="btn btn-grey" aria-label="Link to contact page">Report an issue</a>
+            <a href="{% url 'contact' %}" class="btn btn-grey action-buttons" aria-label="Link to contact page">Report an issue</a>
         </div>
     </div>
 </div>
