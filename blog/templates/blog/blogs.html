@@ -22,7 +22,7 @@
             <h2>Blogs</h2>
         </div>
         <!-- Admin users can create new blog posts -->
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
             <div class="col-12 mt-2 text-center">
                 <a href="{% url 'add_blog' %}">
                     <button class="btn btn-grey">Add Blog</button>
