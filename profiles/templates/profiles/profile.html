@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -28,33 +28,38 @@
             <!-- Nav pills modified from Bootstrap 5 and GymFit Website -->
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <button class="nav-link profile-buttons" id="my-info-button" type="button" aria-label="Show My Info section">My Info</button>
+                    <button class="nav-link profile-buttons" id="my-info-button" type="button"
+                        aria-label="Show My Info section">My Info</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link profile-buttons" id="order-history-button" type="button" aria-label="Show Order History section">Order History</button>
+                    <button class="nav-link profile-buttons" id="order-history-button" type="button"
+                        aria-label="Show Order History section">Order History</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link profile-buttons" id="my-account-button" type="button" aria-label="Show My Account section">My Account</button>
+                    <button class="nav-link profile-buttons" id="my-account-button" type="button"
+                        aria-label="Show My Account section">My Account</button>
                 </li>
+
+                <!-- Admin profile buttons -->
+                {% if request.user.is_superuser %}
+                <li class="nav-item">
+                    <a href="{% url 'add_product' %}">
+                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add product form">Add
+                            Product</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'add_blog' %}">
+                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add blog form">Add
+                            Blog</button>
+                    </a>
+                </li>
+                {% endif %}
+                <!-- Logout button -->
                 <li class="nav-item">
                     <a href="{% url 'account_logout' %}" class="nav-link profile-buttons">Logout</a>
                 </li>
             </ul>
-            <!-- Admin profile buttons -->
-            {% if request.user.is_superuser %}
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a href="{% url 'add_product' %}">
-                            <button class="nav-link profile-buttons" type="button" aria-label="Go to add product form">Add Product</button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'add_blog' %}">
-                            <button class="nav-link profile-buttons" type="button" aria-label="Go to add blog form">Add Blog</button>
-                        </a>
-                    </li>
-                </ul>
-            {% endif %}
         </div>
         <div class="col-12 col-md-7 col-lg-8 col-xl-6">
             <!-- Profile forms for user information -->
@@ -82,7 +87,7 @@
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
+                                            title="{{ order.order_number }}">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
@@ -90,11 +95,11 @@
                                     <td>
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                    {% if item.product.has_sizes %}
-                                                        Size {{ item.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                </li>
+                                            <li class="small">
+                                                {% if item.product.has_sizes %}
+                                                Size {{ item.size|upper }}
+                                                {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                            </li>
                                             {% endfor %}
                                         </ul>
                                     </td>
@@ -111,24 +116,46 @@
                 <div class="row">
                     <div class="col-12">
                         <a href="{% url 'account_change_password' %}" class="btn btn-blue">Change Password</a>
-                        
+
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <a href="" >Delete Account</a>
+                        <p>We would be sad to see you leave us</p>
+                        <a href="#deleteAccount" class="btn btn-grey" data-bs-toggle="modal"
+                                            data-bs-target="#deleteAccount">Delete Account?</a>
+                        <!-- Deletion confirmation Bootstrap modal -->
+                        <div class="modal fade" id="deleteAccount" tabindex="-1"
+                        aria-labelledby="Delete account confirmation modal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-center">Are you sure you want to delete your account?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-grey"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <a href="{% url 'delete_user' user.id %}" class="text-danger">
+                                        <button type="button"
+                                            class="btn btn-sm btn-danger">Delete</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
             </section>
         </div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script src="{% static 'profiles/js/pill-menu-control.js' %}"></script>
-    <script src="{% static 'profiles/js/country-field.js' %}"></script>
+{{ block.super }}
+<script src="{% static 'profiles/js/pill-menu-control.js' %}"></script>
+<script src="{% static 'profiles/js/country-field.js' %}"></script>
 {% endblock %}
