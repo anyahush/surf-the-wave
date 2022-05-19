@@ -43,17 +43,6 @@ h4 {
     cursor: pointer;
 }
 
-.update-link i,
-.remove-item i {
-    color: #666;
-    padding: 0 7px
-}
-
-.update-link i:hover,
-.remove-item i:hover {
-    color: #feb751;
-}
-
 /* Toasts */
 .message-container {
     position: absolute;
@@ -100,7 +89,7 @@ button:hover,
 }
 
 .btn-blue:hover {
-    color: #529afe;
+    color: #529afe !important;
     background-color: #fff;
     border-color: #529afe;
 }
@@ -177,7 +166,7 @@ footer {
 }
 
 footer a {
-    color: #fff;
+    color: #fff !important;
     margin: 0 3px;
 }
 

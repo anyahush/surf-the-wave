@@ -26,7 +26,8 @@
     margin: 0 auto
 }
 
-.blog-info {
+.blog-info,
+.icons i {
     color: #30323d;
 }
 
