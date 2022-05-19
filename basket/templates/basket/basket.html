@@ -39,10 +39,8 @@
                         <div class="row">
                             <div class="col-12 col-lg-5">
                                 <h3 id="basket-item-title">{{ item.product.name }}</h3>
-                                <p class="caption">{% if item.product.men_sizes %}
+                                <p class="caption">{% if item.product.has_sizes %}
                                     Size: {{ item.size|upper }}
-                                    {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes or item.product.kids_shoe_sizes %}
-                                    Size: {{ item.size }}
                                     {% endif %}
                                 </p>
                                 <p class="caption">{% if item.product.sku %}SKU: {{ item.product.sku|upper }}{% endif %}</p>
