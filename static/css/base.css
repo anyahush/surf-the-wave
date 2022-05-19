@@ -84,7 +84,8 @@ a {
     text-decoration: none;
 }
 
-button:hover {
+button:hover,
+.btn-grey:hover {
     color: #fff !important;
     border-color: #feb751;
     background-color: #feb751;
@@ -96,6 +97,12 @@ button:hover {
     text-transform: uppercase;
     border: 1px solid #529afe;
     border-radius: 0.25rem;
+}
+
+.btn-blue:hover {
+    color: #529afe;
+    background-color: #fff;
+    border-color: #529afe;
 }
 
 .btn-grey {
