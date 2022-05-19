@@ -1,8 +1,7 @@
 /* Products */
-a.category-badge>span.badge:hover {
-    color: #529afe !important;
-    border-style: solid !important;
-    border-color: #529afe !important;
+.custom-badge:hover {
+    background-color: #529afe !important;
+    color: #fff !important;
 }
 
 .badge {
