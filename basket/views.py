@@ -65,7 +65,7 @@ def adjust_basket(request, item_id):
     if size:
         if quantity > 0:
             basket[item_id]['items_by_size'][size] = quantity
-            messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {basket[item_id]["items_by_size"]}')
+            messages.success(request, f'Updated size {size.upper()} {product.name} quantity')
         else:
             del basket[item_id]['items_by_size'][size]
             if not basket[item_id]['items_by_size']:
@@ -74,7 +74,7 @@ def adjust_basket(request, item_id):
     else:
         if quantity > 0:
             basket[item_id] = quantity
-            messages.success(request, f'Updated {product.name} quantity to {basket[item_id]}')
+            messages.success(request, f'Updated {product.name} quantity')
         else:
             basket.pop[item_id]
             messages.success(request, f'Removed {product.name} from your basket')
