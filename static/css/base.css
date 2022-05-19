@@ -55,11 +55,20 @@ h4 {
     color: #feb751;
 }
 
+/* Toasts */
 .message-container {
-    position: fixed;
+    position: absolute;
     top: 72px;
     right: 15px;
     z-index: 9999999999;
+}
+
+.message-container i {
+    margin-right: 10px;
+}
+
+#toast-button {
+    width: 100%;
 }
 
 /* Modified from Surfdome */
@@ -100,6 +109,11 @@ button:hover {
 
 .btn-danger {
     text-transform: uppercase !important;
+}
+
+.basket-buttons {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 /* Navbar */

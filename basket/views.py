@@ -7,7 +7,12 @@ from products.models import Product
 
 def view_basket(request):
     """ A view that renders the bag contents """
-    return render(request, 'basket/basket.html')
+    template =  'basket/basket.html'
+    context = {
+        'on_basket': True,
+    }
+
+    return render(request, template, context)
 
 
 def add_to_basket(request, item_id):
