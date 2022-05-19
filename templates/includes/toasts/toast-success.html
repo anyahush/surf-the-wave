@@ -28,10 +28,8 @@
             </div>
             <div class="col-md-9">
               <p><strong>{{ item.product.name }}</strong></p>
-              <p>Size: {% if item.product.men_sizes %}
-                {{ item.size|upper }}
-                {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes or item.product.kids_shoe_sizes %}
-                {{ item.size }}
+              <p> {% if item.product.has_sizes %}
+                Size: {{ item.size|upper }}
                 {% endif %}</p>
               <p>Qty: {{ item.quantity }}</p>
             </div>
