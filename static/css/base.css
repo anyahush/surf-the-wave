@@ -159,7 +159,6 @@ button.navbar-toggler:hover {
 
 /* Footer */
 footer {
-    position: absolute;
     bottom: 0;
     background-color: #30323d;
     color: #fff;
