@@ -234,9 +234,12 @@ The testing process can be viewed [here](TESTING.md).
 ## Credits
 
 ### Content
+* Product content from [Shore](https://www.shore.co.uk/) website.
+* 'In Scotland We Surf' blog from [North Core](https://www.northcore-europe.com/blog/in-scotland-we-surf.html).
+* 'END OF THE LAND: THE LUCY SMALL EPISODE' blog from [Surfdome](https://www.surfdome.com/blog/end-of-the-land-the-lucy-small-episode?_ga=2.96904031.1780410518.1653050895-949459365.1653050895).
 
 
-#### Code Content
+### Code Content
 * README layout and style used from previous [project](https://github.com/anyahush/protect-our-planet-quiz).
 * [Code Institute's Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project was used throughout as a guide.
 * Image hover effect on image gallery modified from [W3 Schools Tutorial](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity) and [Shore's website](https://www.shore.co.uk/).
@@ -247,9 +250,20 @@ The testing process can be viewed [here](TESTING.md).
 * Adding admin link to navbar and delete_user view were used from [Music to my Ears](https://github.com/natalie-kate/music_to_my_ears).
 
 
-### Media
 
-#### Images
+### Images
+* Images on the home page gallery from Pexels and Unsplash:
+    - [Surfboard and van](https://www.pexels.com/photo/surfboard-in-a-van-8241135/)
+    - [Surfing pink sunset](https://www.pexels.com/photo/man-doing-surfing-at-golden-hour-416726/)
+    - [Sea with lots of surfers](https://www.pexels.com/photo/bird-s-eye-view-of-body-of-water-1667004/)
+    - [Watery wetsuit](https://unsplash.com/photos/kUqD6pkMYfI)
+    - [Surfboards](https://unsplash.com/photos/1kXi2x9t9Fg)
+    - [Surfer out at sea](https://unsplash.com/photos/KxQYNqp329Y)
+* Product images from [Shore](https://www.shore.co.uk/) website.
+* Image for 'In Scotland We Surf' blog from [Pexels](https://www.pexels.com/photo/person-surfing-3147548/).
+* Image for 'END OF THE LAND: THE LUCY SMALL EPISODE' blog from [Surfdome](https://www.surfdome.com/blog/end-of-the-land-the-lucy-small-episode?_ga=2.96904031.1780410518.1653050895-949459365.1653050895).
+* 
+
 
 
 ## Acknowledegments
