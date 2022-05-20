@@ -28,7 +28,7 @@
             <p>Fill in this form to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
-                <fieldset>
+                <fieldset class="mb-4">
                     <legend class="fieldset-label small">Personal Information:</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
@@ -43,7 +43,7 @@
                     {{ order_form.postcode | as_crispy_field }}
                     {{ order_form.country | as_crispy_field }}
                 </fieldset>
-                <div class="mt-2 mb-4">
+                <div class="mb-4">
                     <!-- Allows users to save information to profile -->
                     {% if user.is_authenticated %}
                         <label for="save-info">Save information for next time?</label>
@@ -77,29 +77,23 @@
             <hr>
             {% for item in basket_items %}
             <div class="row basket-item">
-                <div class="col-4 col-lg-2">
+                <div class="col-4 col-lg-3">
                     {% if item.product.image %}
                         <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
                         <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                     {% endif %}
                 </div>
-                <div class="col-8 col-lg-10">
+                <div class="col-8 col-lg-9">
                     <div class="row">
                         <div class="col-md-12 col-lg-6">
                             <h4 id="basket-item-title">{{ item.product.name }}</h4>
-                            <h4 class="caption">Size:{% if item.product.men_sizes %}
-                                {{ item.size|upper }}
-                                {% elif item.product.ladies_sizes or item.product.kids_sizes or item.product.shoe_sizes or item.product.kids_shoe_sizes %}
-                                {{ item.size }}
-                                {% else %}
-                                N/A
+                            <p class="caption">{% if item.product.has_sizes %}
+                                Size: {{ item.size|upper }}
                                 {% endif %}
-                            </h4>
-                            <h4 class="caption">Qty: {{ item.quantity }}</h4>
-                        </div>
-                        <div class="col-md-6 col-lg-2">
-                            <h4>£{{ item.product.price }}</h4>
+                            </p>
+                            <p class="caption">Qty: {{ item.quantity }}</p>
+                            <p class="custom-size">£{{ item.product.price }}</p>
                         </div>
                     </div>
                 </div>
@@ -108,9 +102,16 @@
             <hr>
             <div class="row">
                 <div class="col">
-                    <h5 class="caption">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></h5>
-                    <h5 class="caption">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></h5>
-                    <h5 class="mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></h5>
+                    <div class="promo-div">
+                        <p>Free UK delivery on orders over £100</p>
+                        <p>Order by 9pm for Next Day Delivery</p>
+                        <p>Free paperless returns</p>
+                    </div>
+                    <section class="basket-summary">
+                        <p>Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></p>
+                        <p>Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></p>
+                        <p class="custom-size mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
+                    </section>
                 </div>
             </div>
         </div>

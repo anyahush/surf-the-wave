@@ -6,19 +6,3 @@
     font-size: 1.4rem;
     color: #30323d;
 }
-
-.basket-summary {
-    border: 1px solid #e5e5e5;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.custom-size {
-    text-transform: uppercase;
-    font-size: 1.3rem;
-}
-
-.basket-buttons {
-    width: 100%;
-    margin-bottom: 20px;
-}

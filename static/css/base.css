@@ -28,6 +28,18 @@ h4 {
     border-top: none !important;
 }
 
+.basket-summary {
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.custom-size {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+
 /* Modified from GymFit, details in README */
 .form-control:focus, 
 .form-control:active,

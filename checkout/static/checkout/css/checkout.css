@@ -28,12 +28,17 @@
 
 select,
 select option {
-    color: #000000;
+    color: #30323d;
 }
 
 select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
+}
+
+fieldset legend {
+  font-size: 1rem !important;
+  text-transform: uppercase;
 }
 
 #loading-overlay {
