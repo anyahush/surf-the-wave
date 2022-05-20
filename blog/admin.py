@@ -6,12 +6,14 @@ class BlogAdmin(admin.ModelAdmin):
     """ Allow admin users to manage blog posts """
     list_display = (
         'blog_title',
-        'blog_content',
+        'blog_content_one',
+        'blog_content_two',
+        'blog_content_three',
         'author',
         'image',
-        'date_created',
+        'date_added',
     )
-    ordering = ['-date_created']
+    ordering = ['-date_added']
 
 
 class BlogCommentAdmin(admin.ModelAdmin):

@@ -18,7 +18,9 @@ class BlogForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         labels = {
             'blog_title': 'Blog Title',
-            'blog_content': 'Blog Content',
+            'blog_content_one': 'Blog Content',
+            'blog_content_two': 'Further Content',
+            'blog_content_three': 'Further Content',
             'author': 'Author',
             'image': 'Image Upload',
         }

@@ -7,13 +7,15 @@ from django.contrib.auth.models import User
 class Blog(models.Model):
     """ Creates Blog table in database """
     class Meta:
-        ordering = ['-date_created']
+        ordering = ['-date_added']
 
     blog_title = models.CharField(max_length=254)
-    blog_content = models.TextField()
+    blog_content_one = models.TextField()
+    blog_content_two = models.TextField(null=True, blank=True)
+    blog_content_three = models.TextField(null=True, blank=True)
     author = models.CharField(max_length=254)
     image = models.ImageField()
-    date_created = models.DateField(auto_now=False, editable=True, blank=True, null=True)
+    date_added = models.DateField(auto_now_add=True, editable=False, blank=False, null=False)
 
     def __str__(self):
         return self.blog_title
