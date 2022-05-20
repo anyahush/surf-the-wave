@@ -10,6 +10,8 @@
 
 a .card-title {
     color: #30323d;
+    text-transform: uppercase;
+    font-size: 0.875rem;
 }
 
 #product-title {
