@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <h2>{{ blog.blog_title }}</h2>
-            <p class="caption mt-2">{{ blog.date_created }} by {{ blog.author }} </p>
+            <p class="caption mt-2">{{ blog.date_added }} by {{ blog.author }} </p>
         </div>
     </div>
 
@@ -67,9 +67,15 @@
     </div>
     <div class="row mt-4">
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <p>{{ blog.blog_content_one }}</p>
-            <p>{{ blog.blog_content_two }}</p>
-            <p>{{ blog.blog_content_three }}</p>
+            <p class="mb-5">{{ blog.blog_content_one }}</p>
+
+            {% if blog.blog_content_two %}
+            <p class="mb-5">{{ blog.blog_content_two }}</p>
+            {% endif %}
+
+            {% if blog.blog_content_three %}
+            <p class="mb-5">{{ blog.blog_content_three }}</p>
+            {% endif %}
             <a href="{% url 'blogs' %}" class="float-end">
                 <button class="btn btn-sm btn-grey">Back to blogs</button>
             </a>
