@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
+from django.core.validators import RegexValidator
 
 from django_countries.fields import CountryField
 
@@ -18,7 +19,11 @@ class Order(models.Model):
                                      null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
-    phone_number = models.CharField(max_length=20, null=False, blank=False)
+    phone_number = models.CharField(max_length=20, validators=[
+                                    RegexValidator(r'^\+?\d{11,15}$')],
+                                    error_messages={'invalid':
+                                    'Invalid phone number'},
+                                    blank=False, null=False)
     country = CountryField(blank_label='Country *', null=False, blank=False)
     postcode = models.CharField(max_length=20, null=False, blank=True)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
