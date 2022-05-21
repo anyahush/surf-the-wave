@@ -34,9 +34,12 @@ h4 {
     margin-bottom: 20px;
 }
 
+.basket-summary p {
+    margin-bottom: 0;
+}
+
 .custom-size {
     text-transform: uppercase;
-    font-size: 1.3rem;
 }
 
 

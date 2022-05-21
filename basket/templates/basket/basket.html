@@ -28,6 +28,7 @@
             {% if basket_items %}
                 {% for item in basket_items %}
                 <div class="row basket-item">
+                    <hr>
                     <div class="col-4 col-lg-2">
                         {% if item.product.image %}
                             <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
@@ -37,7 +38,7 @@
                     </div>
                     <div class="col-8 col-lg-10">
                         <div class="row">
-                            <div class="col-12 col-lg-5">
+                            <div class="col-12 col-lg-6">
                                 <a href="{% url 'product_detail' item.product.id %}">
                                     <h3 id="basket-item-title">{{ item.product.name }}</h3>
                                 </a>
@@ -47,7 +48,7 @@
                                 </p>
                                 <p class="caption">{% if item.product.sku %}SKU: {{ item.product.sku|upper }}{% endif %}</p>
                             </div>
-                            <div class="col-12 col-lg-4">
+                            <div class="col-8 col-lg-3">
                                 <!-- Modified from Batch Coffe details in README -->
                                 <form class="form update-form" action="{% url 'adjust_basket' item.item_id %}" method="POST">
                                     {% csrf_token %}
@@ -118,7 +119,7 @@
                                  </div>
                             </div>
                             <div class="col-12 col-lg-2 mt-2">
-                                <p class="custom-size">£{{ item.product.price }}</p>
+                                <p>£{{ item.product.price }}</p>
                             </div>
                         </div>
                     </div>
@@ -139,9 +140,10 @@
                 <p>Free paperless returns</p>
             </div>
             <section class="basket-summary">
-                <p>Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></p>
-                <p>Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></p>
-                <p class="custom-size mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
+                <p class="small">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></p>
+                <p class="small">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></p>
+                <hr>
+                <p class="custom-size mt-1">Total including vat<span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
             </section>
             {% if free_delivery_delta > 0 %}
             <p>
