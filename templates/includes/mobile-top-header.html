@@ -1,9 +1,9 @@
-<ul class="navbar-nav mx-0 d-block d-lg-none">
-    <li class="list-inline-item">
+<ul class="navbar-nav my-auto py-2 d-block d-lg-none">
+    <li class="dropdown list-inline-item dropstart" >
         <a class="nav-link d-block d-lg-none" href="#" id="mobile-search" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-search"></i>
         </a>
-        <div class="dropdown-menu" aria-labelledby="mobile-search">
+        <div class="dropdown-menu" id="search-input" aria-labelledby="mobile-search">
             <form method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
                     <input class="form-control border border-$gray-500 rounded search-input" type="text" name="q" placeholder="I am looking for...">

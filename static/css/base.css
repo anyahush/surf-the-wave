@@ -203,6 +203,17 @@ footer a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    div#search-input.dropdown-menu.show {
+        padding: 0 !important;
+    }
+
+    input.form-control.search-input {
+        font-size: 0.76rem;
+    }
+
+}
+
 @media (max-width: 991px) {
     .header-container {
         padding-top: 180px;
