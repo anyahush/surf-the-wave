@@ -145,7 +145,8 @@ button:hover,
     margin: 0 5px;
 }
 
-.nav-link {
+.nav-link,
+.icons i {
     color: #30323d !important;
 }
 
