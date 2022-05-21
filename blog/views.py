@@ -25,20 +25,32 @@ def blog_detail(request, blog_id):
 
     blog = get_object_or_404(Blog, pk=blog_id)
     comments = BlogComment.objects.filter(blog=blog_id)
-
-
+    # Check if user has left a blog comment previous
+    if request.user.is_authenticated:
+        previous_comment = BlogComment.objects.filter(
+            author=request.user
+        ).exists()
+    # Posts comment form info
     if request.method == 'POST':
         comment_form = BlogCommentForm(request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.blog = blog
-            comment.author = request.user
-            comment.save()
-            messages.success(request, 'Comment successfully added!')
-            return redirect(reverse('blog_detail', args=[blog.id]))
+        previous_comment = BlogComment.objects.filter(
+            author=request.user
+        ).exists()
+        if previous_comment:
+            # If previous comment error message displayed
+            messages.error(request, 'You have already left a comment for this blog')
         else:
-            messages.error(request, 'Something went wrong. Please ensure your form is valid')
-            return redirect(reverse('blog_detail', args=[blog.id]))
+            # If no previous comment new comment saved
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.blog = blog
+                comment.author = request.user
+                comment.save()
+                messages.success(request, 'Comment successfully added!')
+                return redirect(reverse('blog_detail', args=[blog.id]))
+            else:
+                messages.error(request, 'Something went wrong. Please ensure your form is valid')
+                return redirect(reverse('blog_detail', args=[blog.id]))
     else:
         comment_form = BlogCommentForm()
 
@@ -47,9 +59,8 @@ def blog_detail(request, blog_id):
         'blog': blog,
         'comment_form': comment_form,
         'comments': comments,
+        'previous_comment': previous_comment,
     }
-    print(comments)
-
     return render(request, template, context)
 
 
