@@ -71,7 +71,7 @@ def product_detail(request, product_id):
     # Check if user has left a product review previous
     if request.user.is_authenticated:
         previous_review = ProductReview.objects.filter(
-            author=request.user
+            author=request.user, product=product,
         ).exists()
 
     context = {

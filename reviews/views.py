@@ -13,11 +13,12 @@ from .forms import ReviewForm
 def create_review(request, product_id):
     """ A view to allow users to create product reviews """
     product = get_object_or_404(Product, pk=product_id)
+    form = ReviewForm
 
     if request.method == 'POST':
         # Filters reviews based on session user
         previous_review = ProductReview.objects.filter(
-            author=request.user
+            author=request.user, product=product,
         ).exists()
         if previous_review:
             # If previous review error message displayed
