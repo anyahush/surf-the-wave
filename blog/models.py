@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxLengthValidator
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -24,8 +25,10 @@ class Blog(models.Model):
 class BlogComment(models.Model):
     """ Creates BlogComment table in database """
 
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, null=False, related_name='blog')
-    blog_comment = models.TextField(null=False, blank=False)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, null=False,
+                             related_name='blog')
+    blog_comment = models.TextField(null=False, blank=False,
+                                    validators=[MaxLengthValidator(250)])
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     date_added = models.DateField(
         auto_now_add=True, null=False, blank=False, editable=False
