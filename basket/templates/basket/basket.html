@@ -141,17 +141,19 @@
                 <p>Order by 9pm for Next Day Delivery</p>
                 <p>Free paperless returns</p>
             </div>
-            <section class="basket-summary">
+            {% if free_delivery_delta > 0 %}
+            <div class="free-delivery mb-2">
+                <p>
+                    Get free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!
+                </p>
+            </div>
+            {% endif %}
+            <div class="basket-summary">
                 <p class="small">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></p>
                 <p class="small">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></p>
                 <hr>
                 <p class="custom-size mt-1">Total including vat<span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
-            </section>
-            {% if free_delivery_delta > 0 %}
-            <p>
-                Get free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!
-            </p>
-        {% endif %}
+            </div>
         <!-- Action buttons -->
             <a href="{% url 'checkout' %}" class="btn btn-blue basket-buttons">
                 <span>Go to secure checkout</span>
