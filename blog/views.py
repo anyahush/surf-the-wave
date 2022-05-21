@@ -28,14 +28,14 @@ def blog_detail(request, blog_id):
     # Check if user has left a blog comment previous
     if request.user.is_authenticated:
         previous_comment = BlogComment.objects.filter(
-            author=request.user
+            author=request.user, blog=blog,
         ).exists()
     # Posts comment form info
     if request.method == 'POST':
         comment_form = BlogCommentForm(request.POST)
         # Filters previous comments from session user
         previous_comment = BlogComment.objects.filter(
-            author=request.user
+            author=request.user, blog=blog,
         ).exists()
         if previous_comment:
             # If previous comment error message displayed
