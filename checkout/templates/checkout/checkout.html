@@ -108,9 +108,10 @@
                         <p>Free paperless returns</p>
                     </div>
                     <section class="basket-summary">
-                        <p>Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></p>
-                        <p>Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></p>
-                        <p class="custom-size mt-4">Grand Total: <span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
+                        <p class="small">Sub-total: <span class="float-end"> £{{ total|floatformat:2 }}</span></p>
+                        <p class="small">Delivery: <span class="float-end">£{{ delivery|floatformat:2 }}</span></p>
+                        <hr>
+                        <p class="custom-size mt-1">Total including vat<span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
                     </section>
                 </div>
             </div>

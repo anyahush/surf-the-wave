@@ -128,7 +128,9 @@
             {% else %}
                         <div>
                             <p>Your basket is empty</p>
-
+                            <a href="{% url 'products' %}">
+                                <button type="button" class="btn btn-grey basket-buttons">Back to products</button>
+                            </a>
                         </div>
             {% endif %}
         </div>
