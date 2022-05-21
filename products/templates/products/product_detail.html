@@ -253,7 +253,7 @@
                     </table>
                 </div>
                 <div class="col-12 mt-4">
-                    {% if request.user.is_authenticated %}
+                    {% if not previous_review %}
                     <a href="{% url 'create_review' product.id %}">
                         <button class="btn btn-sm btn-grey">Leave a review</button>
                     </a>

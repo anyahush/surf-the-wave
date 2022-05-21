@@ -33,6 +33,7 @@ def blog_detail(request, blog_id):
     # Posts comment form info
     if request.method == 'POST':
         comment_form = BlogCommentForm(request.POST)
+        # Filters previous comments from session user
         previous_comment = BlogComment.objects.filter(
             author=request.user
         ).exists()
