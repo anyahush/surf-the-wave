@@ -198,7 +198,7 @@
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                        <tr>
+                        <tr class="d-none d-md-table-row">
                             <th scope="col">Date</th>
                             <th scope="col">Username</th>
                             <th scope="col">Review</th>
@@ -206,12 +206,16 @@
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
+                        <tr class="d-md-none">
+                            <th scope="col">Comment</th>
+                            <th scope="col"></th>
+                          </tr>
                         </thead>
                         <tbody>
                             {% for review in reviews %}
                             <tr>
-                                <th scope="row">{{ review.date_added }}</th>
-                                <td>{{ review.author }}</td>
+                                <th scope="row" class="d-none d-md-table-cell">{{ review.date_added }}</th>
+                                <td class="d-none d-md-table-cell">{{ review.author }}</td>
                                 <td>{{ review.review_content }}</td>
                                 <td>{% if request.user.id == review.author or request.user.is_superuser %}
                                     <a href="{% url 'edit_product_review' review.id %}">
