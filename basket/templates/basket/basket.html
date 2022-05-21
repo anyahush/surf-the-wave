@@ -126,12 +126,12 @@
                 </div>
                 {% endfor %}
             {% else %}
-                        <div>
-                            <p>Your basket is empty</p>
-                            <a href="{% url 'products' %}">
-                                <button type="button" class="btn btn-grey basket-buttons">Back to products</button>
-                            </a>
-                        </div>
+                <div class="col-12">
+                    <p>Your basket is empty</p>
+                    <a href="{% url 'products' %}">
+                        <button type="button" class="btn btn-grey">Back to products</button>
+                    </a>
+                </div>
             {% endif %}
         </div>
         <!-- Basket summary -->
