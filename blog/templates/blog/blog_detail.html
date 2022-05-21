@@ -87,7 +87,7 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                      <tr>
+                      <tr class="d-none d-md-table-row">
                         <th scope="col">Date</th>
                         <th scope="col">Username</th>
                         <th scope="col">Comment</th>
@@ -95,12 +95,16 @@
                         <th scope="col"></th>
                         <th scope="col"></th>
                       </tr>
+                      <tr class="d-md-none">
+                        <th scope="col">Comment</th>
+                        <th scope="col"></th>
+                      </tr>
                     </thead>
                     <tbody>
                         {% for comment in comments %}
                         <tr>
-                            <th scope="row">{{ comment.date_added }}</th>
-                            <td>{{ comment.author }}</td>
+                            <th scope="row" class="d-none d-md-table-cell">{{ comment.date_added }}</th>
+                            <td class="d-none d-md-table-cell">{{ comment.author }}</td>
                             <td>{{ comment.blog_comment }}</td>
                             <td class="icons">{% if request.user == comment.author %}
                                 <a href="{% url 'edit_blog_comment' comment.id %}">
