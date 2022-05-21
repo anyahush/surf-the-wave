@@ -68,6 +68,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = ProductReview.objects.filter(
         product=product).order_by('date_added')
+    previous_review = None
     # Check if user has left a product review previous
     if request.user.is_authenticated:
         previous_review = ProductReview.objects.filter(
