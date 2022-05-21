@@ -41,6 +41,10 @@ fieldset legend {
   text-transform: uppercase;
 }
 
+#qty-caption {
+  margin-left: 15px;
+}
+
 #loading-overlay {
   display: none;
   position: fixed;
