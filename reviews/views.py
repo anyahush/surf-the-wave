@@ -15,16 +15,24 @@ def create_review(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.author = User.objects.get(username=request.user.username)
-            review.product = product
-            review.save()
-            messages.success(request, 'Successfully added review!')
-            return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
+        # Filters reviews based on session user
+        previous_review = ProductReview.objects.filter(
+            author=request.user
+        ).exists()
+        if previous_review:
+            # If previous review error message displayed
+            messages.error(request, 'You have already left a comment for this product')
         else:
-            messages.error(request, 'Failed to add review. Please ensure the form is valid')
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.author = User.objects.get(username=request.user.username)
+                review.product = product
+                review.save()
+                messages.success(request, 'Successfully added review!')
+                return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
+            else:
+                messages.error(request, 'Failed to add review. Please ensure the form is valid')
     else:
         form = ReviewForm()
 

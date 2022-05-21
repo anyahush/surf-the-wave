@@ -68,10 +68,16 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = ProductReview.objects.filter(
         product=product).order_by('date_added')
+    # Check if user has left a product review previous
+    if request.user.is_authenticated:
+        previous_review = ProductReview.objects.filter(
+            author=request.user
+        ).exists()
 
     context = {
         'product': product,
         'reviews': reviews,
+        'previous_review': previous_review,
     }
 
     return render(request, 'products/product_detail.html', context)
