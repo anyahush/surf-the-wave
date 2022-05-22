@@ -48,7 +48,7 @@ h4 {
 .form-select:focus,
 .form-select:active {
   box-shadow: 0 1px 3px 0 #cfd7df;
-  border: 1px solid #529afe;
+  border: 1px solid #2f7deb;
 }
 
 .update-link,
@@ -95,17 +95,17 @@ button:hover,
 }
 
 .btn-blue {
-    background-color: #529afe;
+    background-color: #2f7deb;
     color: #fff;
     text-transform: uppercase;
-    border: 1px solid #529afe;
+    border: 1px solid #2f7deb;
     border-radius: 0.25rem;
 }
 
 .btn-blue:hover {
-    color: #529afe !important;
+    color: #2f7deb !important;
     background-color: #fff;
-    border-color: #529afe;
+    border-color: #2f7deb;
 }
 
 .btn-grey {
@@ -128,7 +128,7 @@ button:hover,
 /* Navbar */
 #logo {
     font-family: 'Source Sans Pro';
-    color: #529afe;
+    color: #2f7deb;
     text-transform: lowercase;
     font-weight: 700;
 }
@@ -171,6 +171,10 @@ button.navbar-toggler:hover {
     padding-top: 5px;
 }
 
+#delivery-banner h2 {
+    color: #30323d;
+}
+
 /* Footer */
 footer {
     bottom: 0;
@@ -200,6 +204,10 @@ footer a:hover {
 
     .toast {
         width: 250px;
+    }
+
+    #delivery-banner h2 {
+        font-size: 1.2rem !important;
     }
 }
 
