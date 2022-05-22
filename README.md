@@ -168,6 +168,19 @@ The wireframes for this project were developed using [Balsamiq](https://balsamiq
 
 
 ### Changes to Wireframes
+- In main nav options New In was replaced by Blogs. The blogs section provides an additional feature for users to explore and enjoy, allowing users to learn more about surfing and engage through leaving comments.
+- User profile page was changed to a series of nav pills that open different sections of profile information accordingly. This was changed to improve user experience, with each section clearly labelled on the button options.
+- Along with delete account, an 'Change password' button was added to allow users to change their password if they wish to do so.
+- On the product detail page, the product information section was moved from the right to underneath the product image. This was to ensure a good, user friendly layout.
+- On the product detail page a review section was added at the bottom. This displays a table with reviews left and for those logged in, and have not already left a review, a button that opens the product review form. 
+- The layout of the shopping basket page was changed to allow for if a user had several items. The basket items are now displayed smaller and stacked on the left, with the basket summary information on the right.
+- On the contact page, a cancel button was added to allow users to return to the home page.
+- The blogs display page layout was changed. As the blogs are iterated through from the database, using a original layout would have been difficult. The blogs are now displayed in a grid, clearly with blog title and date.
+- Blog detail page has only one image per blog.
+- The checkout page has a order summary displayed so users can see what they are about to purchase. A back to basket button has also been added.
+- On the checkout success page a button to the blogs page has been added to encourage users to read the blogs.
+- On mobile screens the home page gallery is displayed the same as on desktop.
+- On smaller screens a top nav was added, seperating the navbar toggle and site logo from the action icons. This ensures a good layout and easy access to all parts of the site.
 
 
 
