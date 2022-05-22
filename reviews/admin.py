@@ -6,7 +6,6 @@ class ProductReviewAdmin(admin.ModelAdmin):
     """ Allow admin users to manage reviews """
 
     list_display = (
-        'review_title',
         'review_content',
         'author',
         'date_added',

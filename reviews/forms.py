@@ -9,7 +9,6 @@ class ReviewForm(forms.ModelForm):
         """ Update Class Meta Data """
         model = ProductReview
         fields = [
-            'review_title',
             'review_content',
         ]
 
@@ -20,11 +19,10 @@ class ReviewForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         labels = {
-            'review_title': 'Title',
             'review_content': 'Review',
         }
 
-        self.fields['review_title'].widget.attrs['autofocus'] = True
+        self.fields['review_content'].widget.attrs['autofocus'] = True
         for field in self.fields:
             self.fields[field].label = labels[field] + ""
             if self.fields[field].required:
