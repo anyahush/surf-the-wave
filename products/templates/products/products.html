@@ -9,9 +9,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -22,7 +20,7 @@
         <div class="col text-center">
             <h2 class="mb-3">Products</h2>
             {% for c in current_categories %}
-            <a href="{% url 'products' %}?category={{ c.name }}" class="category-badge text-decoration-none">
+            <a href="{% url 'products' %}?category={{ c.name }}" aria-label="Link to category products page" class="category-badge text-decoration-none">
                 <span class="p-3 m-1 badge bg-light text-dark custom-badge">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
@@ -57,10 +55,10 @@
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="small"><a href="{% url 'products' %}" id="all-products" >All Products</a> | </span>
+                        <span class="small"><a href="{% url 'products' %}" aria-label="Link to products page" id="all-products" >All Products</a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for
-                        <strong>"{{ search_term }}"</strong>{% endif %}
+                        "{{ search_term }}"{% endif %}
                     </p>
                 </div>
             </div>
@@ -73,31 +71,34 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
                     <div class="card h-100 border-0">
                         {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}">
+                        <a href="{% url 'product_detail' product.id %}" aria-label="Link to product detail page">
                             <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
                         </a>
                         {% else %}
-                        <a href="{% url 'product_detail' product.id %}">
+                        <a href="{% url 'product_detail' product.id %}" aria-label="Link to product detail page">
                             <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid"
                                 alt="{{ product.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <a href="{% url 'product_detail' product.id %}">
+                            <a href="{% url 'product_detail' product.id %}" aria-label="Link to product detail page">
                                 <h5 class="card-title">{{ product.name }}</h5>
                             </a>
                             <p>£{{ product.price }}</p>
-                            
                         </div>
                         <div class="card-footer bg-white border-0">
                             <div class="row">
                                 <div class="col-12">
-                                    
+                                    <!-- Superuser edit and delete links -->
                                     {% if request.user.is_superuser %}
                                     <small>
-                                        <a href="{% url 'edit_product' product.id %}">Edit</a>
+                                        <a href="{% url 'edit_product' product.id %}" aria-label="Link to edit product page">
+                                            Edit
+                                        </a>
                                         <a href="#deleteProduct" class="text-danger" data-bs-toggle="modal"
-                                            data-bs-target="#deleteProduct">Delete</a>
+                                            data-bs-target="#deleteProduct" aria-label="Link to deletion confirmation modal">
+                                            Delete
+                                        </a>
                                     </small>
                                     <!-- Deletion confirmation Bootstrap modal -->
                                     <div class="modal fade" id="deleteProduct" tabindex="-1"
@@ -115,7 +116,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-sm btn-grey"
                                                         data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="{% url 'delete_product' product.id %}" class="text-danger">
+                                                    <a href="{% url 'delete_product' product.id %}" aria-label="Link to delete product">
                                                         <button type="button"
                                                             class="btn btn-sm btn-danger">Delete</button>
                                                     </a>
@@ -134,12 +135,12 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
+    // Sorts products selector 
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);

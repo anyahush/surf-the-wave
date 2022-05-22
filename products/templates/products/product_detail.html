@@ -4,8 +4,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -15,28 +14,29 @@
     <div class="container-fluid">
         <div class="row mt-2">
             <div class="col-12 col-md-7 col-lg-6 offset-lg-1">
-                <div>
-                    {% if product.image %}
-                    <a href="{{ product.image.url }}" target="_blank">
-                        <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
-                    </a>
-                    {% else %}
-                    <a href="">
-                        <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ product.name }}">
-                    </a>
-                    {% endif %}
-                </div>
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank" aria-label="Link to open product image in new page">
+                    <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="{{ product.image.url }}" target="_blank" aria-label="Link to open default image in new page">
+                    <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ product.name }}">
+                </a>
+                {% endif %}
             </div>
             <!-- Product information -->
-            <div class="product-info-container col-12 col-md-5 col-lg-4">
+            <div class="col-12 col-md-5 col-lg-4">
                 <h3 id="product-title" class="mt-2">{{ product.name }}</h3>
-                <p class="basket-meta">{{ product.category.friendly_name }}</p>
+                <p>{{ product.category.friendly_name }}</p>
                 <h4>£{{ product.price }}</h4>
+                <!-- Superuser edit and delete links -->
                 {% if request.user.is_superuser %}
                 <small>
-                    <a href="{% url 'edit_product' product.id %}">Edit</a>
+                    <a href="{% url 'edit_product' product.id %}" aria-label="Link to edit product page">Edit</a>
                     <a href="#deleteProduct" class="text-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteProduct">Delete</a>
+                        data-bs-target="#deleteProduct" aria-label="Link to deletion confirmation modal">
+                        Delete
+                    </a>
                 </small>
                 <!-- Deletion confirmation Bootstrap modal -->
                 <div class="modal fade" id="deleteProduct" tabindex="-1"
@@ -53,7 +53,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-sm btn-grey"
                                     data-bs-dismiss="modal">Cancel</button>
-                                <a href="{% url 'delete_product' product.id %}" class="text-danger">
+                                <a href="{% url 'delete_product' product.id %}" aria-label="Link to delete product">
                                     <button type="button" class="btn btn-sm btn-danger">Delete</button>
                                 </a>
                             </div>
@@ -84,7 +84,7 @@
                         {% elif product.category.name == 'ladies_wetsuits' %}
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
-                            <select class="form-control form-select rounded-0" name="product_size" id='id_ladies_size'>
+                            <select class="form-control form-select" name="product_size" id='id_ladies_size'>
                                 <option value="6" selected>6</option>
                                 <option value="8">8</option>
                                 <option value="10">10</option>
@@ -97,7 +97,7 @@
                         {% elif product.category.name == 'mens_footwear' or product.category.name == 'ladies_footwear'%}
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
-                            <select class="form-control form-select rounded-0" name="product_size" id='id_shoe_size'>
+                            <select class="form-control form-select" name="product_size" id='id_shoe_size'>
                                 <option value="3" selected>3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
@@ -113,7 +113,7 @@
                         {% elif product.category.name == 'boys_wetsuits' or product.category.name == 'girls_wetsuits' %}
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
-                            <select class="form-control form-select rounded-0" name="product_size" id='id_kids_size'>
+                            <select class="form-control form-select" name="product_size" id='id_kids_size'>
                                 <option value="7-8" selected>7-8</option>
                                 <option value="9-10"></option>
                                 <option value="11-12">11-12</option>
@@ -125,7 +125,7 @@
                         {% elif product.category.name == 'kids_footwear' %}
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
-                            <select class="form-control form-select rounded-0" name="product_size"
+                            <select class="form-control form-select" name="product_size"
                                 id='id_kids_shoe_size'>
                                 <option value="xs" selected>XS</option>
                                 <option value="s">S</option>
@@ -168,14 +168,14 @@
                                     </select>
                                 </div>
                             </div>
-                            {% if item.product.mens_sizes or item.product.ladies_sizes or item.product.shoe_sizes or item.product.kids_sizes or item.product.kids_shoe_sizes%}
+                            {% if item.product.has_sizes %}
                             <input type="hidden" name="product_size" value="{{ item.size }}">
                             {% endif %}
                         </div>
                         <!-- Action buttons -->
                         <div class="col-12 mt-4">
                             <input type="submit" class="btn btn-sm btn-blue basket-buttons" value="Add to basket">
-                            <a href="{% url 'products' %}" class="btn btn-sm btn-grey basket-buttons">
+                            <a href="{% url 'products' %}" aria-label="Link to products page" class="btn btn-sm btn-grey basket-buttons">
                                 <span>Continue shopping</span>
                             </a>
                         </div>
@@ -185,6 +185,7 @@
             </div>
         </div>
         <div class="row mt-5">
+            <!-- Product information -->
             <div class="col-12 col-md-6 offset-md-1">
                 <h4>Information</h4>
                 <p>SKU: {{ product.sku }}</p>
@@ -217,14 +218,19 @@
                                 <th scope="row" class="d-none d-md-table-cell">{{ review.date_added }}</th>
                                 <td class="d-none d-md-table-cell">{{ review.author }}</td>
                                 <td>{{ review.review_content }}</td>
-                                <td class="icons">{% if request.user.id == review.author or request.user.is_superuser %}
-                                    <a href="{% url 'edit_product_review' review.id %}">
+                                <td class="icons">
+                                    <!-- Allow user to edit own review -->
+                                    {% if request.user.id == review.author %}
+                                    <a href="{% url 'edit_product_review' review.id %}" aria-label="Link to edit product review page">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
                                     {% endif %}
                                 </td>
-                                <td class="icons">{% if request.user == review.author or request.user.is_superuser %}
-                                    <a href="#deleteComment" data-bs-toggle="modal" data-bs-target="#deleteComment">
+                                <td class="icons">
+                                    <!-- Allow superuser or user who left review to delete-->
+                                    {% if request.user == review.author or request.user.is_superuser %}
+                                    <a href="#deleteComment" data-bs-toggle="modal" data-bs-target="#deleteComment"
+                                    aria-label="Link to deletion confirmation modal">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </a>
                                     <!-- Deletion confirmation Bootstrap modal -->
@@ -237,12 +243,12 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p class="text-center">Are you sure you want to delete your comment?</p>
+                                                    <p class="text-center">Are you sure you want to delete your review?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-sm btn-grey"
                                                         data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="{% url 'delete_product_review' review.id %}" class="text-danger">
+                                                    <a href="{% url 'delete_product_review' review.id %}" aria-label="Link to delete review">
                                                         <button type="button" class="btn btn-sm btn-danger">Delete</button>
                                                     </a>
                                                 </div>
@@ -256,6 +262,7 @@
                         </tbody>
                     </table>
                 </div>
+                 <!-- Review button displayed if user has not left previous review for this product -->
                 <div class="col-12 mt-4">
                     {% if not previous_review %}
                     <a href="{% url 'create_review' product.id %}">
