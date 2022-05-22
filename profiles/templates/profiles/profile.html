@@ -74,6 +74,7 @@
             <!-- User order history -->
             <section id="order-history" class="profile-section">
                 <div class="col-12">
+                    <p>Click on the order number to view the order summary</p>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless">
                             <thead>
@@ -112,18 +113,21 @@
                 </div>
             </section>
             <!-- User account management -->
+            <!-- Paragraph content used from ASOS account, details in README -->
             <section id="my-account" class="profile-section">
                 <div class="row">
                     <div class="col-12">
+                        <p>Feel free to change your password so your Surf the Wave account stays secure</p>
                         <a href="{% url 'account_change_password' %}" aria-label="Link to change account password" class="btn btn-blue">
                             Change Password
                         </a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col-12">
-                        <p>We would be sad to see you leave us</p>
-                        <a href="#deleteAccount" class="btn btn-grey" data-bs-toggle="modal"
+                        <p>We're sorry to see you go!</p>
+                        <p>Remember, your Surf the Wave account is free to have and enables you to shop all of our available products on site.</p>
+                        <a href="#deleteAccount" class="btn btn-sm btn-grey" data-bs-toggle="modal"
                             data-bs-target="#deleteAccount" aria-label="Link to open deletion confirmation modal">
                             Delete Account?
                         </a>
