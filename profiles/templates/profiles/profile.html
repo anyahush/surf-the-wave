@@ -8,9 +8,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -25,7 +23,7 @@
     <div class="row mt-4">
         <!-- My Profile Nav Pills-->
         <div class="col-12 col-md-5 col-lg-4 offset-xl-1">
-            <!-- Nav pills modified from Bootstrap 5 and GymFit Website -->
+            <!-- Nav pills modified from Bootstrap 5 and GymFit Website, details in READEME -->
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <button class="nav-link profile-buttons" id="my-info-button" type="button"
@@ -40,29 +38,31 @@
                         aria-label="Show My Account section">My Account</button>
                 </li>
 
-                <!-- Admin profile buttons -->
+                <!-- Superuser profile buttons -->
                 {% if request.user.is_superuser %}
                 <li class="nav-item">
-                    <a href="{% url 'add_product' %}">
-                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add product form">Add
-                            Product</button>
+                    <a href="{% url 'add_product' %}" aria-label="Link to add product page">
+                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add product form">
+                            Add Product
+                        </button>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'add_blog' %}">
-                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add blog form">Add
-                            Blog</button>
+                    <a href="{% url 'add_blog' %}" aria-label="Link to add blog page">
+                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add blog form">
+                            Add Blog
+                        </button>
                     </a>
                 </li>
                 {% endif %}
                 <!-- Logout button -->
                 <li class="nav-item">
-                    <a href="{% url 'account_logout' %}" class="nav-link profile-buttons">Logout</a>
+                    <a href="{% url 'account_logout' %}" aria-label="Link to logout of account" class="nav-link profile-buttons">Logout</a>
                 </li>
             </ul>
         </div>
         <div class="col-12 col-md-7 col-lg-8 col-xl-6">
-            <!-- Profile forms for user information -->
+            <!-- Profile form for user information -->
             <section id="my-info" class="profile-section">
                 <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
@@ -87,7 +87,7 @@
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                            title="{{ order.order_number }}">
+                                           aria-label="Link to open order summary" title="{{ order.order_number }}">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
@@ -115,15 +115,18 @@
             <section id="my-account" class="profile-section">
                 <div class="row">
                     <div class="col-12">
-                        <a href="{% url 'account_change_password' %}" class="btn btn-blue">Change Password</a>
-
+                        <a href="{% url 'account_change_password' %}" aria-label="Link to change account password" class="btn btn-blue">
+                            Change Password
+                        </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <p>We would be sad to see you leave us</p>
                         <a href="#deleteAccount" class="btn btn-grey" data-bs-toggle="modal"
-                                            data-bs-target="#deleteAccount">Delete Account?</a>
+                            data-bs-target="#deleteAccount" aria-label="Link to open deletion confirmation modal">
+                            Delete Account?
+                        </a>
                         <!-- Deletion confirmation Bootstrap modal -->
                         <div class="modal fade" id="deleteAccount" tabindex="-1"
                         aria-labelledby="Delete account confirmation modal" aria-hidden="true">
@@ -139,7 +142,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-sm btn-grey"
                                         data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_user' user.id %}" class="text-danger">
+                                    <a href="{% url 'delete_user' user.id %}" aria-label="Link to delete account">
                                         <button type="button"
                                             class="btn btn-sm btn-danger">Delete</button>
                                     </a>
