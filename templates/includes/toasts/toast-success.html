@@ -10,45 +10,44 @@
           {{ message }}
         </div>
       </div>
+      <!-- Display basket items if not on basket page or profile page -->
       {% if basket_items and not on_basket and not on_profile_page %}
-      <div class="row">
-        <div class="col mt-2">
-          <p>Your Basket ({{ product_count }})</p>
-        </div>
-      </div>
-      
-        {% for item in basket_items %}
-          <div class="row">
-            <div class="col-md-3">
-              {% if item.product.image %}
-                <img src="{{ item.product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-              {% else %}
-                <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
-              {% endif %}
-            </div>
-            <div class="col-md-9">
-              <p><strong>{{ item.product.name }}</strong></p>
-              <p> {% if item.product.has_sizes %}
-                Size: {{ item.size|upper }}
-                {% endif %}</p>
-              <p>Qty: {{ item.quantity }}</p>
-            </div>
-          </div>
-        {% endfor %}
         <div class="row">
-          <div class="col-12 text-center">
-            <strong><p>
-              Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
-              <span class="float-end">£{{ total|floatformat:2 }}</span>
-            </p></strong>
-            {% if free_delivery_delta > 0%}
-              <p>Get free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!</p>
-            {% endif %}
-            <a href="{% url 'view_basket' %}" id="toast-button" class="btn btn-sm btn-blue">
-              <span>Go to Shopping Basket</span>
-            </a>
+          <div class="col mt-2">
+            <p>Your Basket ({{ product_count }})</p>
           </div>
         </div>
+          {% for item in basket_items %}
+            <div class="row">
+              <div class="col-md-3">
+                {% if item.product.image %}
+                  <img src="{{ item.product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                {% else %}
+                  <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
+                {% endif %}
+              </div>
+              <div class="col-md-9">
+                <p><strong>{{ item.product.name }}</strong></p>
+                <p> {% if item.product.has_sizes %}
+                  Size: {{ item.size|upper }}
+                  {% endif %}</p>
+                <p>Qty: {{ item.quantity }}</p>
+              </div>
+            </div>
+          {% endfor %}
+          <div class="row">
+            <div class="col-12">
+              <p>Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
+                <span>£{{ total|floatformat:2 }}</span>
+              </p>
+              {% if free_delivery_delta > 0 %}
+                <p>Get free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!</p>
+              {% endif %}
+              <a href="{% url 'view_basket' %}" aria-label="Link to basket page" id="toast-button" class="btn btn-sm btn-blue">
+                <span>Go to Shopping Basket</span>
+              </a>
+            </div>
+          </div>
       {% endif %}
     </div>
 </div>
