@@ -197,6 +197,11 @@ footer a:hover {
     .action-buttons {
         margin-top: 15px;
     }
+
+    .toast {
+        width: 250px;
+    }
+    
 }
 
 @media (max-width: 768px) {
