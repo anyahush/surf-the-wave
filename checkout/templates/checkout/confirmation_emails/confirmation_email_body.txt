@@ -6,10 +6,10 @@ This email is a confirmation of your order {{ order.order_number }}.
 
 Your order was purchased on {{ order.date }}.
 
-Your order was £{{ order.order_total }}, delivery £{{ order.deliver_cost }} and came to a total cost of £{{ order.grand_total }}.
+Your order was £{{ order.order_total }}, delivery £{{ order.delivery_cost }} and came to a total cost of £{{ order.grand_total }}.
 
 We hope you enjoy your products. If you need to contact us or require an exchange or refund, please don't hesitate to contact us at {{ contact_email }}.
 
 Happy surfing!
 
-The team at Surf the Wave
+Surf the Wave team
