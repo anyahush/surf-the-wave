@@ -1,8 +1,4 @@
 /* Universal Styles */
-html {
-    height: 100%;
-}
-
 body {
     font-family: 'Inter';
     color: #30323d;
@@ -216,7 +212,7 @@ footer a:hover {
 
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 180px;
+        padding-top: 200px;
     }
 
     .nav-link i,
