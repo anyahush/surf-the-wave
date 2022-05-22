@@ -9,9 +9,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -19,6 +17,7 @@
 {% block content %}
 <div class="container">
     <div class="row">
+        <!-- Blog title -->
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <h2>{{ blog.blog_title }}</h2>
             <p class="caption mt-2">{{ blog.date_added }} by {{ blog.author }} </p>
@@ -27,18 +26,20 @@
 
     <div class="row mt-4">
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-
             {% if blog.image %}
             <img src="{{ blog.image.url }}" class="img-fluid" alt="{{ blog.name }}">
             {% else %}
             <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ blog.name }}">
             {% endif %}
             <div class="mt-2 float-end">
+                <!-- Superuser edit and delete links -->
                 {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_blog' blog.id %}">Edit</a>
+                        <a href="{% url 'edit_blog' blog.id %}" aria-label="Link to edit blog page">Edit</a>
                         <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteBlog">Delete</a>
+                        data-bs-target="#deleteBlog" aria-label="Link to open delete confirmation modal">
+                            Delete
+                        </a>
                     </small>
                     <!-- Deletion confirmation Bootstrap modal -->
                     <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
@@ -54,7 +55,7 @@
                                   </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_blog' blog.id %}" class="text-danger">
+                                    <a href="{% url 'delete_blog' blog.id %}" aria-label="Link to delete blog">
                                         <button type="button" class="btn btn-sm btn-danger">Delete</button>
                                     </a>
                                 </div>
@@ -66,9 +67,10 @@
         </div>
     </div>
     <div class="row mt-4">
+        <!-- Blog content -->
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <p class="mb-5">{{ blog.blog_content_one }}</p>
-
+            <!-- Will display further blog content if blog has more-->
             {% if blog.blog_content_two %}
             <p class="mb-5">{{ blog.blog_content_two }}</p>
             {% endif %}
@@ -76,12 +78,13 @@
             {% if blog.blog_content_three %}
             <p class="mb-5">{{ blog.blog_content_three }}</p>
             {% endif %}
-            <a href="{% url 'blogs' %}" class="float-end">
+            <a href="{% url 'blogs' %}" class="float-end" aria-label="Link to return to blogs page">
                 <button class="btn btn-sm btn-grey">Back to blogs</button>
             </a>
         </div>
     </div>
     <div class="row mt-5">
+        <!-- Comments section -->
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <h3>Comments</h3>
             <div class="table-responsive">
@@ -106,14 +109,19 @@
                             <th scope="row" class="d-none d-md-table-cell">{{ comment.date_added }}</th>
                             <td class="d-none d-md-table-cell">{{ comment.author }}</td>
                             <td>{{ comment.blog_comment }}</td>
-                            <td class="icons">{% if request.user == comment.author %}
-                                <a href="{% url 'edit_blog_comment' comment.id %}">
+                            <td class="icons">
+                                <!-- Allow user to edit own comment -->
+                                {% if request.user == comment.author %}
+                                <a href="{% url 'edit_blog_comment' comment.id %}" aria-label="Link to edit user comment">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                                 {% endif %}
                             </td>
-                            <td class="icons">{% if request.user == comment.author or request.user.is_superuser %}
-                                <a href="#deleteComment" data-bs-toggle="modal" data-bs-target="#deleteComment">
+                            <td class="icons">
+                                <!-- Allow superuser or user who left comment to delete-->
+                                {% if request.user == comment.author or request.user.is_superuser %}
+                                <a href="#deleteComment" data-bs-toggle="modal" data-bs-target="#deleteComment"
+                                aria-label="Link to deletion confirmation modal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </a>
                                 <!-- Deletion confirmation Bootstrap modal -->
@@ -131,7 +139,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-sm btn-grey"
                                                     data-bs-dismiss="modal">Cancel</button>
-                                                <a href="{% url 'delete_blog_comment' comment.id %}" class="text-danger">
+                                                <a href="{% url 'delete_blog_comment' comment.id %}" aria-label="Link to delete comment">
                                                     <button type="button" class="btn btn-sm btn-danger">Delete</button>
                                                 </a>
                                             </div>
@@ -145,23 +153,22 @@
                     </tbody>
                 </table>
             </div>
-           
         </div>
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-5">
+            <!-- Comment form displayed if user has not left previous comment on this blog -->
             {% if not previous_comment %}
             <form action="{% url 'blog_detail' blog.id %}" method="POST">
                 {% csrf_token %}
                 {{ comment_form|crispy }}
                 <div class="text-center">
                     <button class="btn btn-blue" type="submit" >Add comment</button>
-                    <a href="{% url 'blog_detail' blog.id %}">
+                    <a href="{% url 'blog_detail' blog.id %}" aria-label="Link to cancel comment form">
                         <button class="btn btn-grey" type="button">Cancel</button>
                     </a>
                 </div>
             </form>
             {% endif %}
         </div>
-      
     </div>
 </div>
 {% endblock %}

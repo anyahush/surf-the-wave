@@ -8,9 +8,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -21,10 +19,10 @@
         <div class="col-12 text-center">
             <h2>Blogs</h2>
         </div>
-        <!-- Admin users can create new blog posts -->
+        <!-- Button to allow superusers to create blog posts -->
         {% if request.user.is_superuser %}
             <div class="col-12 mt-2 text-center">
-                <a href="{% url 'add_blog' %}">
+                <a href="{% url 'add_blog' %}" aria-label="Link to add blog page">
                     <button class="btn btn-grey">Add Blog</button>
                 </a>
             </div>
@@ -35,17 +33,18 @@
             {% for post in blog %}
             <div class="blog-post">
                 {% if post.image %}
-                <a href="{% url 'blog_detail' post.id %}">
+                <a href="{% url 'blog_detail' post.id %}" aria-label="Link to blog post page">
                     <div class="blog-img-container">
                         <img src="{{ post.image.url }}" class="blog-post-img" alt="{{ post.blog_title }}">
                     </div>
                     <h3 class="blog-info">{{ post.blog_title }}</h3>
                     <p class="blog-info">{{ post.date_created }}</p>
+                    <!-- Superuser edit and delete links -->
                     {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_blog' post.id %}">Edit</a>
+                        <a href="{% url 'edit_blog' post.id %}" aria-label="Link to edit blog page">Edit</a>
                         <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteBlog">Delete</a>
+                        data-bs-target="#deleteBlog" aria-label="Link to deletion confirmation modal">Delete</a>
                     </small>
                     <!-- Deletion confirmation Bootstrap modal -->
                     <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
@@ -61,7 +60,7 @@
                                   </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_blog' post.id %}" class="text-danger">
+                                    <a href="{% url 'delete_blog' post.id %}" aria-label="Link to delete blog">
                                         <button type="button" class="btn btn-sm btn-danger">Delete</button>
                                     </a>
                                 </div>
@@ -72,16 +71,18 @@
                 </a>
                 {% else %}
                 <!-- If blog has no image -->
-                <a href="{% url 'blog_detail' post.id %}">
+                <a href="{% url 'blog_detail' post.id %}" aria-label="Link to blog post page">
                     <div class="blog-img-container">
                         <img src="{{ MEDIA_URL }}noimage.png" class="blog-post-img" alt="{{ post.blog_title }}">
                     </div>
                     <h3 class="blog-info">{{ post.blog_title }}</h3>
                     <p class="blog-info">{{ post.date_created }}</p>
+                     <!-- Superuser edit and delete links -->
                     {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_blog' post.id %}">Edit</a>
-                        <a href="{% url 'delete_blog' post.id %}" class="text-danger">Delete</a>
+                        <a href="{% url 'edit_blog' post.id %}" aria-label="Link to edit blog page">Edit</a>
+                        <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal"
+                        data-bs-target="#deleteBlog" aria-label="Link to deletion confirmation modal">Delete</a>
                     </small>
                     <!-- Deletion confirmation Bootstrap modal -->
                     <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
@@ -97,7 +98,7 @@
                                   </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_blog' post.id %}" class="text-danger">
+                                    <a href="{% url 'delete_blog' post.id %}" aria-label="Link to delete blog">
                                         <button type="button" class="btn btn-sm btn-danger">Delete</button>
                                     </a>
                                 </div>
@@ -107,15 +108,10 @@
                     {% endif %}
                 </a>
                 {% endif %}
-                
             </div>
             {% endfor %}
         {% endif %}
         </div>
-        
-        
     </div>
-
 </div>
-
 {% endblock %}

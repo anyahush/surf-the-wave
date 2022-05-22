@@ -4,9 +4,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -16,20 +14,20 @@
     <div class="row">
         <div class="col-12">
             <h2 class="text-center">Product Management</h2>
-
         </div>
         <div class="col-12 mt-3">
             <h3 class="text-center">Edit a Blog</h3>
         </div>
     </div>
     <div class="row mt-3">
+        <!-- Edit blog form -->
         <div class="col-12 col-md-6 offset-md-3">
             <form action="{% url 'edit_blog' blog.id %}" method="POST" class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-center">
                     <button class="btn btn-blue" type="submit" >Update</button>
-                    <a href="{% url 'blogs' %}">
+                    <a href="{% url 'blogs' %}" aria-label="Link to cancel edit blog form">
                         <button class="btn btn-grey" type="button">Cancel</button>
                     </a>
                 </div>
@@ -37,6 +35,4 @@
         </div>
     </div>
 </div>
-
-
 {% endblock %}
