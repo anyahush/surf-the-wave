@@ -245,6 +245,114 @@ The testing process can be viewed [here](TESTING.md).
 
 ## Deployment
 
+### Creation
+* Following logging into my GitHub account, I created the repository from Code Institute's Gitpod Template. Selected 'Use this template', filled in repository name and created repository.
+
+![Create repo](readme/assets/readme-images/deployment/create-repo.png)
+### Forking
+* Sign into your GitHub account and go to this [repository](). 
+* In the top right there are several options, including 'fork'. Select this to fork the repository.
+
+![Fork repo](readme/assets/readme-images/deployment/fork-repo.png)
+
+### Cloning
+* Sign into your GitHub account and go to this [repository](). In addition to the cloning steps you will need to follow steps for setting up AWS, Stripe and Heroku.
+* Clone using command line
+    - Select button 'Code' next to Gitpod button and copy the URL
+
+    ![Copy URL](readme/assets/readme-images/deployment/clone-repo.png)
+    - In your workspace terminal type 'git clone' followed by the URL and press enter
+* Clone using Desktop GitHub
+    - If you select this, it will guide you through the necessary steps
+
+For more information on troubleshooting see the GitHub documentation [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#about-cloning-a-repository).
+
+### Setting up the Project
+* The project has a set of requirements needed for the project to run. You can install these with pip3 install. The requirements are below.
+* If you have cloned the project then you can use pip3 install -r requirements and it will install all requirements needed 
+
+![Requirements](readme/assets/readme-images/deployment/requirements.png)
+
+* Create a SECRET_KEY. I used a [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/).
+* The settings.py file is set up to collect keys from the environment. During development these were stored in my Gitpod dashboard. Name the variables accordingly. DEVELOPMENT is set to True.
+
+![Environment variables](readme/assets/readme-images/deployment/environment-variables.png)
+
+* Requirements.txt and Procfile are necessary for Heroku deployement. Make sure these have been committed and pushed before deployement. Use command pip3 freeze > requirements.txt to ensure the file is up to date.
+* During development migrations need to be run using commands:
+    - python3 manage.py makemigrations --dry-run
+    - python3 manage.py makemigrations
+    - python3 manage.py migrate --plan
+    - python3 manage.py migrate
+* To create a superuser use the command python3 manage.py createsuperuser and follow the steps
+
+### Setting up AWS
+* First you need to [register](https://aws.amazon.com/?nc2=h_lg) for an account if you don't already have one. I am using the Free Tier.
+* Once created, search S3, select and create bucket
+* Fill in bucket name, select nearest region and unselect 'block all public access' checkbox. Then select to create bucket
+* Once created
+    - Go to Properties section and go to Static Web Hosting, select Edit and Enable and enter default values for index and error documents and click Save.
+
+    ![Static webhosting](readme/assets/readme-images/deployment/static-webhosting.png)
+    - On permissions tab, paste this configuration into CORS section
+
+    ![CORS configuration](readme/assets/readme-images/deployment/CORS.png)
+    - Go to Bucket Policy section and select 'policy generator'
+
+    ![Policy Generator](readme/assets/readme-images/deployment/policy-generator.png)
+    - In the policy generator select 'S3 Bucket Policy' for type, enter a (*) into 'Principal' input and select 'Get Object' from Actions Dropdown.
+    - Copy Amazon Resource Number (ARN) from previous tab and paste into ARN box. Select 'Add Statement' and then 'Generate Policy'.
+    - Copy policy and paste in Bucket Policy Editor and add a (/*) onto end of the resource key and click save.
+    - Go to Access Control List and click Edit. Check Everyone(Public Access) and confirm you understand the changes.
+    - Search for IAM in AWS Services and click 'User Groups' and select to create a new group
+
+    ![User groups](readme/assets/readme-images/deployment/user-groups.png)
+    - Give group a name and click 'Next Step' until 'Create Group', select this.
+    - On menu select 'Policies' and then 'Create Policy' then select 'Import Policy' and search 'S3' and import 'AmazonS3FullAccess' policy.
+    - Amend policy by adding your ARN as the value for resource as list in the format as follows:
+        * "arn:aws:<ARN>",
+        * "arn:aws:<ARN/*>",
+    - Click 'Next: Tags' and 'Next: Review'
+    - Provide policy name and click 'Create Policy'
+    - Got to IAM menu and select 'Users' and add user. Fill in name and select 'Access key- Programmmic Access'.
+    - Add user to group, by selecting the user. Select 'Next' and 'Create User'.
+    - Download CSV file, as this has the keys required. Once you leave this page you won' be able to download or access the keys again.
+    - The AWS keys need to be added to you Heroku Config Vars. In projects settings.py replace AWS_STORAGE_BUCKET_NAME with your bucket name.
+    - Back in your AWS bucket. Select bucket and click 'Create Folder', name it 'media' and create. You can now add media files to it.
+
+### Setting up Stripe
+* First you need to [register](https://stripe.com/en-gb) for an account with Stripe, if you don't have one already.
+* In the dashboard, go to section for Developers and select 'API keys'. Here you will get your publishable and secret keys. These are not to go in version control. These can be stored in GitHub environment during development and Heroku Config Vars if deploying.
+
+![API keys](readme/assets/readme-images/deployment/API-keys-stripe.png)
+
+* Next go to 'Webhooks' in the side menu. Select 'Add endpoint'
+
+![Webhooks](readme/assets/readme-images/deployment/webhooks.png)
+
+* Add the url in for the site followed by /checkout/wh/
+* If deploying, you will need to create a new endpoint with the deployed URL
+* Next select the events you want for the webhooks, once selected then 'Add Endpoint'.
+* In your new webhook there is a signing secret. Copy this and add to variable STRIPE_WH_SECRET in GitHub environment. When creating endpoint for Heroku, this will create a new signing secret.
+
+![Signing secret](readme/assets/readme-images/deployment/signing-key.png)
+
+### Heroku Deployment
+* Firstly login into your [Heroku](https://id.heroku.com/login) account.
+* Select 'New' and then 'Create New App', give it a name and select closest region and click 'Create App'.
+* In Resources under Add-ons select 'Heroku Postgres'
+
+![Add ons](readme/assets/readme-images/deployment/add-ons.png)
+
+* Once the app is created, go to settings and reveal Confif Vars and add the following:
+    * Note: the DATABASE_URL was already populated, USE_AWS is set to True and the AWS_SECRET_KEY was generated using the Django Secret Key Generator. 
+
+![Config Vars](readme/assets/readme-images/deployment/config-vars.png)
+* Go to 'Deploy' and select 'Heroku Git'. Currently Heroku has stopped automatic deploys with GitHub
+* Once deployed commits need to be manually pushed to both GitHub and Heroku. Using the command git push heroku main will push to Heroku
+* You will need to migrate and create a superuser. Migrations can be done with the previous steps with 'heroku run' infront. E.g heroku run python3 manage.py makemigrations.
+
+
 
 
 ## Credits
