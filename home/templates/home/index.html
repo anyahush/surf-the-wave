@@ -8,19 +8,18 @@
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
-            <div class="col">
-
-            </div>
+            <div class="col"></div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
     <div class="container">
+        <!-- Image gallery -->
         <div class="row gallery">
             <div class="col-6 offset-1 image-container">
-                <a href="{% url 'products' %}?category=surfboards,surf_equipment">
-                    <img src="{{ MEDIA_URL }}surfing2-home.jpg" alt="" class="gallery-lg-img image">
+                <a href="{% url 'products' %}?category=surfboards,surf_equipment" aria-label="Link to products page">
+                    <img src="{{ MEDIA_URL }}surfing2-home.jpg" alt="Person surfing at sunset" class="gallery-lg-img image">
                     <div class="image-grid-hover">
                         <div class="text">
                             <h3>Summer ready?</h3>
@@ -28,32 +27,31 @@
                             <div class="mt-2">
                                 <button class="btn btn-sm gallery-btn">Shop now</button>
                             </div>
-                            
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-4">
-                    <a href="{% url 'products' %}?category=surfboards">
-                        <img src="{{ MEDIA_URL }}surfboards2-home.jpg" alt="" class="gallery-sm-img">
+                    <a href="{% url 'products' %}?category=surfboards" aria-label="Link to products page">
+                        <img src="{{ MEDIA_URL }}surfboards2-home.jpg" alt="Three surfboards" class="gallery-sm-img">
                     </a>
                     <a href="{% url 'blogs' %}">
-                        <img src="{{ MEDIA_URL }}ocean-home.jpg" alt="" class="gallery-sm-img">
+                        <img src="{{ MEDIA_URL }}ocean-home.jpg" alt="Aerial view of surfers in the ocean" class="gallery-sm-img" aria-label="Link to blogs page">
                     </a>
             </div>
         </div>
         <div class="row gallery">
             <div class="col-4 offset-1">
-                <a href="{% url 'blogs' %}">
-                    <img src="{{ MEDIA_URL }}surfboard-van-home.jpg" alt="" class="gallery-sm-img">
+                <a href="{% url 'blogs' %}" aria-label="Link to blogs page">
+                    <img src="{{ MEDIA_URL }}surfboard-van-home.jpg" alt="Sea view from a van with surfboard" class="gallery-sm-img">
                 </a>
-                <a href="{% url 'products' %}?category=ladies_wetsuits">
-                    <img src="{{ MEDIA_URL }}wetsuit-home.jpg" alt="" class="gallery-sm-img">
+                <a href="{% url 'products' %}?category=ladies_wetsuits" aria-label="Link to products page">
+                    <img src="{{ MEDIA_URL }}wetsuit-home.jpg" alt="Close up of ladies wetsuit" class="gallery-sm-img">
                 </a>
             </div>
             <div class="col-6 image-container">
-                <a href="{% url 'blogs' %}">
-                    <img src="{{ MEDIA_URL }}surfing-home.jpg" alt="" class="gallery-lg-img image">
+                <a href="{% url 'blogs' %}" aria-label="Link to blogs page">
+                    <img src="{{ MEDIA_URL }}surfing-home.jpg" alt="Ocean view from surfboard" class="gallery-lg-img image">
                     <div class="image-grid-hover">
                         <div class="text">
                             <h3>Solo Surfing</h3>
@@ -61,7 +59,6 @@
                             <div class="mt-2">
                                 <button class="btn btn-sm gallery-btn">Read now</button>
                             </div>
-                            
                         </div>
                     </div>
                 </a>
