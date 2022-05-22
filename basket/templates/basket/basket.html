@@ -8,9 +8,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -23,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12 col-md-6 offset-md-1">
+        <div class="col-sm-12 col-md-6">
             <!-- Displays items in users basket -->
             {% if basket_items %}
                 {% for item in basket_items %}
@@ -39,7 +37,7 @@
                     <div class="col-8 col-lg-10">
                         <div class="row">
                             <div class="col-12 col-lg-6">
-                                <a href="{% url 'product_detail' item.product.id %}">
+                                <a href="{% url 'product_detail' item.product.id %}" aria-label="Link to product detail page for this product">
                                     <h3 id="basket-item-title">{{ item.product.name }}</h3>
                                 </a>
                                 <p class="caption">{% if item.product.has_sizes %}
@@ -91,7 +89,7 @@
                                     aria-label="Will update quantity of item in basket">Update</a>
                                 <a href="#deleteProduct" class="text-danger small mt-2 float-end" data-bs-toggle="modal"
                                     data-bs-target="#deleteProduct"
-                                    aria-label="Will remove quantity of item from basket">Remove</a>
+                                    aria-label="Will remove item from basket">Remove</a>
                                  <!-- Deletion confirmation Bootstrap modal -->
                                  <div class="modal fade" id="deleteProduct" tabindex="-1"
                                      aria-labelledby="Delete product confirmation modal" aria-hidden="true">
@@ -126,9 +124,9 @@
                 </div>
                 {% endfor %}
             {% else %}
-                <div class="col-12">
+                <div class="col-12 offset-1 offset-md-2">
                     <p>Your basket is empty</p>
-                    <a href="{% url 'products' %}">
+                    <a href="{% url 'products' %}" aria-label="Link back to products">
                         <button type="button" class="btn btn-grey">Back to products</button>
                     </a>
                 </div>
@@ -155,24 +153,20 @@
                 <p class="custom-size mt-1">Total including vat<span class="float-end">£{{ grand_total|floatformat:2 }}</span></p>
             </div>
         <!-- Action buttons -->
-            <a href="{% url 'checkout' %}" class="btn btn-blue basket-buttons">
+            <a href="{% url 'checkout' %}" class="btn btn-blue basket-buttons" aria-label="Link to checkout">
                 <span>Go to secure checkout</span>
             </a>
-            <a href="{% url 'products' %}">
+            <a href="{% url 'products' %}" aria-label="Link back to products">
                 <button type="button" class="btn btn-grey basket-buttons">Continue shopping</button>
             </a>
         </div>
     </div>
-
-  
 </div>
-
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-
-<!-- Used from Boutique Ado -->
+<!-- Used from Boutique Ado, details in README -->
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
