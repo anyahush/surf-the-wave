@@ -8,26 +8,25 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
-<!-- Layout and styling used from Boutique Ado -->
+<!-- Layout and styling modified from Boutique Ado, details in README -->
 <div class="container">
     <div class="row">
         <div class="col">
             <h2>Thank you</h2>
-            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }} </strong>
+            <p>Your order information is below. A confirmation email will be sent to {{ order.email }}.
             </p>
         </div>
     </div>
     <div class="row">
+        <!-- Order summary information -->
         <div class="col-12 col-lg-7">
-            <div class="order-confirmation-wrapper p-2 border">
+            <div class="p-2 border">
                 <div class="row">
                     <div class="col">
                         <small class="text-muted mt-2">Order Info:</small>
@@ -55,11 +54,14 @@
                     </div>
                 </div>
                 <div class="row">
+                    <!-- Iterate through purchased items -->
                     {% for item in order.lineitems.all %}
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="small">{{ item.product.name }} {% if item.product_size %} Size:
-                                {{ item.product_size|upper }}{% endif %}
+                            <p class="small">{{ item.product.name }} 
+                                {% if item.product_size %}
+                                Size: {{ item.product_size|upper }}
+                                {% endif %}
                             </p>
                         </div>
                         <div class="col-12 col-md-8">
@@ -75,7 +77,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Full Name</p>
+                        <p>Full Name:</p>
                     </div>
                     <div class="col-12 col-md-8">
                         <p class="float-custom">{{ order.full_name }}</p>
@@ -83,7 +85,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Phone Number</p>
+                        <p>Phone Number:</p>
                     </div>
                     <div class="col-12 col-md-8">
                         <p class="float-custom">{{ order.phone_number }}</p>
@@ -91,15 +93,25 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Address 1</p>
+                        <p>Address 1:</p>
                     </div>
                     <div class="col-12 col-md-8">
                         <p class="float-custom">{{ order.street_address1 }}</p>
                     </div>
                 </div>
+                {% if order.street_address2 %}
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Town or City</p>
+                        <p>Address 2:</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="float-custom">{{ order.street_address2 }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>Town or City:</p>
                     </div>
                     <div class="col-12 col-md-8">
                         <p class="float-custom">{{ order.town_or_city }}</p>
@@ -107,7 +119,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>County</p>
+                        <p>County:</p>
                     </div>
                     <div class="col-12 col-md-8">
                         <p class="float-custom">{{ order.county}}</p>
@@ -115,7 +127,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Postcode</p>
+                        <p>Postcode:</p>
                     </div>
                     <div class="col-12 col-md-8">
                         <p class="float-custom">{{ order.postcode }}</p>
@@ -123,7 +135,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Country</p>
+                        <p>Country:</p>
                     </div>
                     <div class="col-12 col-md-8">
                         <p class="float-custom">{{ order.country }}</p>
@@ -136,39 +148,39 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Order Total</p>
+                        <p>Order Total:</p>
                     </div>
                     <div class="col-12 col-md-8">
-                        <p class="float-custom">{{ order.order_total }}</p>
+                        <p class="float-custom">£{{ order.order_total }}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Delivery</p>
+                        <p>Delivery:</p>
                     </div>
                     <div class="col-12 col-md-8">
-                        <p class="float-custom">{{ order.delivery_cost }}</p>
+                        <p class="float-custom">£{{ order.delivery_cost }}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>Grand Total</p>
+                        <p class="custom-size">Total including VAT:</p>
                     </div>
                     <div class="col-12 col-md-8">
-                        <p class="float-custom">{{ order.grand_total }}</p>
+                        <p class="float-custom">£{{ order.grand_total }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
+        <!-- Action buttons -->
         <div class="col-12 col-lg-7 text-center mt-4">
-            <a href="{% url 'blogs' %}" class="btn btn-sm btn-grey action-buttons">Check out our latest blogs</a>
-            <a href="{% url 'products' %}" class="btn btn-sm btn-blue action-buttons">Continue shopping</a>
+            <a href="{% url 'blogs' %}" aria-label="Link to blogs page" class="btn btn-sm btn-grey action-buttons">Check out our latest blogs</a>
+            <a href="{% url 'products' %}" aria-label="Link to products page" class="btn btn-sm btn-blue action-buttons">Continue shopping</a>
         </div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block postloadjs %}

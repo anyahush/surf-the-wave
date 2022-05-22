@@ -8,9 +8,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-
-        </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
@@ -23,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <!-- Form to complete order -->
+        <!-- Order form -->
         <div class="col-12 col-lg-6">
             <p>Fill in this form to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -62,9 +60,10 @@
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
+                <!-- Action buttons -->
                 <div class="mt-3">
                     <button id="submit-button" class="btn btn-blue btn basket-buttons">Complete order</button>
-                    <a href="{% url 'view_basket' %}">
+                    <a href="{% url 'view_basket' %}" aria-label="Back to basket page">
                         <button type="button" class="btn btn-grey btn basket-buttons">Back to basket</button>
                     </a>
                     <p class="small text-danger">Your card will be charged £{{ grand_total|floatformat:2 }}</p>
@@ -90,7 +89,6 @@
                             <h4 id="basket-item-title">{{ item.product.name }}</h4>
                         </div>
                         <div class="col-md-12 col-lg-6">
-                            
                             <span class="caption">Size: {% if item.product.has_sizes %}
                                 {{ item.size|upper }}
                                 {% else %}
@@ -106,6 +104,7 @@
             {% endfor %}
             <hr>
             <div class="row">
+                <!-- Delivery and cost summary -->
                 <div class="col">
                     <div class="promo-div">
                         <p>Free UK delivery on orders over £100</p>
@@ -123,15 +122,14 @@
         </div>
     </div>
 </div>
+<!-- Loading overlay when payment processing -->
 <div id="loading-overlay">
     <h1 class="loading-spinner text-light">
         <span>
             <i class="fa-solid fa-3x fa-spinner fa-spin-pulse"></i>
         </span>
-        
     </h1>
 </div>
-
 {% endblock %}
 
 {% block postloadjs %}
