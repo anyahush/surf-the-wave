@@ -73,8 +73,10 @@ Deployed website can be viewed [here](https://surf-the-wave.herokuapp.com/).
     * I want to be able to leave reviews on products.
     * I want to be able to edit or delete my reviews.
     * I want to be able to leave comments on the blog posts.
+    * I want to be able to edit or delete comments on blog posts.
     * I want to be able to delete my account.
-    * I want to be able to change my password if I forget it.
+    * I want to be able to change my password to keep my account secure.
+    * I want to be able to reset my password if I forget it.
 
 - As a returning visitor:
     * I want to be able to find social media links.
@@ -89,9 +91,9 @@ Deployed website can be viewed [here](https://surf-the-wave.herokuapp.com/).
     * I want to be able to edit or delete existing blog posts.
     * I want to be able to delete blog comments left by users. 
     * I want to be able to delete user reviews left on products.
+    * I want to be able to access the Django admin portal easily
     * I want to be able to delete a user.
     * I want to be able to make another user admin.
-    * I want to inform users of products that are out of stock, and prevent users from purchasing them.
 
 
 
