@@ -1,58 +1,58 @@
     <div class="collapse navbar-collapse" id="main-nav">
         <ul class="navbar-nav">
             <li class="nav-item d-lg-none d-lg-block">
-                <a class="nav-link nav-options" href="{% url 'home' %}">Home</a>
+                <a class="nav-link nav-options" href="{% url 'home' %}" aria-label="Link to home page">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link nav-options" href="#" id="mens-products" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link nav-options" href="#" aria-label="Link to display mens dropdown menu" id="mens-products" role="button" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Mens
                 </a>
                 <div class="dropdown-menu" aria-labelledby="mens-products">
-                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_wetsuits,mens_footwear,mens_accessories">All Menswear</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_wetsuits">Wetsuits</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_footwear">Footwear</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_accessories">Accessories</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_wetsuits,mens_footwear,mens_accessories" aria-label="Link to all menswear page">All Menswear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_wetsuits" aria-label="Link to mens wetsuits page">Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_footwear" aria-label="Link to mens footwear page">Footwear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mens_accessories" aria-label="Link to mens accessories page">Accessories</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link nav-options" href="#" id="ladies-products" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link nav-options" href="#" aria-label="Link to display ladies dropdown menu" id="ladies-products" role="button" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Ladies
                 </a>
                 <div class="dropdown-menu" aria-labelledby="ladies-products">
-                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_wetsuits,ladies_footwear,ladies_accessories">All Ladieswear</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_wetsuits">Wetsuits</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_footwear">Footwear</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_accessories">Accessories</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_wetsuits,ladies_footwear,ladies_accessories" aria-label="Link to all ladieswear page">All Ladieswear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_wetsuits" aria-label="Link to all ladies wetsuits page">Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_footwear" aria-label="Link to all ladies footwear page">Footwear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ladies_accessories" aria-label="Link to all ladies accessories page">Accessories</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link nav-options" href="#" id="kids-products" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link nav-options" href="#" aria-label="Link to display kids dropdown menu" id="kids-products" role="button" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Kids
                 </a>
                 <div class="dropdown-menu" aria-labelledby="kids-products">
-                    <a class="dropdown-item" href="{% url 'products' %}?category=boys_wetsuits,girls_wetsuits,kids_footwear,kids_accessories">All Kidswear</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=boys_wetsuits">Boys Wetsuits</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=girls_wetsuits">Girls Wetsuits</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=kids_footwear">Footwear</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=kids_accessories">Accessories</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=boys_wetsuits,girls_wetsuits,kids_footwear,kids_accessories" aria-label="Link to all kidwear page">All Kidswear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=boys_wetsuits" aria-label="Link to all boys wetsuits page">Boys Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=girls_wetsuits" aria-label="Link to all girls wetsuits page">Girls Wetsuits</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=kids_footwear" aria-label="Link to all kids footwear page">Footwear</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=kids_accessories" aria-label="Link to all kids accessories page">Accessories</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link nav-options" href="#" id="surf-products" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link nav-options" href="#" aria-label="Link to surf dropdown menu" id="surf-products" role="button" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Surf
                 </a>
                 <div class="dropdown-menu" aria-labelledby="surf-products">
-                    <a class="dropdown-item" href="{% url 'products' %}?category=surfboards,surf_equipment">All Surf Kit</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=surfboards">Surfboards</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=surf_equipment">Surf Essentials</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=surfboards,surf_equipment" aria-label="Link to all surf kit page">All Surf Kit</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=surfboards" aria-label="Link to all surfboards page">Surfboards</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=surf_equipment" aria-label="Link to all surf equipment page">Surf Equipment</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-options" href="{% url 'blogs' %}" id="blog-management" role="button">
+                <a class="nav-link nav-options" href="{% url 'blogs' %}" id="blog-management" role="button" aria-label="Link to blogs page">
                     Blogs
                 </a>
             </li>
