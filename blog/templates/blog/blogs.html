@@ -21,11 +21,11 @@
         </div>
         <!-- Button to allow superusers to create blog posts -->
         {% if request.user.is_superuser %}
-            <div class="col-12 mt-2 text-center">
-                <a href="{% url 'add_blog' %}" aria-label="Link to add blog page">
-                    <button class="btn btn-grey">Add Blog</button>
-                </a>
-            </div>
+        <div class="col-12 mt-2 text-center">
+            <a href="{% url 'add_blog' %}" aria-label="Link to add blog page">
+                <button class="btn btn-grey">Add Blog</button>
+            </a>
+        </div>
         {% endif %}
         <!-- Iterate through blog posts and display -->
         {% if blog|length > 0 %}
@@ -43,30 +43,10 @@
                     {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_blog' post.id %}" aria-label="Link to edit blog page">Edit</a>
-                        <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteBlog" aria-label="Link to deletion confirmation modal">Delete</a>
+                        <button type="button" data-bs-toggle="modal" class="btn btn-sm text-danger"
+                            data-bs-target="#deleteBlog" data-id="{{ post.id }}"
+                            data-url="{% url 'delete_blog' post.id %}">Delete</button>
                     </small>
-                    <!-- Deletion confirmation Bootstrap modal -->
-                    <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="text-center">Are you sure you want to delete {{ post.blog_title }} blog?</p>
-                                  </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_blog' post.id %}" aria-label="Link to delete blog">
-                                        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     {% endif %}
                 </a>
                 {% else %}
@@ -77,41 +57,50 @@
                     </div>
                     <h3 class="blog-info">{{ post.blog_title }}</h3>
                     <p class="blog-info">{{ post.date_created }}</p>
-                     <!-- Superuser edit and delete links -->
+                    <!-- Superuser edit and delete links -->
                     {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_blog' post.id %}" aria-label="Link to edit blog page">Edit</a>
-                        <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteBlog" aria-label="Link to deletion confirmation modal">Delete</a>
+                        <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal" data-bs-target="#deleteBlog"
+                            aria-label="Link to deletion confirmation modal">Delete</a>
                     </small>
-                    <!-- Deletion confirmation Bootstrap modal -->
-                    <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="text-center">Are you sure you want to delete {{ post.blog_title }} blog?</p>
-                                  </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_blog' post.id %}" aria-label="Link to delete blog">
-                                        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     {% endif %}
                 </a>
                 {% endif %}
             </div>
             {% endfor %}
-        {% endif %}
+            {% endif %}
+        </div>
+        <!-- Deletion confirmation Bootstrap modal -->
+        <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Are you sure you want to delete this blog? (ID: <span
+                                id="postId"></span>)</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
+                        <a href="" id="actualDeleteBtn" aria-label="Link to delete blog">
+                            <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $('#deleteBlog').on('shown.bs.modal', function (event) {
+        $("#postId").text($(event.relatedTarget).data('id'));
+        $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
+    })
+</script>
 {% endblock %}
