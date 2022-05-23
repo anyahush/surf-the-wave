@@ -46,7 +46,7 @@
                                 </p>
                                 <p class="caption">{% if item.product.sku %}SKU: {{ item.product.sku|upper }}{% endif %}</p>
                             </div>
-                            <div class="col-8 col-lg-3">
+                            <div class="col-8 col-lg-4">
                                 <!-- Modified from Batch Coffe details in README -->
                                 <form class="form update-form" action="{% url 'adjust_basket' item.item_id %}" method="POST">
                                     {% csrf_token %}
@@ -116,7 +116,7 @@
                                      </div>
                                  </div>
                             </div>
-                            <div class="col-12 col-lg-2 mt-2">
+                            <div class="col-12 col-xl-2 mt-2">
                                 <p>£{{ item.product.price }}</p>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
             {% endif %}
         </div>
         <!-- Basket summary -->
-        <div class="col-sm-12 col-md-5 col-lg-4">
+        <div class="col-sm-12 col-md-6 col-xl-4">
             <div class="promo-div">
                 <p>Free UK delivery on orders over £100</p>
                 <p>Order by 9pm for Next Day Delivery</p>
