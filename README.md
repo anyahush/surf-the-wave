@@ -158,7 +158,10 @@ During the initial strategy planning, the opportunities of the site were determi
 
 ## Structure Plane 
 
-### Database 
+### Database
+The database for this project was designed using [Lucid](https://lucid.co/). The illustration belows displays the relationships between the models in this database.
+
+![Database structure](readme/assets/readme-images/db-structure.png)
 
 ## Skeleton Plane
 
