@@ -4,11 +4,12 @@ Thank you for contacting Surf the Wave.
 
 This email is a confirmation of your enquiry.
 
-Your order was purchased on {{ order.enquiry_sent }}.
+Your enquiry was sent on {{ contact.enquiry_sent }}.
 
 We will get back to you as soon as possible, to {{ contact.email_from }}.
 
-Below is a copy of your enquiry.
+Below is a copy of your enquiry:
+
 {{ contact.enquiry }}
 
 Happy surfing!
