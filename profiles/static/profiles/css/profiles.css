@@ -39,4 +39,10 @@
     text-transform: uppercase;
 }
 
+.nav-link.profile-buttons:hover {
+    background-color: #feb751 !important;
+    color: #fff !important;
+    border-color: #feb751 !important;
+}
+
 
