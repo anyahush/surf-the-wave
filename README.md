@@ -235,15 +235,25 @@ All fonts were chosen from [Google Fonts](https://fonts.google.com/).
 ### Frameworks and Libraries
 
 - [Am I Responsive?](http://ami.responsivedesign.is/) was used to create the mock ups.
+- [AWS](https://aws.amazon.com/) was used to host static and media files required for the site.
 - [Balsamiq](https://balsamiq.com/) was used to create the wireframes.
 - [Bootstrap 5.1.3](https://getbootstrap.com/) was used to contribute to responsiveness and styling of the site.
+- [Compress JPEG](https://compressjpeg.com/) was used to compress images before uploading.
+- [Coolors](https://coolors.co/) was used to choose and match colours.
+- [Django Secret Key Generator](https://djecrety.ir/) was used to generate a random secret key.
 - [Font Awesome](https://fontawesome.com/) was used for button icons.
 - Git was used for version control ad to push code to GitHub.
 - [GitHub](https://github.com/) was used to store the repository.
 - [GitPod](https://www.gitpod.io/) was used as the IDE to develop the project.
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) used throughout for design and development.
 - [Google Fonts](https://fonts.google.com/) were used to select fonts for the site.
+- [Heroku](https://www.heroku.com/) used to deploy the site.
+- [jQuery](https://jquery.com/) was used to support some Bootstrap elements.
 - [Lambdatest](https://www.lambdatest.com/) was used to check browser compatibility.
 - [Online JavaScript Beautifier](https://beautifier.io/) was used to standardise HTML, CSS and JavaScript files.
+- [Postgres](https://www.postgresql.org/) used to host database.
+- [Stripe](https://stripe.com/en-gb) was used for online payment system.
+- [SKU Generator](https://www.tradegecko.com/free-tools/sku-generator) was used to generate SKU numbers for products.
 
 
 
