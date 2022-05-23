@@ -205,6 +205,10 @@ Following this, I used [Coolers](https://coolors.co/) to create a palette of com
 
 ![Colour palette](readme/assets/readme-images/colour-palette.png)
 
+During development and testing, and following accessibility guidelines the Cornflower Blue was replaced with Azure, to ensure readability. Additionally the colour #4D5061 wasn't used as it wasn't required.
+
+![Azure colour](readme/assets/readme-images/azure.png)
+
 
 ### Images
 
@@ -214,7 +218,8 @@ Initially a logo, created using [Adobe](https://www.adobe.com/express/create/log
 
 ### Typography
 
-To ensure easy reading, consistency and a good user experience, I have chosen Akshar font from [Google Fonts](https://fonts.google.com/).
+To ensure easy reading, consistency and a good user experience, I have chosen 'Akshar' font for content headings, 'Inter' for the main body of text and 'Source Sans Pro' for the site logo.
+All fonts were chosen from [Google Fonts](https://fonts.google.com/).
 
 ## Technologies
 
