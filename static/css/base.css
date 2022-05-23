@@ -203,6 +203,12 @@ footer a:hover {
     color: #feb751 !important;
 }
 
+.footer-titles {
+    text-transform: uppercase;
+    font-family: 'Akshar';
+    font-size: 1.5rem;
+}
+
 /* Media Queries */
 @media (max-width: 425px) {
     .action-buttons {
