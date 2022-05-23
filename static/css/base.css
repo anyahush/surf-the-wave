@@ -2,6 +2,7 @@
 body {
     font-family: 'Inter';
     color: #30323d;
+    position: relative;
 }
 
 h2,
@@ -14,6 +15,10 @@ h4 {
 .caption {
     color: #666;
     text-transform: revert;
+}
+
+.custom-margin {
+    margin-bottom: 15rem;
 }
 
 .modal-header {
@@ -181,6 +186,8 @@ footer {
     background-color: #30323d;
     color: #fff;
     padding: 20px;
+    position: absolute;
+    width: 100%;
 }
 
 footer a {

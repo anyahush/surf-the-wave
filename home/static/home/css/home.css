@@ -62,6 +62,10 @@
     color: #fff;
 }
 
+#custom-margin {
+    margin-bottom: 15rem;
+}
+
 /* Media Queries */
 @media (max-width: 425px) {
     .gallery-sm-img {
