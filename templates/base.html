@@ -7,6 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="surf, wetsuit, surfboard">
+    <meta name="author" content="Anya McDonald">
+    <meta name="description" content="Surf shop selling high quality surfboards, equipment and wetsuits">
     {% endblock %}
 
     {% block corecss %}
@@ -62,7 +65,7 @@
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <div class="input-group-append">
-                            <button type="submit" class="form-control border border-end-0">
+                            <button type="submit" class="form-control border border-end-0" aria-label="Click to search site for products">
                                 <span>
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -183,7 +186,7 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
-                        <h4>Follow us</h4>
+                        <p class="footer-titles">Follow us</p>
                     </div>
                 </div>
                 <div class="row ">
@@ -212,7 +215,7 @@
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
                         <a href="{% url 'contact' %}" aria-label="Link to go to contact form">
-                            <h4>Contact us</h4>
+                            <p class="footer-titles">Contact us</p>
                         </a>
                     </div>
                 </div>
