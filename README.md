@@ -105,11 +105,11 @@ During the initial strategy planning, the opportunities of the site were determi
 
 #### Design
 - Responsive design
-- Accessible
 - Easy navigation throughout, nav links clearly labelled or icons used in navbar. Sidenav used for smaller devices.
 - Site logo - returns user to the home page
 - Nav link options will change depending on status of user eg. unregistered, registered or admin
 - On the home page a selection of photos will be displayed that link to different sections of the site, aimed to promote certain products or lines that are in season
+- On larger screens a hover effect over some images will display an image and call to action button. On smaller screens this will be displayed at all times.
 
 #### Products
 - Users are able to search and filter products depending on what they are looking for
@@ -117,14 +117,13 @@ During the initial strategy planning, the opportunities of the site were determi
 - Users can update or delete products from shopping basket
 - Users can securely purchase product(s) from the site
 - Order confirmation will be displayed to user and subsequent confirmation email sent.
-- If a product is 'Out of Stock', this will be displayed to the user and the add to basket button will be hidden
 - Registered users can leave reviews on products
 - Registered users can edit or delete their reviews
 
 #### Register, Login and Logout
 - Users are able to register for an account
 - Registered users can login and logout of account
-- Users will receive confirmation emails for registering, order summary and deleting account
+- Users will receive confirmation emails for registering, order summary and contact enquiries.
 - Registered users can change their password if forgotten
 - Registered users can view profile containing personal information and order history
 - Registered users can save and update personal information on their profile
@@ -153,7 +152,8 @@ During the initial strategy planning, the opportunities of the site were determi
 
 - A wishlist section for logged in users to save products for future purchase
 - Expand further product lines and product ranges
-- A rating and comment section for products
+- A rating option on product reviews that generated average ratings that would be displayed on the product information
+- Out of stock notifications on product detail when a product had run out
 
 
 ## Structure Plane 
