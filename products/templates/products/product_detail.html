@@ -19,7 +19,7 @@
                     <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
                 </a>
                 {% else %}
-                <a href="{{ product.image.url }}" target="_blank" aria-label="Link to open default image in new page">
+                <a href="{{ MEDIA_URL }}noimage.png" target="_blank" aria-label="Link to open default image in new page">
                     <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ product.name }}">
                 </a>
                 {% endif %}
