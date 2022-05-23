@@ -20,7 +20,8 @@
         <div class="col text-center">
             <h2 class="mb-3">Products</h2>
             {% for c in current_categories %}
-            <a href="{% url 'products' %}?category={{ c.name }}" aria-label="Link to category products page" class="category-badge text-decoration-none">
+            <a href="{% url 'products' %}?category={{ c.name }}" aria-label="Link to category products page"
+                class="category-badge text-decoration-none">
                 <span class="p-3 m-1 badge bg-light text-dark custom-badge">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
@@ -31,8 +32,7 @@
             <div class="row mb-2">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                     <div class="sort-select-wrapper w-50">
-                        <select id="sort-selector"
-                            class="custom-select border">
+                        <select id="sort-selector" class="custom-select border">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort
                                 by...</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>
@@ -55,7 +55,8 @@
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="small"><a href="{% url 'products' %}" aria-label="Link to products page" id="all-products" >All Products</a> | </span>
+                        <span class="small"><a href="{% url 'products' %}" aria-label="Link to products page"
+                                id="all-products">All Products</a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for
                         "{{ search_term }}"{% endif %}
@@ -92,16 +93,21 @@
                                     <!-- Superuser edit and delete links -->
                                     {% if request.user.is_superuser %}
                                     <small>
-                                        <a href="{% url 'edit_product' product.id %}" aria-label="Link to edit product page">
-                                            Edit
+                                        <a href="{% url 'edit_product' product.id %}"
+                                            aria-label="Link to edit product page">
+                                            <button class="btn btn-sm text-primary">
+                                                Edit
+                                            </button>
                                         </a>
-                                        <a href="#deleteProduct" class="text-danger" data-bs-toggle="modal"
-                                            data-bs-target="#deleteProduct" aria-label="Link to deletion confirmation modal">
+                                        <button type="button" data-bs-toggle="modal" class="text-danger btn btn-sm"
+                                            data-bs-target="#deleteModal" data-id="{{ product.id }}"
+                                            data-url="{% url 'delete_product' product.id %}"
+                                            aria-label="Link to deletion confirmation modal">
                                             Delete
-                                        </a>
+                                        </button>
                                     </small>
                                     <!-- Deletion confirmation Bootstrap modal -->
-                                    <div class="modal fade" id="deleteProduct" tabindex="-1"
+                                    <div class="modal fade" id="deleteModal" tabindex="-1"
                                         aria-labelledby="Delete product confirmation modal" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
@@ -116,7 +122,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-sm btn-grey"
                                                         data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="{% url 'delete_product' product.id %}" aria-label="Link to delete product">
+                                                    <a href="" id="actualDeleteBtn" aria-label="Link to delete product">
                                                         <button type="button"
                                                             class="btn btn-sm btn-danger">Delete</button>
                                                     </a>
@@ -160,6 +166,12 @@
 
             window.location.replace(currentUrl);
         }
+    })
+    
+    // Used from Stack Overflow, details in README
+    $('#deleteModal').on('shown.bs.modal', function (event) {
+        $("#productId").text($(event.relatedTarget).data('id'));
+        $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
     })
 </script>
 {% endblock %}
