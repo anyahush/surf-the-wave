@@ -229,6 +229,13 @@
 
 
 ### Responsiveness
+The responsiveness was tested using [Mobile Compatibility Tester]() and [Google Chrome Developer Tools]().
+
+The Mobile Compatibility tester returned good results for all pages that could be tested. Pages such as profile page, add product and create review, that required user authentication, could not be tested with this site. Responsiveness testing was carried out with Chrome DevTools. Additionally, real world testing was carried out on my iPhone 13, macBook Pro 13" and Lenovo PC screen (2500px) and Lenovo laptop 11".
+
+Below are the results are displayed.
+
+![Responsiveness Table](readme/assets/testing-images/responsiveness-table.png)
 
 ### Browser Compatibility
 
