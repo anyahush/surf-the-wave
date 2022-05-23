@@ -233,6 +233,164 @@
 ### Browser Compatibility
 
 ### Performance
+To test performance across various areas, I used Google Chrome Developer Lighthouse Tools. Some of the performance scores are not as high as I would like. There are a few areas that caused these lower scores:
+- Stripe reccomends having their documentation on every page
+- Eliminate render blocking- this was caused by my CSS file and other libraries such as Font Awesome. These have been left in the head
+- Serve images in gen formats- this is not something I was aware of. My images are in png format, but I will know for future development.
+- Use HTTP/2- this is not something I was sure how to control. 
+
+#### Home Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/home-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/home-desktop.png)
+
+#### Products Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/products-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/products-desktop.png)
+
+#### Product Detail Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/product-detail-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/product-detail-deskptop.png)
+
+#### Add Product Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/add-product-mbile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/add-blog-desktop.png)
+
+#### Edit Product Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/edit-review-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/edit-product-desktop.png)
+
+#### Create Review Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/create-review-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/create-review-desktop.png)
+
+#### Edit Review Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/edit-review-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/edit-review-desktop.png)
+
+#### Basket Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/basket-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/basket-desktop.png)
+
+#### Checkout Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/checkout-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/checkout-desktop.png)
+
+#### Checkout Success Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/checkout-success-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/checkout-success-desktop.png)
+
+#### Contact Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/contact-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/contact-desktop.png)
+
+#### Profile Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/profile-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/profile-desktop.png)
+
+#### Blogs Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/blogs-page-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/blogs-page-desktop.png)
+
+#### Blog Detail Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/blog-detail-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/blog-detail-desktop.png)
+
+#### Add Blog Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/add-blog-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/add-blog-desktop.png)
+
+#### Edit Blog Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/edit-blog-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/edit-blog-desktop.png)
+
+#### Edit Blog Comment Page
+- Mobile
+
+![](readme/assets/lighthouse-testing/edit-comment-mobile.png)
+
+- Desktop
+
+![](readme/assets/lighthouse-testing/edit-comment-desktop.png)
 
 ### Manual Testing
 
