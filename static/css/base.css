@@ -200,7 +200,7 @@ footer h4 {
 }
 
 footer a:hover {
-    color: #feb751;
+    color: #feb751 !important;
 }
 
 /* Media Queries */
