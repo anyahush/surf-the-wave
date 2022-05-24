@@ -145,7 +145,7 @@
                                 <div class="input-group">
                                     <!-- Quantity selector -->
                                     <select class="form-control form-select mx-auto" name="quantity"
-                                        value="{{ item.quantity }}" data-product_id="{{ item.product.id }}"
+                                        data-product_id="{{ item.product.id }}"
                                         id="id_qty_{{ item.product.id }}">
                                         <option value="1" {% if item.quantity == 1 %}selected{% endif %}>1
                                         </option>
@@ -213,6 +213,10 @@
                             <tr class="d-md-none">
                                 <th scope="col">Comment</th>
                                 <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -246,7 +250,7 @@
                     </table>
                     <!-- Deletion confirmation Bootstrap modal -->
                     <div class="modal fade" id="deleteReview" tabindex="-1"
-                        aria-labelledby="Delete comment confirmation modal" aria-hidden="true">
+                        aria-labelledby="reviewId" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -260,8 +264,8 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-sm btn-grey"
                                         data-bs-dismiss="modal">Cancel</button>
-                                    <a href="" id="actualDeleteBtn" aria-label="Link to delete review">
-                                        <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                                    <a href="" id="actualDeleteBtn" class="btn btn-sm btn-danger" aria-label="Link to delete review">
+                                        Delete
                                     </a>
                                 </div>
                             </div>
@@ -272,8 +276,8 @@
                 <div class="col-12 mt-4">
                     {% if not previous_review %}
                     {% if user.is_authenticated %}
-                    <a href="{% url 'create_review' product.id %}">
-                        <button class="btn btn-sm btn-grey">Leave a review</button>
+                    <a href="{% url 'create_review' product.id %}" class="btn btn-sm btn-grey">
+                        Leave a review
                     </a>
                     {% endif %}
                     {% endif %}
@@ -288,7 +292,7 @@
 {% block postloadjs %}
 {{ block.super }}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
