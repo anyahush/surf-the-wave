@@ -22,7 +22,6 @@ class ProductForm(forms.ModelForm):
             'description': 'Product Description',
             'price': 'Price',
             'image_url': 'Image URL',
-            'image': 'Image upload',
         }
 
         categories = Category.objects.all()
@@ -31,7 +30,7 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'category' and field != 'has_sizes':
+            if field != 'category' and field != 'has_sizes' and field != 'image':
                 self.fields[field].label = labels[field] + ""
                 if self.fields[field].required:
                     placeholder = f'{labels[field]} *'
@@ -40,3 +39,4 @@ class ProductForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
         self.fields['category'].label = 'Category'
         self.fields['has_sizes'].label = 'Has Sizes'
+        self.fields['image'].label = 'Image Upload'
