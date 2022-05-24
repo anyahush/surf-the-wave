@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -22,18 +21,24 @@ def create_review(request, product_id):
         ).exists()
         if previous_review:
             # If previous review error message displayed
-            messages.error(request, f'You have already left a comment for {product.name}')
+            messages.error(request,
+                           f'You have already left a comment'
+                           f'for {product.name}')
         else:
             form = ReviewForm(request.POST)
             if form.is_valid():
                 review = form.save(commit=False)
-                review.author = User.objects.get(username=request.user.username)
+                review.author = User.objects.get(
+                    username=request.user.username)
                 review.product = product
                 review.save()
                 messages.success(request, 'Successfully added review!')
-                return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
+                return redirect(reverse(
+                    'product_detail', kwargs={"product_id": product.id}))
             else:
-                messages.error(request, 'Failed to add review. Please ensure the form is valid')
+                messages.error(request,
+                               'Failed to add review.'
+                               'Please ensure the form is valid')
     else:
         form = ReviewForm()
 
@@ -57,10 +62,14 @@ def edit_product_review(request, review_id):
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Review successfully updated for {product.name}')
-            return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
+            messages.success(request,
+                             f'Review successfully updated for {product.name}')
+            return redirect(reverse(
+                'product_detail', kwargs={"product_id": product.id}))
         else:
-            messages.error(request, 'Failed to updated review. Please ensure the form is valid')
+            messages.error(request,
+                           'Failed to updated review.'
+                           'Please ensure the form is valid')
     else:
         form = ReviewForm(instance=review)
         messages.info(request, f'You are editing a review for {product.name}')
@@ -84,8 +93,10 @@ def delete_product_review(request, review_id):
 
     if review:
         review.delete()
-        messages.success(request, f'Review for {product.name} was successfully deleted')
+        messages.success(request,
+                         f'Review for {product.name} was successfully deleted')
     else:
         messages.error(request, f'Unable to delete review for {product.name}')
 
-    return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
+    return redirect(reverse(
+        'product_detail', kwargs={"product_id": product.id}))
