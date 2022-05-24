@@ -51,6 +51,19 @@ JavaScript validation was carried out on all JavaScript files and JavaScript cod
 
 After correcting the semi-colons, all JavaScript passed validation.
 
+#### Python Validation
+
+Python validation was carried out on all Python files using [PEP8 Validator](http://pep8online.com/). 
+Initial errors returned were:
+* Lines too long
+* Indentation errors
+* Missing blank space at end of file
+* Missing docstrings
+
+Once these were resolved all Python files returned a successful validation result. 
+
+![](readme/assets/testing-images/python-validation.png)
+
 
 ### Testing User Stories
 
