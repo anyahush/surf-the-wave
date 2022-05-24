@@ -115,7 +115,7 @@
                 {% endfor %}
                 <!-- Deletion confirmation Bootstrap modal -->
                 <div class="modal fade" id="deleteModal" tabindex="-1"
-                    aria-labelledby="Delete product confirmation modal" aria-hidden="true">
+                    aria-labelledby="productId" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -130,8 +130,8 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-sm btn-grey"
                                     data-bs-dismiss="modal">Cancel</button>
-                                <a href="" id="actualDeleteBtn" aria-label="Link to delete product">
-                                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                                <a href="" id="actualDeleteBtn" class="btn btn-sm btn-danger" aria-label="Link to delete product">
+                                    Delete
                                 </a>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     // Sorts products selector 
     $('#sort-selector').change(function () {
         var selector = $(this);
