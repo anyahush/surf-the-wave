@@ -295,7 +295,7 @@
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
-    })
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
@@ -312,12 +312,12 @@
             .done(function () {
                 location.reload();
             });
-    })
+    });
 
     // Used from Stack Overflow, details in README
     $('#deleteReview').on('shown.bs.modal', function (event) {
         $("#reviewId").text($(event.relatedTarget).data('id'));
         $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
-    })
+    });
 </script>
 {% endblock %}

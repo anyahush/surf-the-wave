@@ -166,12 +166,12 @@
 
             window.location.replace(currentUrl);
         }
-    })
+    });
 
     // Used from Stack Overflow, details in README
     $('#deleteModal').on('shown.bs.modal', function (event) {
         $("#productId").text($(event.relatedTarget).data('id'));
         $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
-    })
+    });
 </script>
 {% endblock %}
