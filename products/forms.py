@@ -30,7 +30,11 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'category' and field != 'has_sizes' and field != 'image':
+            if (
+                field != 'category' and
+                field != 'has_sizes' and
+                field != 'image'
+            ):
                 self.fields[field].label = labels[field] + ""
                 if self.fields[field].required:
                     placeholder = f'{labels[field]} *'

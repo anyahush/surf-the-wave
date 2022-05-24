@@ -4,6 +4,7 @@ from django.db import models
 class Category(models.Model):
     """ Creates category table in database """
     class Meta:
+        """ Create Meta Data for class table """
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
