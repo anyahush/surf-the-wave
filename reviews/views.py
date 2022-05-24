@@ -22,7 +22,7 @@ def create_review(request, product_id):
         ).exists()
         if previous_review:
             # If previous review error message displayed
-            messages.error(request, 'You have already left a comment for this product')
+            messages.error(request, f'You have already left a comment for {product.name}')
         else:
             form = ReviewForm(request.POST)
             if form.is_valid():
@@ -57,7 +57,7 @@ def edit_product_review(request, review_id):
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Review successfully updated')
+            messages.success(request, f'Review successfully updated for {product.name}')
             return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
         else:
             messages.error(request, 'Failed to updated review. Please ensure the form is valid')
@@ -84,8 +84,8 @@ def delete_product_review(request, review_id):
 
     if review:
         review.delete()
-        messages.success(request, f'Review for {product} was successfully deleted')
+        messages.success(request, f'Review for {product.name} was successfully deleted')
     else:
-        messages.error(request, f'Unable to delete review for {product}')
+        messages.error(request, f'Unable to delete review for {product.name}')
 
     return redirect(reverse('product_detail', kwargs={"product_id": product.id}))
