@@ -20,16 +20,16 @@
             <div class="col-6 offset-1 image-container">
                 <a href="{% url 'products' %}?category=surfboards,surf_equipment" aria-label="Link to products page">
                     <img src="{{ MEDIA_URL }}surfing2-home.jpg" alt="Person surfing at sunset" class="gallery-lg-img image">
-                    <div class="image-grid-hover">
-                        <div class="text">
-                            <h3>Summer ready?</h3>
-                            <span>Check out the latest surf equipment</span>
-                            <div class="mt-2">
-                                <button class="btn btn-sm gallery-btn">Shop now</button>
-                            </div>
+                </a>
+                <div class="image-grid-hover">
+                    <div class="text">
+                        <h3>Summer ready?</h3>
+                        <span>Check out the latest surf equipment</span>
+                        <div class="mt-2">
+                            <a href="{% url 'products' %}?category=surfboards,surf_equipment" class="btn btn-sm gallery-btn">Shop now</a>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             <div class="col-4">
                     <a href="{% url 'products' %}?category=surfboards" aria-label="Link to products page">
@@ -52,16 +52,16 @@
             <div class="col-6 image-container">
                 <a href="{% url 'blogs' %}" aria-label="Link to blogs page">
                     <img src="{{ MEDIA_URL }}surfing-home.jpg" alt="Ocean view from surfboard" class="gallery-lg-img image">
-                    <div class="image-grid-hover">
-                        <div class="text">
-                            <h3>Solo Surfing</h3>
-                            <span>Why don't you browse our latest blogs</span>
-                            <div class="mt-2">
-                                <button class="btn btn-sm gallery-btn">Read now</button>
-                            </div>
+                </a>
+                <div class="image-grid-hover">
+                    <div class="text">
+                        <h3>Solo Surfing</h3>
+                        <span>Why don't you browse our latest blogs</span>
+                        <div class="mt-2">
+                            <a href="{% url 'blogs' %}" class="btn btn-sm gallery-btn">Read now</a>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
