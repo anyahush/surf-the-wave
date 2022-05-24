@@ -22,16 +22,17 @@ class BlogForm(forms.ModelForm):
             'blog_content_two': 'Further Content',
             'blog_content_three': 'Further Content',
             'author': 'Author',
-            'image': 'Image Upload',
         }
         self.fields['blog_title'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            self.fields[field].label = labels[field] + ""
-            if self.fields[field].required:
-                placeholder = f'{labels[field]} *'
-            else:
-                placeholder = labels[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'image':
+                self.fields[field].label = labels[field] + ""
+                if self.fields[field].required:
+                    placeholder = f'{labels[field]} *'
+                else:
+                    placeholder = labels[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields['image'].label = 'Image Upload'
 
 
 class BlogCommentForm(forms.ModelForm):
