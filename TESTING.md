@@ -45,6 +45,12 @@ CSS validation was carried out on all CSS files in the repository using [W3C CSS
 
 ![](readme/assets/testing-images/css-validation.png)
 
+#### JavaScript Validation
+
+JavaScript validation was carried out on all JavaScript files and JavaScript code within HTML files using [JSHint](https://jshint.com/). The only errors to come back initially were missing semi-colons and in one instance, an extra semi-colon. Additionally, some definition issues were raised but these are in relation to using Bootstrap elements.
+
+After correcting the semi-colons, all JavaScript passed validation.
+
 
 ### Testing User Stories
 
