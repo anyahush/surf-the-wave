@@ -28,10 +28,14 @@ def contact(request):
                 user_enquiry.user = user
             user_enquiry.save()
             send_confirmation_email(user_enquiry)
-            messages.success(request, 'Your enquiry has been sent. Check your emails for a confirmation')
+            messages.success(request,
+                             'Your enquiry has been sent.'
+                             'Check your emails for a confirmation')
             return redirect(reverse('home'))
         else:
-            messages.error(request, 'There was an error with your enquiry. Please ensure the form is valid')
+            messages.error(request,
+                           'There was an error with your enquiry.'
+                           'Please ensure the form is valid')
             return redirect(reverse('contact'))
     else:
         if request.user.is_authenticated:

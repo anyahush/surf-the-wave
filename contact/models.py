@@ -11,4 +11,5 @@ class Contact(models.Model):
     email_from = models.EmailField(max_length=254, null=False, blank=False)
     order_number = models.CharField(max_length=254, null=True, blank=True)
     enquiry = models.TextField(null=False, blank=False)
-    enquiry_sent = models.DateField(auto_now_add=True, null=False, blank=False, editable=False)
+    enquiry_sent = models.DateField(
+        auto_now_add=True, null=False, blank=False, editable=False)
