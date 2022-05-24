@@ -56,10 +56,14 @@
 }
 
 .gallery-btn {
-    border: 1px solid #30323d;
     text-transform: uppercase;
     background-color: #30323d;
     color: #fff;
+}
+
+a.gallery-btn:hover {
+    background-color: #feb751;
+    color: #fff !important;
 }
 
 #custom-margin {

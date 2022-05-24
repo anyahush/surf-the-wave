@@ -95,7 +95,6 @@ a {
 button:hover,
 .btn-grey:hover {
     color: #fff !important;
-    border-color: #feb751;
     background-color: #feb751;
 }
 
@@ -114,7 +113,6 @@ button:hover,
 }
 
 .btn-grey {
-    border: 1px solid #30323d;
     background-color: #30323d;
     color: #fff !important;
     border-radius: 0.25rem;
