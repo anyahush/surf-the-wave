@@ -87,34 +87,11 @@
                                 <!-- Allows users to update or remove items -->
                                 <a class="update-link small mt-2 float-start"
                                     aria-label="Will update quantity of item in basket">Update</a>
-                                <a href="#deleteProduct" class="text-danger small mt-2 float-end" data-bs-toggle="modal"
-                                    data-bs-target="#deleteProduct"
-                                    aria-label="Will remove item from basket">Remove</a>
-                                 <!-- Deletion confirmation Bootstrap modal -->
-                                 <div class="modal fade" id="deleteProduct" tabindex="-1"
-                                     aria-labelledby="Delete product confirmation modal" aria-hidden="true">
-                                     <div class="modal-dialog modal-dialog-centered">
-                                         <div class="modal-content">
-                                             <div class="modal-header">
-                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                     aria-label="Close"></button>
-                                             </div>
-                                             <div class="modal-body">
-                                                 <p class="text-center">Are you sure you want to remove {{ item.quantity }} 
-                                                     item(s) of {{ item.product.name }} from your basket?</p>
-                                             </div>
-                                             <div class="modal-footer">
-                                                 <button type="button" class="btn btn-sm btn-grey"
-                                                     data-bs-dismiss="modal">Cancel</button>
-                                                 <a class="remove-item" id="remove_{{ item.item_id }}"
-                                                     data-product_size="{{ item.size }}"
-                                                     aria-label="Will remove quantity of item from basket">
-                                                     <button type="button" class="btn btn-sm btn-danger">Remove</button>
-                                                </a>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
+                                <a class="remove-item text-danger small mt-2 float-end" id="remove_{{ item.item_id }}"
+                                    data-product_size="{{ item.size }}"
+                                    aria-label="Will remove quantity of item from basket">
+                                    Remove
+                               </a>
                             </div>
                             <div class="col-12 col-xl-2 mt-2">
                                 <p>£{{ item.product.price }}</p>
