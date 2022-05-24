@@ -19,6 +19,33 @@
 
 ### Code Validation
 
+#### HTML Validation
+
+HTML Validation was carried out on all pages of the site using [W3C HTML Validator](https://validator.w3.org/nu/). 
+A number of errors came back across the site:
+* Button elements being placed inside anchor links
+* Incorrect aria-labelledby attribute values
+* Documents with two autofocus attributes
+* Number of rows and columns in tables not equal to data provided
+* Unnecessary type attribute in JavaScript script element
+* Value attribute added to select element
+* Placeholders on image upload fields
+
+Once these were amended, the site returns no HTML validation errors. 
+
+Below shows some of the errors present whilst validating.
+
+![](readme/assets/testing-images/html-validation.png)
+
+![](readme/assets/testing-images/html-validation2.png)
+
+#### CSS Validation
+
+CSS validation was carried out on all CSS files in the repository using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). All pages returned successful validation. Two pages returned warnings that the border colour and background colour of button elements were the same. The unncessary border colours were removed, and the warnings subequently resolved.
+
+![](readme/assets/testing-images/css-validation.png)
+
+
 ### Testing User Stories
 
 - As a first time visitor:
