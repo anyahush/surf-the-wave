@@ -43,9 +43,9 @@
                     {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_blog' post.id %}" aria-label="Link to edit blog page">Edit</a>
-                        <button type="button" data-bs-toggle="modal" class="btn btn-sm text-danger"
+                        <a data-bs-toggle="modal" class="btn btn-sm text-danger"
                             data-bs-target="#deleteBlog" data-id="{{ post.id }}"
-                            data-url="{% url 'delete_blog' post.id %}">Delete</button>
+                            data-url="{% url 'delete_blog' post.id %}">Delete</a>
                     </small>
                     {% endif %}
                 </a>
@@ -61,8 +61,9 @@
                     {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_blog' post.id %}" aria-label="Link to edit blog page">Edit</a>
-                        <a href="#deleteBlog" class="text-danger" data-bs-toggle="modal" data-bs-target="#deleteBlog"
-                            aria-label="Link to deletion confirmation modal">Delete</a>
+                        <a type="button" data-bs-toggle="modal" class="btn btn-sm text-danger"
+                            data-bs-target="#deleteBlog" data-id="{{ post.id }}"
+                            data-url="{% url 'delete_blog' post.id %}">Delete</a>
                     </small>
                     {% endif %}
                 </a>
@@ -98,6 +99,7 @@
 
 {% block postloadjs %}
 <script type="text/javascript">
+    // Used from Stack Overflow, details in README
     $('#deleteBlog').on('shown.bs.modal', function (event) {
         $("#postId").text($(event.relatedTarget).data('id'));
         $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
