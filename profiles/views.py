@@ -2,11 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from checkout.models import Order
 from .models import UserProfile
 from .forms import UserProfileForm, UserForm
-
-from checkout.models import Order
 
 
 @login_required
@@ -22,7 +20,8 @@ def profile(request):
             user_form.save()
             messages.success(request, 'Your profile was successfully updated')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid')
+            messages.error(request,
+                           'Update failed. Please ensure the form is valid')
     else:
         form = UserProfileForm(instance=profile)
         user_form = UserForm(instance=request.user)
@@ -42,6 +41,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """ Gets user order history and opens checkout_success """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
