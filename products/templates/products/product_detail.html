@@ -70,6 +70,7 @@
                 <!-- Size dropdown option depending on product type -->
                 <form action="{% url 'add_to_basket' product.id %}" method="POST">
                     {% csrf_token %}
+                    {% if product.has_sizes %}
                     <div class="row form-row mt-4">
                         {% if product.category.name == 'mens_wetsuits' %}
                         <div class="col-sm-12 col-md-7">
@@ -134,6 +135,7 @@
                                 <option value="xl">XL</option>
                             </select>
                         </div>
+                        {% endif %}
                         {% endif %}
                         <div class="col-sm-12 col-md-5">
                             <p class="small">Quantity*</p>
