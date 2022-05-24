@@ -40,7 +40,7 @@ def blog_detail(request, blog_id):
         ).exists()
         if previous_comment:
             # If previous comment error message displayed
-            messages.error(request, 'You have already left a comment for this blog')
+            messages.error(request, f'You have already left a comment for {blog.blog_title}')
         else:
             # If no previous comment new comment saved
             if comment_form.is_valid():
@@ -130,7 +130,7 @@ def delete_blog(request, blog_id):
 
     blog = get_object_or_404(Blog, pk=blog_id)
     blog.delete()
-    messages.success(request, 'Blog successfully deleted')
+    messages.success(request, f'{blog.blog_title} successfully deleted')
     return redirect(reverse('blogs'))
 
 
@@ -171,8 +171,8 @@ def delete_blog_comment(request, comment_id):
 
     if comment:
         comment.delete()
-        messages.success(request, f'Comment for {blog} was successfully deleted')
+        messages.success(request, f'Comment for {blog.blog_title} was successfully deleted')
     else:
-        messages.error(request, f'Unable to delete comment for {blog}')
+        messages.error(request, f'Unable to delete comment for {blog.blog_title}')
 
     return redirect(reverse('blog_detail', kwargs={"blog_id": blog.id}))
