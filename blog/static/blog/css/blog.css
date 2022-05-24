@@ -30,32 +30,6 @@
     color: #30323d;
 }
 
-/* Box shadow effect modified from CSS Tricks */
-.comments p,
-.comments small {
-   padding: 15px;
-  }
-
-.comments {
-    position: relative;
-    height:150px;
-    background:#FFF;
-    margin:40px auto;
-    -webkit-box-shadow: 0px 2px 5px 2px #aaa4a4;
-    -moz-box-shadow: 0px 2px 5px 2px #aaa4a4;
-    box-shadow: 0px 2px 5px 2px #aaa4a4;
-    }
-
-.comments small {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
-
-#edit-comment {
-    display: none;
-}
-
 #id_blog_comment.textarea.form-control {
     height: 120px;
 }
