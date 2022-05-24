@@ -58,7 +58,7 @@
             <!-- Logo -->
             <div class="col-4 my-auto py-1">
                 <a href="{% url 'home' %}" aria-label="Link to home page">
-                    <h1 id="logo">Surf the Wave</h1>
+                    <p class="logo">Surf the Wave</p>
                 </a>
             </div>
             <!-- Searchbar input -->
@@ -86,7 +86,7 @@
                             aria-haspopup="true" aria-expanded="false">
                             <div><i class="fas fa-user fa-lg"></i></div>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="user-desktop-profile-dropdown">
+                        <div class="dropdown-menu" aria-labelledby="user-desktop-profile-dropdown">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'admin:index' %}" aria-label="Link to admin portal"
@@ -106,7 +106,7 @@
                             <a href="{% url 'account_login' %}" aria-label="Link to login page"
                                 class="dropdown-item">Login</a>
                             {% endif %}
-                        </ul>
+                        </div>
                     </li>
                     <!-- Shopping basket icon -->
                     <li class="list-inline-item">
@@ -140,7 +140,7 @@
         <div class="row">
             <nav class="navbar navbar-light navbar-expand-lg">
                 <a href="{% url 'home' %}" aria-label="Link to home page" class="d-lg-none">
-                    <h1 id="logo">Surf the Wave</h1>
+                    <p class="logo">Surf the Wave</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
                     aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -239,7 +239,7 @@
 
     {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
         // Initialising toast code used from Slack, details in README
         let toastElList = [].slice.call(document.querySelectorAll('.toast'))
         let toastList = toastElList.map(function (toastEl) {

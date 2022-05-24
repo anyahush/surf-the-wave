@@ -2,7 +2,7 @@
     <!-- Search icon and search bar input -->
     <li class="dropdown list-inline-item dropstart">
         <a class="nav-link d-block d-lg-none" href="#" aria-label="Link to display search bar" id="mobile-search"
-            type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-search"></i>
         </a>
         <div class="dropdown-menu" id="search-input" aria-labelledby="mobile-search">
@@ -27,7 +27,7 @@
             aria-expanded="false">
             <i class="fas fa-user"></i>
         </a>
-        <ul class="dropdown-menu" aria-labelledby="user-mobile-profile-dropdown">
+        <div class="dropdown-menu" aria-labelledby="user-mobile-profile-dropdown">
             <!-- Nav options dependant on user status -->
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
@@ -41,7 +41,7 @@
             <a href="{% url 'account_signup' %}" aria-label="Link to register page" class="dropdown-item">Register</a>
             <a href="{% url 'account_login' %}" aria-label="Link to login page" class="dropdown-item">Login</a>
             {% endif %}
-        </ul>
+        </div>
     </li>
     <!-- Shopping basket icon -->
     <li class="list-inline-item">

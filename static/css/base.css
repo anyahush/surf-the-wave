@@ -131,11 +131,12 @@ button:hover,
 }
 
 /* Navbar */
-#logo {
+.logo {
     font-family: 'Source Sans Pro';
     color: #2f7deb;
     text-transform: lowercase;
     font-weight: 700;
+    font-size: 3rem;
 }
 
 .nav-options {
@@ -232,6 +233,10 @@ footer a:hover {
 
     input.form-control.search-input {
         font-size: 0.76rem;
+    }
+
+    .logo {
+        font-size: 2.2rem;
     }
 }
 
