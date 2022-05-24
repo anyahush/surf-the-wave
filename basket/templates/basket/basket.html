@@ -103,8 +103,8 @@
             {% else %}
                 <div class="col-12 offset-1 offset-md-2">
                     <p>Your basket is empty</p>
-                    <a href="{% url 'products' %}" aria-label="Link back to products">
-                        <button type="button" class="btn btn-grey">Back to products</button>
+                    <a href="{% url 'products' %}"  class="btn btn-grey" aria-label="Link back to products">
+                        Back to products
                     </a>
                 </div>
             {% endif %}
@@ -133,8 +133,8 @@
             <a href="{% url 'checkout' %}" class="btn btn-blue basket-buttons" aria-label="Link to checkout">
                 <span>Go to secure checkout</span>
             </a>
-            <a href="{% url 'products' %}" aria-label="Link back to products">
-                <button type="button" class="btn btn-grey basket-buttons">Continue shopping</button>
+            <a href="{% url 'products' %}" class="btn btn-grey basket-buttons" aria-label="Link back to products">
+                Continue shopping
             </a>
         </div>
     </div>
@@ -144,7 +144,7 @@
 {% block postloadjs %}
 {{ block.super }}
 <!-- Used from Boutique Ado, details in README -->
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
