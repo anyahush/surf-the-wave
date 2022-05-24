@@ -185,6 +185,6 @@
     $('#deleteComment').on('shown.bs.modal', function (event) {
         $("#commentId").text($(event.relatedTarget).data('id'));
         $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
-    })
+    });
 </script>
 {% endblock %}

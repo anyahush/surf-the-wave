@@ -103,6 +103,6 @@
     $('#deleteBlog').on('shown.bs.modal', function (event) {
         $("#postId").text($(event.relatedTarget).data('id'));
         $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
-    })
+    });
 </script>
 {% endblock %}
