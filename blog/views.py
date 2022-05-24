@@ -5,8 +5,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Blog, BlogComment
 from .forms import BlogForm, BlogCommentForm
 
-# Create your views here.
-
 
 def blogs(request):
     """ A view to render the blogs page """
@@ -40,7 +38,9 @@ def blog_detail(request, blog_id):
         ).exists()
         if previous_comment:
             # If previous comment error message displayed
-            messages.error(request, f'You have already left a comment for {blog.blog_title}')
+            messages.error(request,
+                           f'You have already left a comment'
+                           f'for {blog.blog_title}')
         else:
             # If no previous comment new comment saved
             if comment_form.is_valid():
@@ -51,7 +51,9 @@ def blog_detail(request, blog_id):
                 messages.success(request, 'Comment successfully added!')
                 return redirect(reverse('blog_detail', args=[blog.id]))
             else:
-                messages.error(request, 'Something went wrong. Please ensure your form is valid')
+                messages.error(request,
+                               'Something went wrong.'
+                               'Please ensure your form is valid')
                 return redirect(reverse('blog_detail', args=[blog.id]))
     else:
         comment_form = BlogCommentForm()
@@ -80,7 +82,9 @@ def add_blog(request):
             messages.success(request, 'Successfully added blog!')
             return redirect(reverse('blog_detail', args=[blog.id]))
         else:
-            messages.error(request, 'Failed to add blog. Please ensure the form is valid')
+            messages.error(request,
+                           'Failed to add blog.'
+                           'Please ensure the form is valid')
     else:
         form = BlogForm()
 
@@ -107,7 +111,9 @@ def edit_blog(request, blog_id):
             messages.success(request, 'Blog successfully updated')
             return redirect(reverse('blog_detail', args=[blog.id]))
         else:
-            messages.error(request, 'Failed to updated blog. Please ensure the form is valid')
+            messages.error(request,
+                           'Failed to updated blog.'
+                           'Please ensure the form is valid')
     else:
         form = BlogForm(instance=blog)
         messages.info(request, f'You are editing {blog.blog_title}')
@@ -145,9 +151,12 @@ def edit_blog_comment(request, comment_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Comment successfully updated')
-            return redirect(reverse('blog_detail', kwargs={"blog_id": blog.id}))
+            return redirect(reverse('blog_detail',
+                            kwargs={"blog_id": blog.id}))
         else:
-            messages.error(request, 'Failed to updated comment. Please ensure the form is valid')
+            messages.error(request,
+                           'Failed to updated comment.'
+                           'Please ensure the form is valid')
     else:
         form = BlogCommentForm(instance=comment)
         messages.info(request, f'You are editing comment on {blog.blog_title}')
@@ -162,7 +171,6 @@ def edit_blog_comment(request, comment_id):
     return render(request, template, context)
 
 
-
 @login_required
 def delete_blog_comment(request, comment_id):
     """ View to allow users to delete blog comments """
@@ -171,8 +179,11 @@ def delete_blog_comment(request, comment_id):
 
     if comment:
         comment.delete()
-        messages.success(request, f'Comment for {blog.blog_title} was successfully deleted')
+        messages.success(request,
+                         f'Comment for {blog.blog_title}'
+                         f'was successfully deleted')
     else:
-        messages.error(request, f'Unable to delete comment for {blog.blog_title}')
+        messages.error(request,
+                       f'Unable to delete comment for {blog.blog_title}')
 
     return redirect(reverse('blog_detail', kwargs={"blog_id": blog.id}))

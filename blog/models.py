@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 class Blog(models.Model):
     """ Creates Blog table in database """
     class Meta:
+        """ Creates Meta Data for table """
         ordering = ['-date_added']
 
     blog_title = models.CharField(max_length=254)
@@ -16,7 +17,8 @@ class Blog(models.Model):
     blog_content_three = models.TextField(null=True, blank=True)
     author = models.CharField(max_length=254)
     image = models.ImageField()
-    date_added = models.DateField(auto_now_add=True, editable=False, blank=False, null=False)
+    date_added = models.DateField(auto_now_add=True,
+                                  editable=False, blank=False, null=False)
 
     def __str__(self):
         return self.blog_title
