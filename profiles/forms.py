@@ -58,7 +58,6 @@ class UserProfileForm(forms.ModelForm):
             'default_county': 'County',
         }
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':
                 self.fields[field].label = labels[field] + ""
