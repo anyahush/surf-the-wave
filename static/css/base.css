@@ -178,6 +178,7 @@ button.navbar-toggler:hover {
 
 #delivery-banner h2 {
     color: #30323d;
+    font-size: 1.5rem !important;
 }
 
 /* Footer */
@@ -232,7 +233,6 @@ footer a:hover {
     input.form-control.search-input {
         font-size: 0.76rem;
     }
-
 }
 
 @media (max-width: 991px) {
