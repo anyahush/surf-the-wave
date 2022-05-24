@@ -121,37 +121,40 @@
                                 <!-- Allow superuser or user who left comment to delete-->
                                 {% if request.user == comment.author or request.user.is_superuser %}
                                 <a href="#deleteComment" data-bs-toggle="modal" data-bs-target="#deleteComment"
-                                aria-label="Link to deletion confirmation modal">
+                                    data-id="{{ comment.id }}" data-url="{% url 'delete_blog_comment' comment.id %}"
+                                    aria-label="Link to deletion confirmation modal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </a>
-                                <!-- Deletion confirmation Bootstrap modal -->
-                                <div class="modal fade" id="deleteComment" tabindex="-1"
-                                    aria-labelledby="Delete comment confirmation modal" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="text-center">Are you sure you want to delete your comment?</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-grey"
-                                                    data-bs-dismiss="modal">Cancel</button>
-                                                <a href="{% url 'delete_blog_comment' comment.id %}" aria-label="Link to delete comment">
-                                                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 {% endif %}
                             </td>
-                        </tr>
+                            </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+                 <!-- Deletion confirmation Bootstrap modal -->
+                 <div class="modal fade" id="deleteComment" tabindex="-1"
+                 aria-labelledby="Delete comment confirmation modal" aria-hidden="true">
+                 <div class="modal-dialog modal-dialog-centered">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                 aria-label="Close"></button>
+                         </div>
+                         <div class="modal-body">
+                             <p class="text-center">Are you sure you want to delete this comment?
+                                <span id="postId"></span>
+                             </p>
+                         </div>
+                         <div class="modal-footer">
+                             <button type="button" class="btn btn-sm btn-grey"
+                                 data-bs-dismiss="modal">Cancel</button>
+                             <a href="" id="actualDeleteBtn" aria-label="Link to delete comment">
+                                 <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
             </div>
         </div>
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-5">
@@ -175,3 +178,12 @@
 </div>
 {% endblock %}
 
+{% block postloadjs %}
+<script type="text/javascript">
+    // Used from Stack Overflow, details in README
+    $('#deleteComment').on('shown.bs.modal', function (event) {
+        $("#commentId").text($(event.relatedTarget).data('id'));
+        $("#actualDeleteBtn").attr('href', $(event.relatedTarget).data('url'));
+    })
+</script>
+{% endblock %}
