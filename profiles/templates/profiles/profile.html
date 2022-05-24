@@ -41,55 +41,56 @@
                 <!-- Superuser profile buttons -->
                 {% if request.user.is_superuser %}
                 <li class="nav-item">
-                    <a href="{% url 'add_product' %}" aria-label="Link to add product page">
-                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add product form">
-                            Add Product
-                        </button>
+                    <a href="{% url 'add_product' %}" class="nav-link profile-buttons"
+                        aria-label="Link to add product page">
+                        Add Product
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'add_blog' %}" aria-label="Link to add blog page">
-                        <button class="nav-link profile-buttons" type="button" aria-label="Go to add blog form">
-                            Add Blog
-                        </button>
+                    <a href="{% url 'add_blog' %}" class="nav-link profile-buttons" aria-label="Link to add blog page">
+                        Add Blog
                     </a>
                 </li>
                 {% endif %}
                 <!-- Logout button -->
                 <li class="nav-item">
-                    <a href="{% url 'account_logout' %}" aria-label="Link to logout of account" class="nav-link profile-buttons">Logout</a>
+                    <a href="{% url 'account_logout' %}" aria-label="Link to logout of account"
+                        class="nav-link profile-buttons">Logout</a>
                 </li>
             </ul>
         </div>
         <div class="col-12 col-md-7 col-lg-8 col-xl-6">
             <!-- Profile form for user information -->
-            <section id="my-info" class="profile-section">
+            <div id="my-info" class="profile-section">
                 <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ user_form|crispy }}
                     {{ form| crispy }}
                     <button class="btn btn-blue action-buttons">Update Information</button>
-                    <a href="{% url 'profile' %}" aria-label="Cancel profile information update" class="btn btn-grey action-buttons">Cancel</a>
+                    <a href="{% url 'profile' %}" aria-label="Cancel profile information update"
+                        class="btn btn-grey action-buttons">Cancel</a>
                 </form>
-            </section>
+            </div>
             <!-- User order history -->
-            <section id="order-history" class="profile-section">
+            <div id="order-history" class="profile-section">
                 <div class="col-12">
                     <p>Click on the order number to view the order summary</p>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless">
                             <thead>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
+                                <tr>
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Order Total</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 {% for order in orders %}
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                           aria-label="Link to open order summary" title="{{ order.order_number }}">
+                                            aria-label="Link to open order summary" title="{{ order.order_number }}">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
@@ -112,14 +113,15 @@
                         </table>
                     </div>
                 </div>
-            </section>
+            </div>
             <!-- User account management -->
             <!-- Paragraph content used from ASOS account, details in README -->
-            <section id="my-account" class="profile-section">
+            <div id="my-account" class="profile-section">
                 <div class="row">
                     <div class="col-12">
                         <p>Feel free to change your password so your Surf the Wave account stays secure</p>
-                        <a href="{% url 'account_change_password' %}" aria-label="Link to change account password" class="btn btn-blue">
+                        <a href="{% url 'account_change_password' %}" aria-label="Link to change account password"
+                            class="btn btn-blue">
                             Change Password
                         </a>
                     </div>
@@ -127,43 +129,45 @@
                 <div class="row mt-5">
                     <div class="col-12">
                         <p>We're sorry to see you go!</p>
-                        <p>Remember, your Surf the Wave account is free to have and enables you to shop all of our available products on site.</p>
+                        <p>Remember, your Surf the Wave account is free to have and enables you to shop all of our
+                            available products on site.</p>
                         <a href="#deleteAccount" class="btn btn-sm btn-grey" data-bs-toggle="modal"
                             data-bs-target="#deleteAccount" aria-label="Link to open deletion confirmation modal">
                             Delete Account?
                         </a>
                         <!-- Deletion confirmation Bootstrap modal -->
-                        <div class="modal fade" id="deleteAccount" tabindex="-1"
-                        aria-labelledby="Delete account confirmation modal" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="text-center">Are you sure you want to delete your account?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-sm btn-grey"
-                                        data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_user' user.id %}" aria-label="Link to delete account">
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger">Delete</button>
-                                    </a>
+                        <div class="modal fade" id="deleteAccount" tabindex="-1" aria-labelledby="userId"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" id="userId">
+                                        <p class="text-center">Are you sure you want to delete your account?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-sm btn-grey"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <a href="{% url 'delete_user' user.id %}" class="btn btn-sm btn-danger"
+                                            aria-label="Link to delete account">
+                                            Delete
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
 </div>
-{% endblock %}
+    {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script src="{% static 'profiles/js/pill-menu-control.js' %}"></script>
-<script src="{% static 'profiles/js/country-field.js' %}"></script>
-{% endblock %}
+    {% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'profiles/js/pill-menu-control.js' %}"></script>
+    <script src="{% static 'profiles/js/country-field.js' %}"></script>
+    {% endblock %}
