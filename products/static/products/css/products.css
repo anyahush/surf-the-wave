@@ -1,6 +1,6 @@
 /* Products */
 .custom-badge:hover {
-    background-color: #529afe !important;
+    background-color: #2f7deb !important;
     color: #fff !important;
 }
 
@@ -24,6 +24,6 @@ a .card-title {
 }
 
 #all-products {
-    color: #529afe !important;
+    color: #2f7deb !important;
     text-decoration: underline;
 }
