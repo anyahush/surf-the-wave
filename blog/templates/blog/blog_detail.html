@@ -31,7 +31,7 @@
             {% else %}
             <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="{{ blog.name }}">
             {% endif %}
-            <div class="mt-2 float-end">
+            <div class="mt-2">
                 <!-- Superuser edit and delete links -->
                 {% if request.user.is_superuser %}
                     <small>
