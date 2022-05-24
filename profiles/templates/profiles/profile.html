@@ -68,8 +68,8 @@
                     {% csrf_token %}
                     {{ user_form|crispy }}
                     {{ form| crispy }}
-                    <button class="btn btn-blue">Update Information</button>
-                    <a href="{% url 'profile' %}" aria-label="Cancel profile information update" class="btn btn-grey">Cancel</a>
+                    <button class="btn btn-blue action-buttons">Update Information</button>
+                    <a href="{% url 'profile' %}" aria-label="Cancel profile information update" class="btn btn-grey action-buttons">Cancel</a>
                 </form>
             </section>
             <!-- User order history -->
