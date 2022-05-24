@@ -7,4 +7,4 @@ $('.profile-buttons').click(function(){
 
 $(document).ready(function(){
     $('#my-info').show();
-})
+});
