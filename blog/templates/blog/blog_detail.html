@@ -42,7 +42,7 @@
                         </a>
                     </small>
                     <!-- Deletion confirmation Bootstrap modal -->
-                    <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
+                    <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="blogId"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -50,13 +50,13 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body" id="blogId">
                                     <p class="text-center">Are you sure you want to delete {{ post.blog_title }} blog?</p>
                                   </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_blog' blog.id %}" aria-label="Link to delete blog">
-                                        <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                                    <a href="{% url 'delete_blog' blog.id %}" class="btn btn-sm btn-danger" aria-label="Link to delete blog">
+                                        Delete
                                     </a>
                                 </div>
                             </div>
@@ -78,8 +78,8 @@
             {% if blog.blog_content_three %}
             <p class="mb-5">{{ blog.blog_content_three }}</p>
             {% endif %}
-            <a href="{% url 'blogs' %}" class="float-end" aria-label="Link to return to blogs page">
-                <button class="btn btn-sm btn-grey">Back to blogs</button>
+            <a href="{% url 'blogs' %}" class="btn btn-sm btn-grey float-end" aria-label="Link to return to blogs page">
+               Back to blogs
             </a>
         </div>
     </div>
@@ -96,10 +96,12 @@
                         <th scope="col">Comment</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
                       </tr>
                       <tr class="d-md-none">
                         <th scope="col">Comment</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                         <th scope="col"></th>
                       </tr>
                     </thead>
@@ -133,7 +135,7 @@
                 </table>
                  <!-- Deletion confirmation Bootstrap modal -->
                  <div class="modal fade" id="deleteComment" tabindex="-1"
-                 aria-labelledby="Delete comment confirmation modal" aria-hidden="true">
+                 aria-labelledby="postId" aria-hidden="true">
                  <div class="modal-dialog modal-dialog-centered">
                      <div class="modal-content">
                          <div class="modal-header">
@@ -148,8 +150,8 @@
                          <div class="modal-footer">
                              <button type="button" class="btn btn-sm btn-grey"
                                  data-bs-dismiss="modal">Cancel</button>
-                             <a href="" id="actualDeleteBtn" aria-label="Link to delete comment">
-                                 <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                             <a href="" id="actualDeleteBtn" class="btn btn-sm btn-danger" aria-label="Link to delete comment">
+                                Delete
                              </a>
                          </div>
                      </div>
@@ -166,9 +168,8 @@
                 {{ comment_form|crispy }}
                 <div class="text-center">
                     <button class="btn btn-blue" type="submit" >Add comment</button>
-                    <a href="{% url 'blog_detail' blog.id %}" aria-label="Link to cancel comment form">
-                        <button class="btn btn-grey" type="button">Cancel</button>
-                    </a>
+                    <a href="{% url 'blog_detail' blog.id %}" class="btn btn-grey"  aria-label="Link to cancel comment form">
+                        Cancel
                 </div>
             </form>
             {% endif %}
@@ -179,7 +180,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript">
+<script>
     // Used from Stack Overflow, details in README
     $('#deleteComment').on('shown.bs.modal', function (event) {
         $("#commentId").text($(event.relatedTarget).data('id'));

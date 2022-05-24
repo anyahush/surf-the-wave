@@ -73,7 +73,7 @@
             {% endif %}
         </div>
         <!-- Deletion confirmation Bootstrap modal -->
-        <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="Delete blog confirmation modal"
+        <div class="modal fade" id="deleteBlog" tabindex="-1" aria-labelledby="postId"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -86,8 +86,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-grey" data-bs-dismiss="modal">Cancel</button>
-                        <a href="" id="actualDeleteBtn" aria-label="Link to delete blog">
-                            <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                        <a href="" id="actualDeleteBtn" class="btn btn-sm btn-danger" aria-label="Link to delete blog">
+                            Delete
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript">
+<script>
     // Used from Stack Overflow, details in README
     $('#deleteBlog').on('shown.bs.modal', function (event) {
         $("#postId").text($(event.relatedTarget).data('id'));
