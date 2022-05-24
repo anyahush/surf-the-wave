@@ -5,7 +5,7 @@ from products.models import Product
 
 
 def basket_contents(request):
-
+    """ Creates basket contents and updates totals across all templates """
     basket_items = []
     total = 0
     product_count = 0
