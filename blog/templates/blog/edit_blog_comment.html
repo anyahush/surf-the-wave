@@ -24,8 +24,8 @@
                     {{ form|crispy }}
                     <div class="text-center">
                         <button class="btn btn-blue" type="submit" >Update comment</button>
-                        <a href="{% url 'blog_detail' blog.id %}" aria-label="Link to cancel edit comment form">
-                            <button class="btn btn-grey" type="button">Cancel</button>
+                        <a href="{% url 'blog_detail' blog.id %}" class="btn btn-grey"  aria-label="Link to cancel edit comment form">
+                            Cancel
                         </a>
                     </div>
                 </form>
