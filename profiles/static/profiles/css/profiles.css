@@ -20,7 +20,6 @@
     color: #aab7c4;
 }
 
-
 .nav {
     display: block;
 }
@@ -31,7 +30,6 @@
 
 .profile-buttons {
     background-color: #30323d !important;
-    border-color: #30323d !important;
     color: #fff !important;
     margin: 0 0 20px;
     width: 75%;
@@ -42,7 +40,6 @@
 .nav-link.profile-buttons:hover {
     background-color: #feb751 !important;
     color: #fff !important;
-    border-color: #feb751 !important;
 }
 
 
