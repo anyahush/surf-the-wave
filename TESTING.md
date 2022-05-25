@@ -290,6 +290,11 @@ The responsiveness was tested using [Mobile Compatibility Tester]() and [Google 
 
 The Mobile Compatibility tester returned good results for all pages that could be tested. Pages such as profile page, add product and create review, that required user authentication, could not be tested with this site. Responsiveness testing was carried out with Chrome DevTools. Additionally, real world testing was carried out on my iPhone 13, macBook Pro 13" and Lenovo PC screen (2500px) and Lenovo laptop 11".
 
+Some changes were made during testing to enhance responsiveness:
+* On some pages such as the profile page, margins were added between the action buttons on screens under 425px
+* Margins were removed from the main nav and on smaller screens the logo font size was reduced to improve user experience, as it gives for screen space for scrolling and exploring the site
+* The delivery banner font size was reduced on smaller screens
+
 Below are the results are displayed.
 
 ![Responsiveness Table](readme/assets/testing-images/responsiveness-table.png)
