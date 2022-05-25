@@ -243,6 +243,7 @@ All fonts were chosen from [Google Fonts](https://fonts.google.com/).
 - [Compress JPEG](https://compressjpeg.com/) was used to compress images before uploading.
 - [Coolors](https://coolors.co/) was used to choose and match colours.
 - [Django Secret Key Generator](https://djecrety.ir/) was used to generate a random secret key.
+- [Favicon](https://favicon.io/) was used to generate a favicon for the site.
 - [Font Awesome](https://fontawesome.com/) was used for button icons.
 - Git was used for version control ad to push code to GitHub.
 - [GitHub](https://github.com/) was used to store the repository.
@@ -263,7 +264,7 @@ During development I came across challenges due to inexperience.
 - Once AWS was set up, static files were intially loading but the media files were not. All settings were checked and I went through the set up process again to make sure my buckets, policies and keys were correct. I discovered that when loading the images into the bucket, I had not named them the same as what I was calling in the HTML files. Once changed, all media files loaded with no issues.
 - I decided to change the DateTimeField to DateField in several models, as I didn't feel it was necessary to have a time stamp. After doing so it caused an issue in my local environemnt, as it affected the existing date in my sqlite database. As this was early in development and I only had some test data loaded, I used the flush command and it resolved the issue.
 - I wanted to implement additional form validation. I tried the PhoneField and Regex. The PhoneField wasn't compatible with the sqlite so would have thrown issues when developing locally and when implementing the Regex validator, I had issues displaying an appropriate error message. I felt that if the form reloading and saying the form was invalid without indicating what the error is, would be confusing for the user. The Regex validator also conflicted with the checkout form and Stripe, causing payments to fail.
-- 
+- Understanding how to implement the MaxLength Validator was difficult at first. Initially it threw errors but with some help from [Stack Overflow](https://stackoverflow.com/questions/3206905/django-textfield-max-length-validation-for-modelform), I was able to resolve the issue.
 
 
 
