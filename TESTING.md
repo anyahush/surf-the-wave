@@ -480,5 +480,21 @@ In addition to my own manual testing, I shared my project with others to gain fe
     * Solution: Port was changed to public.
 - Once the webhook handler for payment_intent_succeeded had been updated to be able to get or create orders to be stored, I found an issues with street_address2. The webhook was failing and displaying a 'NOT NULL constraint' error. I discovered that in the Order model I had set null=False, instead of null=True. 
     * Solution: Order model updated with street_address2, null=True
+- Initial deployment resulted in failed attempts. Through investigation I found that the version of Python used within my local enviorment was conflicting with the standard version used by Heroku.
+    * A runtime.txt file was added stating the version of Python used in the project
+- On the basket page there was a delete confirmation modal when a user removed an item from their basket. This was removing the first item regardless of the one they were selecting. After some research across other sites such as ASOS, H&M, Amazon, no name a few, none of these sites have confirmation before removing an item from the basket. 
+    * Modal was removed
+- Throughout development I had issues with the footer staying at the bottom of the page. I tried min vh, positions and different margins.
+    * The body was set to relative, footer set to absolute and a custom margin was added
+- During testing, there was an issue when a logged in user tried to complete the checkout form. On investigation I found that the email field was trying to get the email from the default email address, but on the profile form this had changed to get the email from the user model.
+    * Changed the email field to get the email from the user model
+- When users tried to update their basket that had a product with a size, if it was the same product but a different size, this threw a server error. Additionally when the user tried to update the quantity of one product of one size, if there was the same product in a different size it would be affected. I decided to change to the way the sizes were stored in the model and used the has_sizes field as a Boolean, from Boutique Ado. Following this, users were able to add and update products with different sizes
+    * Different size fields in product model changed to one has_sizes field
 
-#### Existing
+#### Known Limitations
+
+- Currently on the product detail pages product information is displayed. In a traditional e-commerce site there is often a list of features or a summary of the main selling points. In future development I would like to implement a form field in the product form that would allow admin users to add a list of features and this would be iterated through and displayed on the product detail page. 
+- For the delete product, blog, product review, blog comment and user account a confirmation modal is displayed to the user to confirm deletion. For all described, except user account, an id number is attached to the span element in the modal so it can dynamically generate with the items being iterated through. There were issues when clicking to delete product 5 it would delete product 1. The delete modal now works and the id number is hidden from the user. However, it has only been hidden using CSS and if a user explore dev tools they could find the id number. This could possibly be a security issue. A more secure way of handling this delete modal will be explore during further development.
+- The has_sizes field in the product model would need to be changed for a real site that had stock and an inventory to reflect the change in stock levels
+- When a product is removed that someone has bought previously, this data is removed from the users order history. An inactive field could be added to keep the product data on the database but not available on the store.
+
