@@ -27,3 +27,8 @@ a .card-title {
     color: #2f7deb !important;
     text-decoration: underline;
 }
+
+#reviewId,
+#productId {
+    display: none;
+}
