@@ -14,16 +14,16 @@
 {% endblock %}
 
 {% block content %}
+<!-- Nav pills modified from Bootstrap 5 and GymFit Website, details in READEME -->
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">My Profile</h2>
+            <h2 class="text-center">{{ user.username }}'s <span id="visible-section-name">My info</span></h2>
         </div>
     </div>
     <div class="row mt-4 custom-margin">
         <!-- My Profile Nav Pills-->
         <div class="col-12 col-md-5 col-lg-4 offset-xl-1">
-            <!-- Nav pills modified from Bootstrap 5 and GymFit Website, details in READEME -->
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <button class="nav-link profile-buttons" id="my-info-button" type="button"
