@@ -94,17 +94,15 @@
                                     {% if request.user.is_superuser %}
                                     <small>
                                         <a href="{% url 'edit_product' product.id %}"
-                                            aria-label="Link to edit product page">
-                                            <button class="btn btn-sm text-primary">
+                                            aria-label="Link to edit product page" class="btn btn-sm text-primary">
                                                 Edit
-                                            </button>
                                         </a>
-                                        <button type="button" data-bs-toggle="modal" class="text-danger btn btn-sm"
+                                        <a data-bs-toggle="modal" class="text-danger btn btn-sm"
                                             data-bs-target="#deleteModal" data-id="{{ product.id }}"
                                             data-url="{% url 'delete_product' product.id %}"
                                             aria-label="Link to deletion confirmation modal">
                                             Delete
-                                        </button>
+                                        </a>
                                     </small>
                                     {% endif %}
                                 </div>
