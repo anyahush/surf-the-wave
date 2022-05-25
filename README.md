@@ -396,10 +396,11 @@ For more information on troubleshooting see the GitHub documentation [here](http
 * [Code Institute's Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project was used throughout as a guide.
 * Image hover effect on image gallery modified from [W3 Schools Tutorial](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity) and [Shore's website](https://www.shore.co.uk/).
 * The shopping basket page modified code from [Surfdome](https://www.surfdome.com/).
-* The box shadow used for the blog comments section was modified from [CSS Tricks](https://css-tricks.com/almanac/properties/b/box-shadow/#aa-inner-shadow).
 * The topnav styling, autofocus on inputs and navbar pill layout and accompanying JavaScript in the user profile were modified from [GymFit](https://github.com/nlenno1/gym-fit-MS4).
 * The quantity dropdown selector on product detail and basket pages modified from Boutique Ado and [Batch Coffee](https://github.com/fayskerritt/batch-coffee).
 * Adding admin link to navbar and delete_user view were used from [Music to my Ears](https://github.com/natalie-kate/music_to_my_ears).
+* Dynamically generating modals for items in a for loop was used from [Stack Overflow](https://stackoverflow.com/questions/42441574/passing-information-to-modal-in-for-loop).
+* Profile section 'My Account' wording and style modified from [ASOS](https://www.asos.com/men/).
 
 
 
