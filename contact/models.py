@@ -7,7 +7,7 @@ class Contact(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL,
                              null=True, blank=True)
-    full_name = models.CharField(max_length=254, null=False, blank=False)
+    full_name = models.CharField(max_length=254, null=False, blank=False,)
     email_from = models.EmailField(max_length=254, null=False, blank=False)
     order_number = models.CharField(max_length=254, null=True, blank=True)
     enquiry = models.TextField(null=False, blank=False)
