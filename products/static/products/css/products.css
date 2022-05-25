@@ -30,5 +30,5 @@ a .card-title {
 
 #reviewId,
 #productId {
-    display: none;
+    display: none !important;
 }
