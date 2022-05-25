@@ -270,6 +270,17 @@ Once these were resolved all Python files returned a successful validation resul
         - In the admin portal, superusers can make other users admin
 
         ![Admin user](readme/assets/user-story-testing-images/make-superuser.png)
+    
+    * I want to be notified when a user fills out the contact form, so I don't have to check the admin portal constantly.
+        - When a user completes the contact form, an email is sent to the DEFAULT_FROM_EMAIl to notify the admin that someone has contacted the site
+
+        Email sent by user to site 
+
+        ![Contact enquiry](readme/assets/user-story-testing-images/user-email-confirmation.png)
+
+        Email sent to admin, notifying of user contact
+
+        ![Admin notification](readme/assets/user-story-testing-images/admin-notification.png)
 
 
 
