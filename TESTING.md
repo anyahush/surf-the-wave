@@ -301,6 +301,8 @@ Below are the results are displayed.
 
 ### Browser Compatibility
 
+The site was manually tested on Chrome 101, Microsoft Edge 101 and Safari 15.1. Additionally the site was checked on [Lamdatest](https://www.lambdatest.com/) for Firefox 89 and Opera 74. All browsers tested produced good compatibility and user experience results. 
+
 ### Performance
 To test performance across various areas, I used Google Chrome Developer Lighthouse Tools. Some of the performance scores are not as high as I would like. There are a few areas that caused these lower scores:
 - Stripe reccomends having their documentation on every page
