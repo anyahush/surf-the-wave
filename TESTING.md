@@ -447,6 +447,20 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ### Manual Testing
 
+To test the functionality, usability responsiveness and data management of this site rigorous manual testing was carried out. See the full [Manual Testing Document](test-case-report.pdf) to see the results.
+
+In addition to my own manual testing, I shared my project with others to gain feedback and insight. There comments and feedback are displayed below.
+
+
+| Peer  | Comment | Outcome |
+--------------------|--------------------|--------------------------|
+| Nick Lennon  | Suggested limiting the number of comments and reviews left or limiting length of comment| Logged in users can only leave one comment/review per blog/comment and a max-length of 250 characters implemented|
+| Nick Lennon | Suggested having the email field pre-populated on profile | User form created so user email taken from user login rather than profile form |
+| Nick Lennon | Suggested having back to product link on basket page | Back to product link added to product name |
+| Nick Lennon | Suggested having a back to profile button on logout page | Back to profile button added |
+| Vanessa Cleary | When going through checkout process an error occurred when logged in but could checkout as a guest was able to checkout successfully | The checkout form was trying to get email from default_email rather than the user. This was updated. |
+| Maggie Walsh | Tested checkout process but got a server error when 'Go to secure checkout' was clicked. | Checkout process thoroughly checked and no issues. Maggie later tried and it worked with no issues |
+
 ### Bugs
 
 #### Found and Fixed
