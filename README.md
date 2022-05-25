@@ -94,6 +94,7 @@ Deployed website can be viewed [here](https://surf-the-wave.herokuapp.com/).
     * I want to be able to access the Django admin portal easily
     * I want to be able to delete a user.
     * I want to be able to make another user admin.
+    * I want to be notified when a user fills out the contact form, so I don't have to check the admin portal constantly.
 
 
 
@@ -136,6 +137,7 @@ During the initial strategy planning, the opportunities of the site were determi
 - Admin users can delete user reviews on products
 - Admin users can delete users
 - Admin users can make other users admin
+- Admin users are notified by email when a user fills out the contact form
 
 #### Other
 - Users can contact site owner through contact form
