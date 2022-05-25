@@ -34,6 +34,10 @@
     height: 120px;
 }
 
+#postId {
+    display: none !important;
+}
+
 /* Media queries */
 @media (max-width: 425px) {
    .blog-img-container {
