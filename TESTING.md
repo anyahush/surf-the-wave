@@ -87,6 +87,7 @@ Once these were resolved all Python files returned a successful validation resul
 
     4. I want the site to be accessible.
         - All anchor links have aria-labels, images have alt attributes and the colours pass the Lighthouse accessibility checks.
+        - Placeholders and form labels have been used throughout to ensure accesbility is available throughout the site.
     5. I want the site to be responsive across all devices.
         - Throughout development responsiveness has been considered. Using Bootstrap and media queries the site is accessible across all devices.
 
