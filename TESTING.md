@@ -480,6 +480,10 @@ In addition to my own manual testing, I shared my project with others to gain fe
 | Vanessa Cleary | When going through checkout process an error occurred when logged in but could checkout as a guest was able to checkout successfully | The checkout form was trying to get email from default_email rather than the user. This was updated. |
 | Maggie Walsh | Tested checkout process but got a server error when 'Go to secure checkout' was clicked. | Checkout process thoroughly checked and no issues. Maggie later tried and it worked with no issues |
 
+### Automated Testing
+
+Automated testing is new to me so decided that I would carry out thorough and robust manual testing and try some autmated testing to compliment. I have carried out some testing across all apps. This is something I tend to explore further and build on my skills, and will explore futher testing of this site in future development. 
+
 ### Bugs
 
 #### Found and Fixed
