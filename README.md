@@ -2,7 +2,7 @@
 
 ![Mock-up of site](readme/assets/readme-images/mockups.png)
 
-Surf the Wave is a fictional e-commerce site that sells surf equipment and surfwear for all those who love surfing or are curious to try! This is the fourth milestone project as part of my Diploma with Code Institute. This project focuses on the development of a full-stack e-commerce site that uses a centrally-owned dataset by using HTML, CSS, JavaScript, Python+Django, relational database(Postgres), stripe payments and AWS.
+Surf the Wave is a fictional e-commerce site that sells surf equipment and surfwear for all those who love surfing or are curious to try! Surf the Wave is a retail site for individuals, friends and families and not a commerical wholesaler. This is the fourth milestone project as part of my Diploma with Code Institute. This project focuses on the development of a full-stack e-commerce site that uses a centrally-owned dataset by using HTML, CSS, JavaScript, Python+Django, relational database(Postgres), stripe payments and AWS.
 
 Deployed website can be viewed [here](https://surf-the-wave.herokuapp.com/).
 
@@ -39,6 +39,7 @@ Deployed website can be viewed [here](https://surf-the-wave.herokuapp.com/).
 - All genders and ethnicities
 - All levels of surfing
 - Ages 7+
+- Retail purchases not commercial wholesale
 
 
 ### User Stories
@@ -154,6 +155,7 @@ During the initial strategy planning, the opportunities of the site were determi
 
 - A wishlist section for logged in users to save products for future purchase
 - Expand further product lines and product ranges
+- To have a list of features displayed on the product detail page
 - A rating option on product reviews that generated average ratings that would be displayed on the product information
 - Out of stock notifications on product detail when a product had run out
 
