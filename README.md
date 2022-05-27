@@ -8,21 +8,22 @@ Deployed website can be viewed [here](https://surf-the-wave.herokuapp.com/).
 
 ## Table of Contents
 ---
-1. [Project Goals]()
-2. [UX]()
-3. [Strategy Plane]()
-    * [User Stories]()
-4. [Scope Plane]()
-    * [Existing Features]()
-    * [Features Left to Implement]()
-5. [Structure Plane]()
-6. [Skeleton Plane]()
-7. [Surface Plane]()
-8. [Technologies]()
-9. [Testing]()
-10. [Deployment]()
-11. [Credits]()
-12. [Acknowledgements]()
+1. [Project Goals](https://github.com/anyahush/surf-the-wave#project-goals)
+2. [UX](https://github.com/anyahush/surf-the-wave#ux-design)
+3. [Strategy Plane](https://github.com/anyahush/surf-the-wave#strategy-plane)
+    * [User Stories](https://github.com/anyahush/surf-the-wave#user-stories)
+4. [Scope Plane](https://github.com/anyahush/surf-the-wave#scope-plane)
+    * [Existing Features](https://github.com/anyahush/surf-the-wave#existing-features)
+    * [Features Left to Implement](https://github.com/anyahush/surf-the-wave#features-left-to-implement)
+5. [Structure Plane](https://github.com/anyahush/surf-the-wave#structure-plane)
+6. [Skeleton Plane](https://github.com/anyahush/surf-the-wave#skeleton-plane)
+7. [Surface Plane](https://github.com/anyahush/surf-the-wave#surface-plane)
+8. [Technologies](https://github.com/anyahush/surf-the-wave#technologies)
+9. [Challenges]*https://github.com/anyahush/surf-the-wave#challenges
+10. [Testing](TESTING.md)
+11. [Deployment](https://github.com/anyahush/surf-the-wave#deployment)
+12. [Credits](https://github.com/anyahush/surf-the-wave#credits)
+13. [Acknowledgements](https://github.com/anyahush/surf-the-wave#acknowledegments)
 
 ---
 

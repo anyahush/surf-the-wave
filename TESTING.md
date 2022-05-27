@@ -2,24 +2,25 @@
 
 ## Table of Contents
 ---
-1. [Code Validation]()
-    * [HTML Validation]()
-    * [CSS Validation]()
-    * [JavaScript Validation]()
-    * [Python Validation]()
-2. [Testing User Stores]()
-3. [Responsiveness]()
-4. [Browser Compatibility]()
-5. [Performance]()
-6. [Manual Testing]()
-7. [Bugs]()
-    * [Found and Fixed]()
-    * [Existing]()
+1. [Code Validation](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#code-validation)
+    * [HTML Validation](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#html-validation)
+    * [CSS Validation](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#css-validation)
+    * [JavaScript Validation](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#javascript-validation)
+    * [Python Validation](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#python-validation)
+2. [Testing User Stores](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#testing-user-stories)
+3. [Responsiveness](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#responsiveness)
+4. [Browser Compatibility](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#browser-compatibility)
+5. [Performance](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#performance)
+6. [Manual Testing](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#manual-testing)
+8. [Automated Testing](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#automated-testing)
+8. [Bugs](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#bugs)
+    * [Found and Fixed](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#found-and-fixed)
+    * [Known Limitations](https://github.com/anyahush/surf-the-wave/blob/main/TESTING.md#known-limitations)
 
 
-### Code Validation
+## Code Validation
 
-#### HTML Validation
+### HTML Validation
 
 HTML Validation was carried out on all pages of the site using [W3C HTML Validator](https://validator.w3.org/nu/). 
 A number of errors came back across the site:
@@ -39,19 +40,19 @@ Below shows some of the errors present whilst validating.
 
 ![](readme/assets/testing-images/html-validation2.png)
 
-#### CSS Validation
+### CSS Validation
 
 CSS validation was carried out on all CSS files in the repository using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). All pages returned successful validation. Two pages returned warnings that the border colour and background colour of button elements were the same. The unncessary border colours were removed, and the warnings subequently resolved.
 
 ![](readme/assets/testing-images/css-validation.png)
 
-#### JavaScript Validation
+### JavaScript Validation
 
 JavaScript validation was carried out on all JavaScript files and JavaScript code within HTML files using [JSHint](https://jshint.com/). The only errors to come back initially were missing semi-colons and in one instance, an extra semi-colon. Additionally, some definition issues were raised but these are in relation to using Bootstrap elements.
 
 After correcting the semi-colons, all JavaScript passed validation.
 
-#### Python Validation
+### Python Validation
 
 Python validation was carried out on all Python files using [PEP8 Validator](http://pep8online.com/). 
 Initial errors returned were:
@@ -65,7 +66,7 @@ Once these were resolved all Python files returned a successful validation resul
 ![](readme/assets/testing-images/python-validation.png)
 
 
-### Testing User Stories
+## Testing User Stories
 
 - As a first time visitor:
     1. I want to easily navigate throughout the site.
@@ -286,7 +287,7 @@ Once these were resolved all Python files returned a successful validation resul
 
 
 
-### Responsiveness
+## Responsiveness
 The responsiveness was tested using [Mobile Compatibility Tester]() and [Google Chrome Developer Tools]().
 
 The Mobile Compatibility tester returned good results for all pages that could be tested. Pages such as profile page, add product and create review, that required user authentication, could not be tested with this site. Responsiveness testing was carried out with Chrome DevTools. Additionally, real world testing was carried out on my iPhone 13, macBook Pro 13" and Lenovo PC screen (2500px) and Lenovo laptop 11".
@@ -300,18 +301,18 @@ Below are the results are displayed.
 
 ![Responsiveness Table](readme/assets/testing-images/responsiveness-table.png)
 
-### Browser Compatibility
+## Browser Compatibility
 
 The site was manually tested on Chrome 101, Microsoft Edge 101 and Safari 15.1. Additionally the site was checked on [Lamdatest](https://www.lambdatest.com/) for Firefox 89 and Opera 74. All browsers tested produced good compatibility and user experience results. 
 
-### Performance
+## Performance
 To test performance across various areas, I used Google Chrome Developer Lighthouse Tools. Some of the performance scores are not as high as I would like. There are a few areas that caused these lower scores:
 - Stripe reccomends having their documentation on every page
 - Eliminate render blocking- this was caused by my CSS file and other libraries such as Font Awesome. These have been left in the head
 - Serve images in gen formats- this is not something I was aware of. My images are in png format, but I will know for future development.
 - Use HTTP/2- this is not something I was sure how to control. 
 
-#### Home Page
+### Home Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/home-mobile.png)
@@ -320,7 +321,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/home-desktop.png)
 
-#### Products Page
+### Products Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/products-mobile.png)
@@ -329,7 +330,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/products-desktop.png)
 
-#### Product Detail Page
+### Product Detail Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/product-detail-mobile.png)
@@ -338,7 +339,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/product-detail-deskptop.png)
 
-#### Add Product Page
+### Add Product Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/add-product-mbile.png)
@@ -347,7 +348,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/add-blog-desktop.png)
 
-#### Edit Product Page
+### Edit Product Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/edit-review-mobile.png)
@@ -356,7 +357,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/edit-product-desktop.png)
 
-#### Create Review Page
+### Create Review Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/create-review-mobile.png)
@@ -365,7 +366,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/create-review-desktop.png)
 
-#### Edit Review Page
+### Edit Review Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/edit-review-mobile.png)
@@ -374,7 +375,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/edit-review-desktop.png)
 
-#### Basket Page
+### Basket Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/basket-mobile.png)
@@ -383,7 +384,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/basket-desktop.png)
 
-#### Checkout Page
+### Checkout Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/checkout-mobile.png)
@@ -392,7 +393,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/checkout-desktop.png)
 
-#### Checkout Success Page
+### Checkout Success Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/checkout-success-mobile.png)
@@ -401,7 +402,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/checkout-success-desktop.png)
 
-#### Contact Page
+### Contact Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/contact-mobile.png)
@@ -410,7 +411,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/contact-desktop.png)
 
-#### Profile Page
+### Profile Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/profile-mobile.png)
@@ -419,7 +420,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/profile-desktop.png)
 
-#### Blogs Page
+### Blogs Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/blogs-page-mobile.png)
@@ -428,7 +429,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/blogs-page-desktop.png)
 
-#### Blog Detail Page
+### Blog Detail Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/blog-detail-mobile.png)
@@ -437,7 +438,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/blog-detail-desktop.png)
 
-#### Add Blog Page
+### Add Blog Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/add-blog-mobile.png)
@@ -446,7 +447,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/add-blog-desktop.png)
 
-#### Edit Blog Page
+### Edit Blog Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/edit-blog-mobile.png)
@@ -455,7 +456,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/edit-blog-desktop.png)
 
-#### Edit Blog Comment Page
+### Edit Blog Comment Page
 - Mobile
 
 ![](readme/assets/lighthouse-testing/edit-comment-mobile.png)
@@ -464,7 +465,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ![](readme/assets/lighthouse-testing/edit-comment-desktop.png)
 
-### Manual Testing
+## Manual Testing
 
 To test the functionality, usability responsiveness and data management of this site rigorous manual testing was carried out. See the full [Manual Testing Document](test-case-report.pdf) to see the results.
 
@@ -480,7 +481,7 @@ In addition to my own manual testing, I shared my project with others to gain fe
 | Vanessa Cleary | When going through checkout process an error occurred when logged in but could checkout as a guest was able to checkout successfully | The checkout form was trying to get email from default_email rather than the user. This was updated. |
 | Maggie Walsh | Tested checkout process but got a server error when 'Go to secure checkout' was clicked. | Checkout process thoroughly checked and no issues. Maggie later tried and it worked with no issues |
 
-### Automated Testing
+## Automated Testing
 
 Automated testing is new to me so decided that I would carry out thorough and robust manual testing and try some autmated testing to compliment. I have carried out some testing across all apps. This is something I tend to explore further and build on my skills, and will explore futher automated testing of this site in future development. 
 
@@ -522,9 +523,9 @@ Overall Project Result
 ![](readme/assets/testing-images/reviews-test.png)
 
 
-### Bugs
+## Bugs
 
-#### Found and Fixed
+### Found and Fixed
 
 - Whilst setting up webhooks there was issues with the webhook being sent back from Stripe. With investigation and searching on Slack and through web searches I found that I hadn't changed the port to public, so Stripe wasn't able to connect.
     * Solution: Port was changed to public.
@@ -541,7 +542,7 @@ Overall Project Result
 - When users tried to update their basket that had a product with a size, if it was the same product but a different size, this threw a server error. Additionally when the user tried to update the quantity of one product of one size, if there was the same product in a different size it would be affected. I decided to change to the way the sizes were stored in the model and used the has_sizes field as a Boolean, from Boutique Ado. Following this, users were able to add and update products with different sizes
     * Different size fields in product model changed to one has_sizes field
 
-#### Known Limitations
+### Known Limitations
 
 - Currently on the product detail pages product information is displayed. In a traditional e-commerce site there is often a list of features or a summary of the main selling points. In future development I would like to implement a form field in the product form that would allow admin users to add a list of features and this would be iterated through and displayed on the product detail page. 
 - For the delete product, blog, product review, blog comment and user account a confirmation modal is displayed to the user to confirm deletion. For all described, except user account, an id number is attached to the span element in the modal so it can dynamically generate with the items being iterated through. There were issues when clicking to delete product 5 it would delete product 1. The delete modal now works and the id number is hidden from the user. However, it has only been hidden using CSS and if a user explore dev tools they could find the id number. This could possibly be a security issue. A more secure way of handling this delete modal will be explore during further development.
