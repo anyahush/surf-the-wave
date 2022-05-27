@@ -37,12 +37,14 @@ def blog_detail(request, blog_id):
             author=request.user, blog=blog,
         ).exists()
         if previous_comment:
-            # If previous comment error message displayed
+            # If user has left previous comment
+            # error message displayed
             messages.error(request,
                            f'You have already left a comment'
                            f'for {blog.blog_title}')
         else:
-            # If no previous comment new comment saved
+            # If no previous comment 
+            # and form is valid, comment saved
             if comment_form.is_valid():
                 comment = comment_form.save(commit=False)
                 comment.blog = blog

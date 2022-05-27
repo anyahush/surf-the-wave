@@ -53,12 +53,13 @@ def checkout(request):
             'country': request.POST['country'],
         }
         order_form = OrderForm(form_data)
+        # If form valid add pid and basket data
         if order_form.is_valid():
             order = order_form.save()
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
-
+            # Iterate through basket items and  create lineitem instance
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -79,7 +80,7 @@ def checkout(request):
                                 product_size=size,
                             )
                             order_line_item.save()
-
+                # If error display error message
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your basket"
@@ -92,7 +93,7 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
-
+        # If form not valid display error message
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -112,7 +113,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-
+        # If user logged in and has data saved to profile populate checkout form
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

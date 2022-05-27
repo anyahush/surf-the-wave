@@ -22,6 +22,7 @@ def all_products(request):
     direction = None
 
     if request.GET:
+        # Sorts products by name, category and direction
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -40,7 +41,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
+        # Searches products based on user query
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -89,12 +90,14 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Admin users can add a product to the store """
+    # If not admin, users are redirected
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you do not have permission to do this')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
+        # If form is valid, form saved and product created
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
@@ -117,6 +120,7 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Admin users can edit products in the store """
+    # If not admin, users are redirected
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you do not have permission to do this')
         return redirect(reverse('home'))
@@ -124,6 +128,7 @@ def edit_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
+        # If form valid, form saved and product updated
         if form.is_valid():
             form.save()
             messages.success(request, f'{product.name} successfully updated')
@@ -148,6 +153,7 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """ Admin users can delete products from the store """
+    # If not admin user, redirected
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you do not have permission to do this')
         return redirect(reverse('home'))

@@ -15,10 +15,12 @@ def profile(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         user_form = UserForm(request.POST, instance=request.user)
+        # If form is valid, form is saved
         if form.is_valid():
             form.save()
             user_form.save()
             messages.success(request, 'Your profile was successfully updated')
+        # If form invalid, error message displayed
         else:
             messages.error(request,
                            'Update failed. Please ensure the form is valid')
@@ -63,6 +65,7 @@ def order_history(request, order_number):
 def delete_user(request, user_id):
     """ Delete user account """
     user = request.user.id
+    # Only logged in users can delete their own account
     if not request.user.id == user:
         messages.error(request, 'Sorry you cannot do this')
         return redirect(reverse('account_login'))

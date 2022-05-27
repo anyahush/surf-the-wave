@@ -77,7 +77,8 @@ class StripeWH_Handler:
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_country = shipping_details.address.country
                 profile.save()
-
+        # For all orders check if in database
+        # Check 5 times before continuing
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -101,6 +102,7 @@ class StripeWH_Handler:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
+        # If order exists send email and return HTTP response
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
@@ -108,6 +110,7 @@ class StripeWH_Handler:
                               Verified order in database',
                     status=200)
         else:
+            # If no order create one
             order = None
             try:
                 order = Order.objects.create(
@@ -149,6 +152,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        # If successful send email and return HTTP response
         self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: \

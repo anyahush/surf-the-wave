@@ -20,7 +20,7 @@ def contact(request):
             'enquiry': request.POST['enquiry'],
         }
         contact_form = ContactForm(form_data)
-
+        # If form valid, save enquiry
         if contact_form.is_valid():
             user_enquiry = contact_form.save(commit=False)
             name = contact_form.cleaned_data['full_name']
@@ -43,6 +43,7 @@ def contact(request):
                              'Your enquiry has been sent.'
                              'Check your emails for a confirmation')
             return redirect(reverse('home'))
+        # If not valid, error message displayed
         else:
             messages.error(request,
                            'There was an error with your enquiry.'
@@ -70,7 +71,7 @@ def contact(request):
 
 
 def send_confirmation_email(user_enquiry):
-    """ Send a confirmation email following successful enquiry """
+    """ Send a confirmation email to user following successful enquiry """
     cust_email = user_enquiry.email_from
     subject = 'Thank you for contacting Surf the Wave'
     body = render_to_string(
