@@ -487,7 +487,7 @@ Automated testing is new to me so decided that I would carry out thorough and ro
 
 Overall Project Result
 
-![](readme/assets/testing-images/overall-results.png)
+![](readme/assets/testing-images/overall-test.png)
 
 - Home App
 
