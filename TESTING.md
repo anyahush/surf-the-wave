@@ -482,7 +482,45 @@ In addition to my own manual testing, I shared my project with others to gain fe
 
 ### Automated Testing
 
-Automated testing is new to me so decided that I would carry out thorough and robust manual testing and try some autmated testing to compliment. I have carried out some testing across all apps. This is something I tend to explore further and build on my skills, and will explore futher testing of this site in future development. 
+Automated testing is new to me so decided that I would carry out thorough and robust manual testing and try some autmated testing to compliment. I have carried out some testing across all apps. This is something I tend to explore further and build on my skills, and will explore futher automated testing of this site in future development. 
+
+Overall Project Result
+
+![](readme/assets/testing-images/overall-results.png)
+
+- Home App
+
+![](readme/assets/testing-images/home-test.png)
+
+- Basket App
+
+![](readme/assets/testing-images/basket-test.png)
+
+- Blog App
+
+![](readme/assets/testing-images/blog-test.png)
+
+- Checkout App
+
+![](readme/assets/testing-images/checkout-test.png)
+
+
+- Contact App
+
+![](readme/assets/testing-images/contact-test.png)
+
+- Products App
+
+![](readme/assets/testing-images/produts-test.png)
+
+- Profiles App
+
+![](readme/assets/testing-images/profiles-test.png)
+
+- Reviews App
+
+![](readme/assets/testing-images/reviews-test.png)
+
 
 ### Bugs
 
