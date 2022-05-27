@@ -31,7 +31,6 @@ class TestBasketViews(TestCase):
         """ Test basket view renders """
         response = self.client.get('/basket/')
         self.assertEqual(response.status_code, 200)
-    
 
     def test_add_basket_view(self):
         """ Test items can be added to basket """
