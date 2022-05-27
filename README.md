@@ -307,7 +307,7 @@ For more information on troubleshooting see the GitHub documentation [here](http
 * The project has a set of requirements needed for the project to run. You can install these with pip3 install. The requirements are below.
 * If you have cloned the project then you can use pip3 install -r requirements and it will install all requirements needed 
 
-![Requirements](readme/assets/readme-images/deployment/requirements.png)
+![Requirements](readme/assets/testing-images/requirements-image.png)
 
 * Create a SECRET_KEY. I used a [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/).
 * The settings.py file is set up to collect keys from the environment. During development these were stored in my Gitpod dashboard. Name the variables accordingly. DEVELOPMENT is set to True.
