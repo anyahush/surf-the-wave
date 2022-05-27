@@ -467,7 +467,7 @@ To test performance across various areas, I used Google Chrome Developer Lightho
 
 ## Manual Testing
 
-To test the functionality, usability responsiveness and data management of this site rigorous manual testing was carried out. See the full [Manual Testing Document](test-case-report.pdf) to see the results.
+To test the functionality, usability responsiveness and data management of this site rigorous manual testing was carried out. See the full [Manual Testing Document](readme/assets/testing-images/test-case-report.pdf) to see the results.
 
 In addition to my own manual testing, I shared my project with others to gain feedback and insight. There comments and feedback are displayed below.
 
