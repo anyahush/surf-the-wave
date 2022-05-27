@@ -7,8 +7,8 @@ class TestUserProfileForm(TestCase):
     def test_fields_are_not_required(self):
         """ Test if form submits without fields populated """
         form_data = {
-                'default_full_name': '', 
-                'default_phone_number': '', 
+                'default_full_name': '',
+                'default_phone_number': '',
                 'default_street_address1': '',
                 'default_street_address2': '',
                 'default_town_or_city': '',
