@@ -19,7 +19,7 @@ Deployed website can be viewed [here](https://surf-the-wave.herokuapp.com/).
 6. [Skeleton Plane](https://github.com/anyahush/surf-the-wave#skeleton-plane)
 7. [Surface Plane](https://github.com/anyahush/surf-the-wave#surface-plane)
 8. [Technologies](https://github.com/anyahush/surf-the-wave#technologies)
-9. [Challenges]*https://github.com/anyahush/surf-the-wave#challenges
+9. [Challenges](https://github.com/anyahush/surf-the-wave#challenges)
 10. [Testing](TESTING.md)
 11. [Deployment](https://github.com/anyahush/surf-the-wave#deployment)
 12. [Credits](https://github.com/anyahush/surf-the-wave#credits)
