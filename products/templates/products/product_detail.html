@@ -76,7 +76,7 @@
                     {% csrf_token %}
                     {% if product.has_sizes %}
                     <div class="row form-row mt-4">
-                        {% if product.category.name == 'mens_wetsuits' %}
+                        {% if product.category.name == 'mens_wetsuits' or product.category.name == 'mens_accessories' or product.category.name == 'ladies_accessories' %}
                         <div class="col-sm-12 col-md-7">
                             <p class="small">Size*</p>
                             <select class="form-control form-select" name="product_size" id='id_product_size'>
@@ -128,7 +128,7 @@
                                 <option value="15-16">15-16</option>
                             </select>
                         </div>
-                        {% elif product.category.name == 'kids_footwear' %}
+                        {% elif product.category.name == 'kids_footwear' or product.category.name == 'kids_accessories' %}
                         <div class="col-sm-12 col-md-6">
                             <p>Size*</p>
                             <select class="form-control form-select" name="product_size" id='id_kids_shoe_size'>
