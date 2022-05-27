@@ -48,7 +48,7 @@ class TestBlogForm(TestCase):
         # Check error message is correct
         self.assertEqual(
             form.errors['author'][0], 'This field is required.')
-    
+
     def test_image_is_required(self):
         """ Test if form submits without price field """
         form = BlogForm({
