@@ -21,11 +21,11 @@ class TestProductModels(TestCase):
     def test_category_string(self):
         """ Test Category string method """
         self.assertEqual(str(self.category), 'test')
-    
+
     def test_category_friendly(self):
         """ Test Category friendly method """
         self.assertEqual(str(self.category.friendly_name), 'Test')
-    
+
     def test_product_string(self):
         """ Test Product string method """
         self.assertEqual(str(self.product), 'Test Product')

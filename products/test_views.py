@@ -46,7 +46,7 @@ class TestProductsViews(TestCase):
         response = self.client.get(f'/products/{self.product.id}/')
         self.assertTemplateUsed(response, 'products/product_detail.html')
         self.assertEqual(response.status_code, 200)
-    
+
     def test_add_product_view(self):
         """ Test that only admin can access add_product page"""
 
