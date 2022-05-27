@@ -44,4 +44,3 @@ class TestCheckoutModels(TestCase):
     def test_order_string(self):
         """ Test order string method """
         self.assertEqual(str(self.order), str(self.order.order_number))
-

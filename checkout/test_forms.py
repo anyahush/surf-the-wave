@@ -143,4 +143,3 @@ class TestOrderForm(TestCase):
         # Check error message is correct
         self.assertEqual(
             form.errors['postcode'][0], 'This field is required.')
-
