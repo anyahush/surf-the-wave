@@ -25,6 +25,7 @@ def create_review(request, product_id):
                            f'You have already left a comment'
                            f'for {product.name}')
         else:
+            # if no previous review 
             form = ReviewForm(request.POST)
             if form.is_valid():
                 review = form.save(commit=False)
@@ -53,19 +54,21 @@ def create_review(request, product_id):
 
 @login_required
 def edit_product_review(request, review_id):
-    """ A view to all users to edit product reviews"""
+    """ A view to all users to edit their product review"""
 
     review = get_object_or_404(ProductReview, id=review_id)
     product = review.product
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES, instance=review)
+        # If form valid, form saved and user redirected
         if form.is_valid():
             form.save()
             messages.success(request,
                              f'Review successfully updated for {product.name}')
             return redirect(reverse(
                 'product_detail', kwargs={"product_id": product.id}))
+        # If form not valid error message displayed
         else:
             messages.error(request,
                            'Failed to updated review.'
