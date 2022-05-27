@@ -397,6 +397,9 @@ For more information on troubleshooting see the GitHub documentation [here](http
 * Product content from [Shore](https://www.shore.co.uk/) website.
 * 'In Scotland We Surf' blog from [North Core](https://www.northcore-europe.com/blog/in-scotland-we-surf.html).
 * 'END OF THE LAND: THE LUCY SMALL EPISODE' blog from [Surfdome](https://www.surfdome.com/blog/end-of-the-land-the-lucy-small-episode?_ga=2.96904031.1780410518.1653050895-949459365.1653050895).
+* 'Post Surf Yoga to Relax Your Muscles' content from [Surfers Hyper](https://surfershype.com/post-surf-yoga-sequence).
+* 'This is How You Should Clean Your Wetsuit' content from [Surfers Hype](https://surfershype.com/wetsuit-washing-guide.)
+
 
 
 ### Code Content
@@ -423,7 +426,8 @@ For more information on troubleshooting see the GitHub documentation [here](http
 * Product images from [Shore](https://www.shore.co.uk/) website.
 * Image for 'In Scotland We Surf' blog from [Pexels](https://www.pexels.com/photo/person-surfing-3147548/).
 * Image for 'END OF THE LAND: THE LUCY SMALL EPISODE' blog from [Surfdome](https://www.surfdome.com/blog/end-of-the-land-the-lucy-small-episode?_ga=2.96904031.1780410518.1653050895-949459365.1653050895).
-* 
+* Image for 'Post Surf Yoga to Relax Your Muscles' from [Unsplash](https://unsplash.com/photos/uT0PkbAM8kg).
+* Image for 'This is How You Should Clean Your Wetsuit' from [Surfers Hype](https://surfershype.com/wetsuit-washing-guide.)
 
 
 
