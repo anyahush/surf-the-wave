@@ -226,6 +226,10 @@ During development and testing, and following accessibility guidelines the Cornf
 
 Initially a logo, created using [Adobe](https://www.adobe.com/express/create/logo), was going to be used. During initial stages of development I felt the logo did not fit well with the aesthetic of the site and decided to remove this. The brand logo was created using 'Source Sans Pro' font from Google Fonts.
 
+Images for the home page were chosen to draw attention and encourage users to explore the sight. The variety of images showcase different aspects related to surfing. 
+
+Product images have been selected to illustrate the product and replicate an online shop, displaying images primarily of the wetsuits and boards rather than of people.
+
 
 
 ### Typography
