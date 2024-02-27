@@ -4,7 +4,7 @@
 
 Do you love to surf and want the latest board? Or have you always wanted to give surfing a try? Surf the Wave is an online retailer of surfboards, equipment and wetsuits for you, your friends and the family! We want to spread the joy of surfing!
 
-Deployed website can be viewed [here]((https://surf-the-wave.onrender.com/)).
+Deployed website can be viewed [here](https://surf-the-wave.onrender.com/).
 
 ## Table of Contents
 ---
