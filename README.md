@@ -6,6 +6,8 @@ Do you love to surf and want the latest board? Or have you always wanted to give
 
 Deployed website can be viewed [here](https://surf-the-wave.onrender.com/).
 
+Note: Currently this site is being hosted free with Render. Therefore after a period of inactivity it can take a moment for the the connection to be re-established and the site to load fully.
+
 ## Table of Contents
 ---
 1. [Project Goals](https://github.com/anyahush/surf-the-wave#project-goals)
